@@ -1,0 +1,26 @@
+@import "./abstracts//variables";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background-color: $white;
+  color: $body-text-color;
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: Manrope, sans-serif;
+}
