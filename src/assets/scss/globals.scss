@@ -1,3 +1,5 @@
+/* EN PRINCIPIO IGNORAR*/
+
 @import "./abstracts//variables";
 
 * {
@@ -16,7 +18,7 @@ html,
 body {
   overflow-x: hidden;
   background-color: $white;
-  color: $body-text-color;
+  color: green;
   box-sizing: inherit;
 }
 
