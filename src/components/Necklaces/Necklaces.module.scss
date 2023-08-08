@@ -1,5 +1,14 @@
 @import "src/assets/scss/abstracts/_variables";
 
+
+
 .container {
-    
-}
+    display: flex;
+    height: 100vh;
+  }
+  
+  .image {
+    flex: 1; /* Each image should take 50% of the available space */
+    display: block; /* Make sure it's a block-level element */
+    object-fit: cover; /* Maintain aspect ratio while covering the space */
+  }

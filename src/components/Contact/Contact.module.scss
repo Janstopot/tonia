@@ -36,13 +36,13 @@
 }
 
 .title {
+    margin-top: 7.3rem;
     height: 6.5rem;
     color: #ffffff;
     font-size: 5rem;
     font-weight: 400;
     height: 6.5rem;
     letter-spacing: 5.25px;
-    margin-top: 7.3rem;
     text-align: center;
 }
 
@@ -64,13 +64,13 @@
 }
 
 .input {
-    background-color: rgba(217, 217, 217, 0.50);
     height: 5.7rem;
     margin-top: 1.8rem;
     padding: 0.5rem 1rem; /* Add some padding for better visual appearance */
     font-size: 2.5rem;
     font-weight: 400;
     text-align: center;
+    background-color: rgba(217, 217, 217, 0.50);
     color: #fff; /* Set text color for input */
     border: none; /* Remove default border */
     &::placeholder {
@@ -79,13 +79,13 @@
 }
 
 .comment {
-    background-color: #d9d9d980;
     height: 18rem;
     margin-top: 1.8rem;
     padding: 1rem; /* Add padding for better visual appearance */
     font-size: 2.5rem;
     font-weight: 400;
     text-align: center;
+    background-color: #d9d9d980;
     color: #fff; /* Set text color for input */
     border: none; /* Remove default border */
     &::placeholder {

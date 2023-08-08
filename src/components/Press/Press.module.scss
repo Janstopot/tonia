@@ -22,20 +22,16 @@
   background-position: center;
 }
 
-
-
 .titleBox {
   position: relative;
-  background-color: #000000;
+  width: 94.8rem;
+  height: 16.6rem;
   border: 3px solid;
   border-color: #ffffff;
-  height: 16.6rem;
-  width: 94.8rem;
   margin-top: 3.4rem;
   margin-bottom: 6.8rem;
-
+  background-color: #000000;
 }
-
 
 .titleText {
   color: #ffffff;
@@ -46,44 +42,32 @@
   line-height: 16.6rem;
 }
 
-
-
 .box {
-  height: 100%;
-  width: 94.8rem;
-  background-color: #ffffffe6;
   position: relative;
   width: 94.8rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding-top: 9.4rem;
   padding-left: 7.3rem;
   padding-right: 9.4rem;
   margin-bottom: 15.4rem;
+  background-color: #ffffffe6;
 }
-
 
 .exposition {
   position: relative;
-  color: #000000;
-  font-size: 29.6px;
-  margin-bottom: 5.1rem;
-  max-width:100%;
   height: 8.7rem;
+  margin-bottom: 5.1rem;
+  max-width: 100%;
+  font-size: 29.6px;
   letter-spacing: -0.44px;
   line-height: 3rem;
   width: 82.9rem;
+  color: #000000;
   text-decoration: none;
-  
 }
 
 .exposition .textWrapper {
   font-weight: 700;
 }
-
-
-
-
-
-
-
