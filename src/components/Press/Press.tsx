@@ -155,8 +155,7 @@ function Press() {
             target="_blank"
           >
             <div className={styles.textWrapper}>
-              The Bead that Gives Its Power to Priests in Dogon Country || The
-              Bead Forum
+              The Bead that Gives Its Power to Priests in Dogon Country || TheBead Forum
             </div>
             <div>AUTOMN 2015</div>
           </Link>

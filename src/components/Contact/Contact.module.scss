@@ -22,8 +22,8 @@
 
 .background {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100vh; // me gusta mas con vh que con %
+    height: 100vh;
     color: $white;
     background-color: rgba(6, 2, 0, 0.80);
 }
@@ -42,7 +42,7 @@
     font-size: 5rem;
     font-weight: 400;
     height: 6.5rem;
-    letter-spacing: 5.25px;
+    //letter-spacing: 5.25px; así es como está en figma pero creo que queda mejor
     text-align: center;
 }
 
