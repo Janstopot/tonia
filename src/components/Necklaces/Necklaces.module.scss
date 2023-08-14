@@ -1,31 +1,22 @@
 @import "src/assets/scss/abstracts/_variables";
 
 .main {
-  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100%;
   font-family: $font-raleway;
 }
 
-.imagesContainer {
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-
-.imageWrapper {
+.image {
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: end;
 }
 
-.image {
-  width: 100%; /* Set the width to 100% of the image container */
-  height: auto; /* Let the height adjust according to the image's aspect ratio */
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .text {
@@ -45,5 +36,3 @@
   width: 2rem;
   background-color: #000000;
 }
-
-

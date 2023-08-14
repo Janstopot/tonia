@@ -2,7 +2,8 @@
   min-height: 100vh;
   font-family: $font-raleway;
   overflow: hidden;
-  //background-color: #000000;
+  padding-bottom: 11.04rem;
+  background-color: #000000;
 }
 
 .box {
@@ -14,9 +15,14 @@
 
 .image {
   position: relative;
-  //width: calc(33.33% - 1.04rem); /* Adjust the width of each image box */
-  //width: 50.4rem;
-  //height: 44.1rem;
+  width: 50.9rem;
+  height: 44.2rem;
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .image:hover::before {
@@ -36,4 +42,13 @@
   transition: transform 0.3s ease;
   transform: scale(1.1);
   z-index: 1;
+}
+
+.text{
+  position: absolute;
+  width: 32.0059rem;
+  height: 11.1909rem;
+  font-size: 5rem;
+  //letter-spacing: -0.075rem;
+  color: #FFF;
 }

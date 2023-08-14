@@ -12,19 +12,17 @@ import Link from "next/link";
 function Necklaces() {
   return (
     <div className={styles.main}>
-      <div className={styles.imagesContainer}>
-        <Link href="/woman" className={styles.imageWrapper}>
-          <div className={styles.text}>WOMAN</div>
-          <Image src={man} alt="Woman" className={styles.image} />
-        </Link>
+      <Link href="/woman" className={styles.image}>
+        <div className={styles.text}>WOMAN</div>
+        <Image src={woman} alt="Woman" />
+      </Link>
 
-        <div className={styles.separation}></div>
+      <div className={styles.separation}></div>
 
-        <Link href="/" className={styles.imageWrapper}>
-          <div className={styles.text}>MAN</div>
-          <Image src={man} alt="Man" className={styles.image} />
-        </Link>
-      </div>
+      <Link href="/" className={styles.image}>
+        <div className={styles.text}>MAN</div>
+        <Image src={man} alt="Man" />
+      </Link>
     </div>
   );
 }
