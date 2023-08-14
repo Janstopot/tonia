@@ -21,30 +21,8 @@ function Woman() {
           <Image src={woman2} alt="Woman1"/>
         </div>
 
-        <div className={styles.image}>
-          <link href="/"/>
-          <Image src={woman1} alt="Woman1"/>
-        </div>
+        
 
-        <div className={styles.image}>
-          <link href="/"/>
-          <Image src={woman2} alt="Woman1"/>
-        </div>
-
-        <div className={styles.image}>
-          <link href="/"/>
-          <Image src={woman1} alt="Woman1"/>
-        </div>
-
-        <div className={styles.image}>
-          <link href="/"/>
-          <Image src={woman2} alt="Woman1"/>
-        </div>
-
-        <div className={styles.image}>
-          <link href="/"/>
-          <Image src={woman1} alt="Woman1"/>
-        </div>
 
       </div>
     </div>
