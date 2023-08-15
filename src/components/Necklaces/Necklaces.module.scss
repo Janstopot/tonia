@@ -2,7 +2,25 @@
 
 .main {
   display: flex;
+  flex-direction: column;
   font-family: $font-raleway;
+
+}
+
+.title {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  letter-spacing: 0.525rem;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.box {
+  display: flex;
 }
 
 .image {

@@ -1,0 +1,67 @@
+.main {
+  min-height: 100vh;
+  font-family: $font-raleway;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.backgroundImage {
+  transform: scaleX(-1); // la imagen estaba al reves
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/images/exhibitionsMain.jpg");
+  background-size: cover;
+}
+
+.title {
+  position: relative;
+  width: 100%;
+  height: 18rem; // para ser consistente con el título de NECKALCES tendría que ser de 20rem pero asi queda mejor
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  letter-spacing: 0.525rem;
+  color: #ffffff;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  //padding-right: 4.16rem; es el padding que hay pero me parece mas centrado así
+}
+
+.row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.96rem;
+}
+.row2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.96rem;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  padding: 3.8rem; // no es como está originalmente pero este padding hace que todas las fechas estén abajo
+  position: relative;
+  width: 25.041rem;
+  height: 25.041rem;
+  border-radius: 50%;
+  margin-right: 7.96rem;
+  background-color: #e5e2e0;
+}
+
+.text {
+  font-size: 3.5rem;
+  font-weight: 500;
+  letter-spacing: -0.077rem;
+  color: rgba(0, 0, 0, 0.8);
+}

@@ -1,5 +1,5 @@
 .main {
-  min-height: 100vh;
+  //min-height: 100vh;
   font-family: $font-raleway;
   overflow: hidden;
   padding-bottom: 11.04rem;
@@ -14,7 +14,7 @@
 }
 
 .image {
-  position: relative;
+  //position: relative;
   //width: 62.4rem;
   //height: 58.1rem;
   width: 50.4rem;
@@ -27,33 +27,27 @@
   object-fit: cover;
 }
 
-.image:hover {
-  transition: transform 0.3s ease;
-  transform: scale(1.1);
-}
-
 .text {
   position: absolute;
   font-size: 5rem;
   letter-spacing: -0.075rem;
   color: #fff;
-  opacity: 0; /* Initially hidden */
+  opacity: 0; /* Para que no se vea */
   width: 32.0059rem;
   height: 11.1909rem;
 }
 
 .image:hover {
+  //transition: transform 0.3s ease;
+  //transform: scale(1.1);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.7);
 }
+
 .image:hover .text {
-  transition: transform 0.3s ease;
-  opacity: 1; /* Show on hover */
+  //transition: transform 0.3s ease;
+  opacity: 1; /* Para enseñar el texto */
   background-color: rgba(0, 0, 0, 0.7);
-
 }
-
