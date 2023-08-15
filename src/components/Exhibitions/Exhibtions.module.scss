@@ -59,6 +59,12 @@
   background-color: #e5e2e0;
 }
 
+.circle:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+    background-color: #9b9794;
+}
+
 .text {
   font-size: 3.5rem;
   font-weight: 500;
