@@ -1,0 +1,49 @@
+.main {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: $font-raleway;
+  color: #fff;
+  background-color: #2e2d2d;
+
+  //z-index: 9999; /* Ensure it's on top of everything */
+}
+
+.arrow{
+    width: 5.4rem;
+    height: 5.4rem;
+    border : none;
+    background-color: #2e2d2d;
+    
+}
+.image {
+  position: relative;
+  width: 46.6rem;
+  height: 68.1rem;
+  border: none;
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.descriptionBox {
+    width: 39.7rem;
+
+}
+
+.name {
+  font-size: 5rem;
+  letter-spacing: 0.525rem;
+}
+
+.description {
+  font-size: 2.2rem;
+
+  letter-spacing: -0.033rem;
+}

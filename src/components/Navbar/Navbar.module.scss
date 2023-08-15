@@ -5,6 +5,8 @@
   height: 10rem;
   background-color: $black;
   font-family: $font-raleway;
+  //position: fixed;
+  z-index: 2;
 
   .content {
     display: flex;
