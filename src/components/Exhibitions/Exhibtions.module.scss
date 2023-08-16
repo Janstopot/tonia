@@ -57,13 +57,16 @@
   border-radius: 50%;
   margin-right: 7.96rem;
   background-color: #e5e2e0;
-}
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Apply transition to both transform and background-color properties */
 
-.circle:hover{
-    transition: transform 0.3s ease;
+  &:hover {
     transform: scale(1.1);
     background-color: #9b9794;
+  }
+  
 }
+
+
 
 .text {
   font-size: 3.5rem;

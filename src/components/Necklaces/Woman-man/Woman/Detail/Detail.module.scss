@@ -33,7 +33,16 @@
   width: 46.6rem;
   height: 68.1rem;
   border: none;
+  transition: transform 0.3s ease; /* Apply transition to transform property */
+  filter: grayscale(0); /* Set grayscale to 0% by default */
+
+  &:hover {
+    transform: scale(1.1);
+    filter: grayscale(50%);
+  }
 }
+
+
 
 .image img {
   height: 100%;
