@@ -5,8 +5,7 @@ import ImageDetail from "./ImageDetail/ImageDetail";
 import arrow from "../../../../../assets/images/arrow.png";
 
 function Detail(props: any) {
-  const { data, selectedIndex } = props;
-
+  const { data, increaseIndex, decreaseIndex, index, listLength } = props;
   const [isImageOpen, setIsImageOpen] = useState(false);
 
   const openImage = () => {
@@ -20,27 +19,34 @@ function Detail(props: any) {
   return (
     <>
       <div className={styles.main}>
-        <button className={styles.arrow}>
+        <button
+          className={index === 0 ? styles.hiddenButton : styles.backArrow}
+          onClick={decreaseIndex}
+        >
           <Image src={arrow} alt="arrow" />
         </button>
 
         <button className={styles.image} onClick={openImage}>
-          <Image src={data[selectedIndex].image} alt="image" />
+          <Image src={data.image} alt="image" />
         </button>
         <div className={styles.descriptionBox}>
-          <div className={styles.name}>{data[selectedIndex].name}</div>
-          <div className={styles.description}>
-            {data[selectedIndex].description}
-          </div>
+          <div className={styles.name}>{data.name}</div>
+          <div className={styles.description}>{data.description}</div>
         </div>
 
-        <button className={styles.arrow}>
+        <button
+          className={
+            index === listLength - 1 ? styles.hiddenButton : styles.arrow
+          }
+          onClick={increaseIndex}
+        >
           <Image src={arrow} alt="arrow" />
         </button>
       </div>
+
       {isImageOpen && (
         <div className="modal-container">
-          <ImageDetail onClose={closeImage} />
+          <ImageDetail onClose={closeImage} image={data.image} />
         </div>
       )}
     </>

@@ -9,17 +9,25 @@
   font-family: $font-raleway;
   color: #fff;
   background-color: #2e2d2d;
-
-  //z-index: 9999; /* Ensure it's on top of everything */
 }
 
-.arrow{
-    width: 5.4rem;
-    height: 5.4rem;
-    border : none;
-    background-color: #2e2d2d;
-    
+.hiddenButton {
+  visibility: hidden;
+  pointer-events: none;
 }
+
+.arrow {
+  width: 5.4rem;
+  height: 5.4rem;
+  border: none;
+  background-color: #2e2d2d;
+}
+
+.backArrow {
+  @extend .arrow;
+  transform: scaleX(-1);
+}
+
 .image {
   position: relative;
   width: 46.6rem;
@@ -32,18 +40,18 @@
   width: 100%;
   object-fit: cover;
 }
-.descriptionBox {
-    width: 39.7rem;
 
+.descriptionBox {
+  width: 39.7rem;
 }
 
 .name {
   font-size: 5rem;
   letter-spacing: 0.525rem;
+  margin-bottom: 4.6rem;
 }
 
 .description {
   font-size: 2.2rem;
-
   letter-spacing: -0.033rem;
 }
