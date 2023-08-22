@@ -39,7 +39,7 @@
     font-size: 5rem;
     font-weight: 400;
     height: 6.5rem;
-    //letter-spacing: 5.25px; así es como está en figma pero creo que queda mejor
+    letter-spacing: 0.525rem;
     text-align: center;
 }
 
@@ -63,35 +63,35 @@
 .input {
     height: 5.7rem;
     margin-top: 1.8rem;
-    padding: 0.5rem 1rem; /* Add some padding for better visual appearance */
+    padding: 0.5rem 1rem;
     font-size: 2.5rem;
     font-weight: 400;
     text-align: center;
-    background-color: rgba(217, 217, 217, 0.50);
-    color: #fff; /* Set text color for input */
-    border: none; /* Remove default border */
+    background-color: $background-grey;
+    color: $white;
+    border: none;
     &::placeholder {
-        color: #fff;
+        color: $white;
     }
 }
 
 .comment {
     height: 18rem;
     margin-top: 1.8rem;
-    padding: 1rem; /* Add padding for better visual appearance */
+    padding: 1rem; 
     font-size: 2.5rem;
     font-weight: 400;
     text-align: center;
-    background-color: #d9d9d980;
-    color: #fff; /* Set text color for input */
-    border: none; /* Remove default border */
+    background-color: $background-grey;
+    color: $white;
+    border: none;
     &::placeholder {
-        color: #fff;
+        color: $white;
     }
 }
 
 .submit {
     height: 5.7rem;
     margin-top: 1.8rem;
-    background-color: #ffffff;
+    background-color: $white;
 }

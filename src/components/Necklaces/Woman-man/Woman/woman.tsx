@@ -54,7 +54,7 @@ function Woman() {
     {
       image: woman1,
       name: "ROMAN HEAD",
-      description:
+      description: //Mirar comillas
         "The central bronze bead found at an antique dealer in Mali resembles a Roman head. The black lava beads from the Canary Islands enhance multicolored glass beads from Venice, called 'King beads' because they were very popular with royalty. They were made in the first half of the 19th century and were used for trade with Africa. Small Mediterranean corals add a touch of contrast. ⁣ © Fodé Koné⁣",
     },
     {
@@ -127,7 +127,7 @@ function Woman() {
       image: woman13,
       name: "ROMAN HEAD",
       description:
-        "The central bronze bead found at an antique dealer in Mali resembles a Roman head. The black lava beads from the Canary Islands enhance multicolored glass beads from Venice, called 'King beads' because they were very popular with royalty. They were made in the first half of the 19th century and were used for trade with Africa. Small Mediterranean corals add a touch of contrast. ⁣ © Fodé Koné⁣",
+        "The central bronze bead found at an antique dealer in Mali resembles a Roman head. The black lava beads from the Canary Islands enhance multicolored glass beads from Venice, called King beads' because they were very popular with royalty. They were made in the first half of the 19th century and were used for trade with Africa. Small Mediterranean corals add a touch of contrast. ⁣ © Fodé Koné⁣",
     },
     {
       image: woman14,
