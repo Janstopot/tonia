@@ -1,1 +1,73 @@
 @import "src/assets/scss/abstracts/_variables";
+
+.main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: $font-raleway;
+  overflow: auto;
+}
+
+.backgroundImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/images/Wooko.png");
+  background-size: cover;
+}
+
+.titleBox {
+  position: relative;
+  width: 94.8rem;
+  height: 16.6rem;
+  border: 3px solid;
+  border-color: $white;
+  margin-top: 3.4rem;
+  margin-bottom: 6.8rem;
+  background-color: $black;
+}
+
+.titleText {
+  color: $white;
+  font-size: 5rem;
+  font-weight: 400;
+  letter-spacing: 0.525rem;
+  text-align: center;
+  line-height: 16.6rem;
+}
+
+.box {
+  position: relative;
+  width: 94.8rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 9.4rem;
+  margin-bottom: 15rem;
+  background-color: $white-background;
+}
+
+.exposition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  height: 12rem;
+  max-width: 100%;
+  font-size: 2.96rem;
+  letter-spacing: -0.044rem;
+  line-height: 3rem;
+  width: 82.9rem;
+  color: $black;
+  text-decoration: none;
+}
+
+.exposition .textWrapper {
+  font-weight: 700;
+}
+
+.exposition .textWrapper:hover {
+  text-decoration:underline;
+}

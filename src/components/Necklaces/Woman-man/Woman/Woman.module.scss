@@ -1,0 +1,52 @@
+.main {
+  font-family: $font-raleway;
+  overflow: hidden;
+  padding-bottom: 11.04rem;
+  background-color: #000000;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.04rem;
+}
+
+.image {
+  // width: 62.4rem;
+  // height: 58.1rem;
+  width: 50.4rem; 
+  height: 44.1rem;
+  border: none;
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.text {
+  position: absolute;
+  font-size: 5rem;
+  letter-spacing: -0.075rem;
+  color: #fff;
+  opacity: 0; /* Para que no se vea */
+  width: 32.0059rem;
+  height: 11.1909rem;
+}
+
+.image:hover {
+  //transition: transform 0.3s ease; Mirar como escalar en el hover la imagen
+  //transform: scale(1.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.image:hover .text {
+  //transition: transform 0.3s ease;
+  opacity: 1; /* Para enseñar el texto */
+  background-color: rgba(0, 0, 0, 0.7);
+}
