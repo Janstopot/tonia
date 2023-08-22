@@ -3,8 +3,6 @@ import React from "react";
 import styles from "./Necklaces.module.scss";
 
 import Image from "next/image";
-//import woman from "../../assets/images/woman.png";
-//import man from "../../assets/images/man.png";
 import woman from "../../assets/images/woman2.jpg";
 import man from "../../assets/images/man2.jpg";
 import Link from "next/link";
