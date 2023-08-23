@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './Profile.module.scss'
 import Image from 'next/image'
 
-import profile from '../../assets/images/tonia_profile.png'
+import profile from '@/assets/images/tonia_profile.png'
 
 function Profile() {
     return (

@@ -4,8 +4,8 @@ import Link from 'next/link'
 import styles from './Footer.module.scss'
 import Image from 'next/image'
 
-import facebook from '../../assets/images/Facebook.png'
-import instagram from '../../assets/images/Instagram.png'
+import facebook from '@/assets/images/Facebook.png'
+import instagram from '@/assets/images/Instagram.png'
 
 function Footer() {
     return (

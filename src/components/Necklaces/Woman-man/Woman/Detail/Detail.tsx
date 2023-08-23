@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Detail.module.scss";
 import Image, { StaticImageData } from "next/image";
 import ImageDetail from "./ImageDetail/ImageDetail";
-import arrow from "../../../../../assets/images/arrow.png";
+import arrow from "@/assets/images/arrow.png";
 
 function Detail(props: any) {
   const { data, increaseIndex, decreaseIndex, index, listLength } = props;
