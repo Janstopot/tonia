@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import styles from "./Contact.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import facebook from "../../assets/images/Facebook.png";
-import instagram from "../../assets/images/Instagram.png";
-import send from "../../assets/images/emailSend.png";
+import facebook from "@/assets/images/Facebook.png";
+import instagram from "@/assets/images/Instagram.png";
+import send from "@/assets/images/emailSend.png";
 
 function Contact() {
   const [formData, setFormData] = useState({

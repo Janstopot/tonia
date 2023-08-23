@@ -4,8 +4,8 @@ import Link from 'next/link'
 import styles from './Navbar.module.scss'
 import Image from 'next/image'
 
-import logo from '../../assets/images/Logo.png'
-import search from '../../assets/images/Search.png'
+import logo from '@/assets/images/Logo.png'
+import search from '@/assets/images/Search.png'
 
 function Navbar() {
     return (
