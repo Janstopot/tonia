@@ -1,11 +1,11 @@
 import React from "react";
 
 import styles from "./Necklaces.module.scss";
+import Link from "next/link";
 
 import Image from "next/image";
 import woman from "../../assets/images/woman2.jpg";
 import man from "../../assets/images/man2.jpg";
-import Link from "next/link";
 
 function Necklaces() {
   return (
