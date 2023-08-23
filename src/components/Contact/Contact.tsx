@@ -25,16 +25,17 @@ function Contact() {
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     console.log("Form data:", formData);
-    // You can perform additional actions with the form data here
   };
+
+  const [focusedInput, setFocusedInput] = useState(null);
 
   return (
     <>
       <div className={styles.main}>
         <div className={styles.backgroundImage}></div>
-        <div className={styles.background}>
-          <div className={styles.container}>
-            <div className={styles.title}>CONTACT</div>
+        <div className={styles.container}>
+          <div className={styles.title}>CONTACT</div>
+          <div className={styles.contentWrapper}>
             <div className={styles.iconsContainer}>
               <Link href="/" className={styles.icons}>
                 <Image src={instagram} alt="Instagram logo" />
@@ -48,24 +49,33 @@ function Contact() {
                 type="text"
                 name="name"
                 className={styles.input}
-                placeholder="NAME"
+                placeholder={focusedInput === "name" ? "" : "NAME"}
                 value={formData.name}
                 onChange={handleInputChange}
+                onFocus={() => setFocusedInput('name')}
+                onBlur={() => setFocusedInput(null)}
+                autoComplete="off" 
               />
               <input
                 type="email"
                 name="mail"
                 className={styles.input}
-                placeholder="MAIL"
+                placeholder={focusedInput === "mail" ? "" : "MAIL"}
                 value={formData.mail}
                 onChange={handleInputChange}
+                onFocus={() => setFocusedInput('mail')}
+                onBlur={() => setFocusedInput(null)}
+                autoComplete="off" 
               />
               <textarea
                 name="comment"
                 className={styles.comment}
-                placeholder="COMMENT"
+                placeholder={focusedInput === "comment" ? "" : "COMMENT"}
                 value={formData.comment}
                 onChange={handleInputChange}
+                onFocus={() => setFocusedInput('comment')}
+                onBlur={() => setFocusedInput(null)}
+                autoComplete="off" 
               />
               <button type="submit" value="Submit" className={styles.submit}>
                 <Image src={send} alt="Send logo" />
