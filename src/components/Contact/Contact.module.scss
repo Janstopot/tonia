@@ -92,6 +92,27 @@
         height: 5.7rem;
         margin-top: 1.8rem;
         background-color: $white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border: none;
+
+        img {
+          transition: filter 0.3s ease;
+        }
+
+        &:hover img {
+          filter: brightness(0) invert(1);
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .submit:hover {
+        background-color: rgba(0, 0, 0, 0.5);
       }
     }
   }
