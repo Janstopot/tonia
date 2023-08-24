@@ -1,6 +1,6 @@
 import styles from "./ImageDetail.module.scss";
 import Image from "next/image";
-import close from "../../../../../../assets/images/close.svg"
+import close from "@/assets/images/close.svg"
 
 function ImageDetail(props : any) {
   const {onClose , image} = props;

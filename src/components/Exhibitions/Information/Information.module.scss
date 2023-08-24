@@ -1,0 +1,93 @@
+@import "src/assets/scss/abstracts/_variables";
+
+.main {
+    background-color: $background-fill;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    font-family: $font-raleway;
+  
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 4rem;
+  
+      .title {
+        font-size: 5rem;
+        letter-spacing: 0.525rem;
+      }
+  
+      .subtitle {
+        text-align: center;
+        margin-top: 3.7rem;
+        font-size: 2.2rem;
+        font-weight: 700;
+  
+        div {
+          margin-bottom: 1.5rem;
+        }
+      }
+  
+      .description {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 4.6rem;
+        font-size: 2.2rem;
+        text-align: justify;
+        line-height: 3rem;
+  
+        .left,
+        .right {
+          width: 49rem;
+          height: 26rem;
+        }
+  
+        .left {
+          margin-right: 7rem;
+        }
+      }
+  
+      .background {
+        width: 100%;
+        height: 3rem;
+        display: flex;
+        justify-content: flex-start; 
+        align-items: center;
+        position: relative;
+        margin-top: 18rem;
+  
+        .background-image {
+          width: 30rem;
+          height: 30rem; 
+          object-fit: cover;
+          opacity: 0.3;
+        }
+
+        .background-wrapper {
+            display: grid;
+            grid-template-columns: repeat(7, 30rem);
+            justify-content: center;
+            align-items: center;
+            height: 30rem;
+            position: relative;
+            cursor: pointer;
+
+            .text {
+                font-family: $font-abhaya;
+                font-size: 18.68rem;
+                font-weight: 700;
+                letter-spacing: 7.9rem;
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+          }
+      }
+    }
+  }
