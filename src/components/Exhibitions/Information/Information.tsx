@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 import { Exhibition } from './exhibitionData';
 import exhibitionData from './exhibitionData';
+import Link from "next/link"
 
 import backgroundImages from './backgroundImage';
 
@@ -35,19 +36,21 @@ const Information: React.FC<ExhibitionProps> = ({ exhibition }) => {
                     <div className={styles.left}>{exhibition.leftText}</div>
                     <div className={styles.right}>{exhibition.rightText}</div>
                 </div>
-                <div className={styles.background}>
-                    <div className={styles['background-wrapper']}>
-                        {backgroundImages.slice(0, 7).map((image, index) => (
-                            <img
-                                key={index}
-                                className={styles['background-image']}
-                                src={image.src}
-                                alt={`Background Image ${index}`}
-                            />
-                        ))}
-                        <div className={styles.text}>GALLERY</div>
+                <Link href={`gallery?exhibition=paris2022`}>
+                    <div className={styles.background}>
+                        <div className={styles['background-wrapper']}>
+                            {backgroundImages.slice(0, 7).map((image, index) => (
+                                <img
+                                    key={index}
+                                    className={styles['background-image']}
+                                    src={image.src}
+                                    alt={`Background Image ${index}`}
+                                />
+                            ))}
+                            <div className={styles.text}>GALLERY</div>
+                        </div>
                     </div>
-                </div>
+                </Link>
             </div>
         </div>
     );
