@@ -1,0 +1,52 @@
+@import "src/assets/scss/abstracts/_variables";
+
+.main {
+  overflow: hidden;
+  padding-bottom: 2rem;
+  background-color: $black;
+
+  .box {
+    display: grid;
+    grid-template-columns: repeat(3, calc(33.333% - 10px));
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 0 10px;
+  }
+
+  .modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modalContent {
+    max-width: 90vw;
+    max-height: 90vh;
+
+    .navButton {
+        height: 50px;
+        width: 50px;
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: 40rem;
+    border: none;
+    position: relative;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
