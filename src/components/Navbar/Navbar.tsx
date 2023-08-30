@@ -17,6 +17,7 @@ function Navbar() {
                             <Image
                                 src={logo}
                                 alt="Logo"
+                                className={styles.logoImage}
                             />
                         </Link>
                     </div>
@@ -41,9 +42,9 @@ function Navbar() {
                     <Image
                         src={search}
                         alt="Logo"
+                        className={styles.searchImage}
                     />
                 </ul>
-
             </div>
         </>
     )
