@@ -28,23 +28,73 @@
     text-align: center;
     color: $white;
     background-color: rgba(6, 2, 0, 0.8);
+    transition: width 0.3s, height 0.3s;
 
     @include responsive("xl") {
-      width: 100rem;
-      height: 30rem;
+      width: 90rem;
+      height: 29rem;
+    }
+
+    @include responsive("md") {
+      width: 70rem;
+      height: 23rem;
+    }
+
+    @include responsive("sm") {
+      width: 53rem;
+      height: 19rem;
+    }
+
+    @include responsive("xs") {
+      width: 45rem;
+      height: 15rem;
     }
 
     .title {
       font-size: 15rem;
       font-weight: 200;
-      letter-spacing: -0.9rem;
       margin-bottom: -2rem;
+      transition: font-size 0.3s;
+
+      @include responsive("xl") {
+        font-size: 12rem;
+      }
+
+      @include responsive("md") {
+        font-size: 10rem;
+      }
+  
+      @include responsive("sm") {
+        font-size: 8rem;
+        padding-bottom: 0.5rem;
+      }
+  
+      @include responsive("xs") {
+        font-size: 6rem;
+      }
     }
 
     .subtitle {
       font-size: 6rem;
       letter-spacing: 2.1rem;
       font-family: $font-abhaya;
+      transition: font-size 0.3s;
+
+    @include responsive("xl") {
+      font-size: 5rem;
+    }
+
+    @include responsive("md") {
+      font-size: 4rem;
+    }
+
+    @include responsive("sm") {
+      font-size: 3rem;
+    }
+
+    @include responsive("xs") {
+      font-size: 2.7rem;
+    }
     }
 
     .text {
@@ -52,6 +102,23 @@
       line-height: 1.6;
       letter-spacing: -0.035rem;
       margin-top: 1rem;
+      transition: font-size 0.3s;
+
+      @include responsive("xl") {
+        font-size: 2rem;
+      }
+  
+      @include responsive("md") {
+        font-size: 1.8rem;
+      }
+  
+      @include responsive("sm") {
+        font-size: 1.6rem;
+      }
+  
+      @include responsive("xs") {
+        font-size: 1.4rem;
+      }
     }
   }
 }
