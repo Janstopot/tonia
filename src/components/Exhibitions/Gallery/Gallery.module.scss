@@ -31,8 +31,27 @@
     max-height: 90vh;
 
     .navButton {
-        height: 50px;
-        width: 50px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      transition: opacity 0.3s;
+    }
+
+    .navButton:hover {
+      opacity: 0.5;
+    }
+
+    .nextButton {
+      right: 6.5rem;
+    }
+
+    .previousButton {
+      left: 6.5rem;
+      transform: scaleX(-1) translateY(-50%);
     }
   }
 

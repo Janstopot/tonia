@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-
 import Image from 'next/image'
 import styles from './Gallery.module.scss';
-
 import galleryData from "./galleryImages"
+import arrow from "@/assets/images/arrow.png";
 
 
 function Gallery() {
@@ -55,14 +54,18 @@ function Gallery() {
           <div className={styles.modalBackdrop} onClick={closeModal}>
             <div className={styles.modalContent}>
               {selectedImageIndex > 0 && (
-                <button className={styles.navButton} onClick={(e) => { previousImage(); preventPropagation(e); }}>Previous</button>
+                <button className={`${styles.navButton} ${styles.previousButton}`} onClick={(e) => { previousImage(); preventPropagation(e); }}>
+                  <Image src={arrow} alt="arrow" />
+                </button>
               )}
               <Image
                 src={galleryData[selectedImageIndex].image}
                 alt={galleryData[selectedImageIndex].name}
               />
               {selectedImageIndex < galleryData.length - 1 && (
-                <button className={styles.navButton} onClick={(e) => { nextImage(); preventPropagation(e); }}>Next</button>
+                <button className={`${styles.navButton} ${styles.nextButton}`} onClick={(e) => { nextImage(); preventPropagation(e); }}>
+                  <Image src={arrow} alt="arrow" />
+                </button>
               )}
             </div>
           </div>
