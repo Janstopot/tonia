@@ -1,24 +1,16 @@
 @import "src/assets/scss/abstracts/_variables";
 
 .main {
-    position: fixed;
-    top: 10rem;
-    left: 0;
-    right: 0;
-    bottom: 10rem;
-    background-color: #e5e5e5;
-    font-family: $font-raleway;
-    padding-top: 5rem;
-    overflow-y: auto;
+  position: relative;
+  min-height: calc(100vh - 15rem);
+  background-color: $background-fill;
+  font-family: $font-raleway;
+  overflow-y: auto;
 
   .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 2rem;
-    width: 100%;
+    padding: 5rem 0rem;
     max-width: 100%;
+    margin: 0 auto;
   }
 
   .title {
@@ -26,15 +18,38 @@
     font-size: 5rem;
     font-weight: 400;
     margin-bottom: 6rem;
-    color: #464545;
+    color: $meet-artist;
     letter-spacing: 0.52rem;
     text-align: center;
+
+    @include responsive("xl") {
+      font-size: 4rem;
+    }
+
+    @include responsive("md") {
+      font-size: 3.8rem;
+    }
+
+    @include responsive ("sm") {
+      margin-bottom: 4rem;
+    }
+
+    @include responsive ("xs") {
+      margin-bottom: 2rem;
+    }
   }
 
   .content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
+
+    @include responsive("sm") {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: normal;
+    }
 
     .text {
       flex: 1;
@@ -48,12 +63,20 @@
       flex-direction: column;
       justify-content: center;
 
-      .upperText {
-        margin-bottom: 1rem;
+      @include responsive("xl") {
+        font-size: 2rem;
       }
 
-      .lowerText {
-        margin-top: 1rem;
+      @include responsive("md") {
+        font-size: 1.7rem;
+      }
+
+      @include responsive("sm") {
+        font-size: 1.5rem;
+      }
+
+      p {
+        margin: 1rem 0;
       }
     }
 
@@ -63,14 +86,48 @@
       justify-content: flex-end;
       align-items: center;
       margin-right: 5rem;
+
+      @include responsive("sm") {
+        margin-right: 15rem;
+        margin-left: 15rem;
+        padding-top: 5rem;
+      }
+
+      @include responsive("xs") {
+        margin-right: 10rem;
+        margin-left: 10rem;
+        padding-top: 5rem;
+      }
+
+      .imageWrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        overflow: hidden;
+        transition: border-radius 0.3s;
+        
+        @include responsive("md") {
+          padding-bottom: 117%;
+        }
+
+        .profileImage {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 74%;
+          object-fit: cover;
+          transition: all 0.3s;
+
+          @include responsive("xl") {
+            height: 74%;
+          }
+
+          @include responsive("md") {
+            height: 64%;
+          }
+        }
+      }
     }
-  }
-
-  .footer {
-    margin-top: auto;
-}
-
-  .profileImage {
-    max-width: 100%;
   }
 }
