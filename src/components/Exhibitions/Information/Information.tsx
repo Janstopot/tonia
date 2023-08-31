@@ -36,21 +36,23 @@ const Information: React.FC<ExhibitionProps> = ({ exhibition }) => {
                     <div className={styles.left}>{exhibition.leftText}</div>
                     <div className={styles.right}>{exhibition.rightText}</div>
                 </div>
-                <Link href={`gallery?exhibition=paris2022`}>
-                    <div className={styles.background}>
-                        <div className={styles['background-wrapper']}>
-                            {backgroundImages.slice(0, 7).map((image, index) => (
-                                <img
-                                    key={index}
-                                    className={styles['background-image']}
-                                    src={image.src}
-                                    alt={`Background Image ${index}`}
-                                />
-                            ))}
-                            <div className={styles.text}>GALLERY</div>
+                <div className={styles.stickyBackgroundGallery}>
+                    <Link href={`gallery?exhibition=paris2022`}>
+                        <div className={styles.background}>
+                            <div className={styles['background-wrapper']}>
+                                {backgroundImages.slice(0, 7).map((image, index) => (
+                                    <img
+                                        key={index}
+                                        className={styles['background-image']}
+                                        src={image.src}
+                                        alt={`Background Image ${index}`}
+                                    />
+                                ))}
+                                <div className={styles.text}>GALLERY</div>
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
             </div>
         </div>
     );
