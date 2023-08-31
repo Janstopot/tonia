@@ -24,7 +24,7 @@ function Press() {
               Première exposition à Paris de Tonia Marek, créatrice de colliers
               africains || DiverCite Belgique
             </div>
-            <div>JUNE 2021</div>
+            <p>JUNE 2021</p>
           </Link>
 
           <Link
@@ -37,7 +37,7 @@ function Press() {
               Ritual || Intersect Art Center
               <br />
             </div>
-            <div>MAY 2021</div>
+            <p>MAY 2021</p>
           </Link>
 
           <Link
@@ -51,7 +51,7 @@ function Press() {
               Montmartre Addict
               <br />
             </div>
-            <div>MAY 2021</div>
+            <p>MAY 2021</p>
           </Link>
 
           <Link
@@ -64,7 +64,7 @@ function Press() {
               EXPO – Passé présent : Tonia Marek roule sur des perles || Le
               Quotidien Sénégal
             </div>
-            <div>DECEMBER 2018</div>
+            <p>DECEMBER 2018</p>
           </Link>
 
           <Link
@@ -76,7 +76,7 @@ function Press() {
             <div className={styles.textWrapper}>
               Exposition « Passé Présent » || Au Sénégal
             </div>
-            <div>DECEMBER 2018</div>
+            <p>DECEMBER 2018</p>
           </Link>
 
           <Link
@@ -88,7 +88,7 @@ function Press() {
             <div className={styles.textWrapper}>
               La Galerie Kemboury tout en perles || ENQUÊTE+
             </div>
-            <div>DECEMBER 2018</div>
+            <p>DECEMBER 2018</p>
           </Link>
 
           <Link
@@ -98,7 +98,7 @@ function Press() {
             target="_blank"
           >
             <div className={styles.textWrapper}>Passé Présent || Partcours</div>
-            <div>2018</div>
+            <p>2018</p>
           </Link>
 
           <Link
@@ -110,7 +110,7 @@ function Press() {
             <div className={styles.textWrapper}>
               Interview Tonia Marek || Bonjour d’Algérie
             </div>
-            <div>FEBRUARY 2017</div>
+            <p>FEBRUARY 2017</p>
           </Link>
 
           <Link
@@ -122,7 +122,7 @@ function Press() {
             <div className={styles.textWrapper}>
               Collector Spotlight: Interview to Tonia Marek, France || IMODARA
             </div>
-            <div>OCTOBER 2017</div>
+            <p>OCTOBER 2017</p>
           </Link>
 
           <Link
@@ -145,7 +145,7 @@ function Press() {
             <div className={styles.textWrapper}>
               Des bienfaits et des couleurs || L’EXPRESSION
             </div>
-            <div>DECEMBER 2015</div>
+            <p>DECEMBER 2015</p>
           </Link>
 
           <Link
@@ -157,7 +157,7 @@ function Press() {
             <div className={styles.textWrapper}>
               The Bead that Gives Its Power to Priests in Dogon Country || TheBead Forum
             </div>
-            <div>AUTOMN 2015</div>
+            <p>AUTOMN 2015</p>
           </Link>
         </div>
       </div>

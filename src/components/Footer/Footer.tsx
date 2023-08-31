@@ -17,12 +17,14 @@ function Footer() {
                         <Image
                             src={instagram}
                             alt="Instagram logo"
+                            className={styles.imgContainer}
                         />
                     </Link>
                     <Link href="/">
                         <Image
                             src={facebook}
                             alt="Facebook logo"
+                            className={styles.imgContainer}
                         />
                     </Link>
                 </div>
