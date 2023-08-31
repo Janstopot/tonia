@@ -1,3 +1,5 @@
+@import "src/assets/scss/abstracts/_variables";
+
 .main {
   min-height: 100vh;
   font-family: $font-raleway;
@@ -13,6 +15,10 @@
   height: 100%;
   background: url("../../assets/images/exhibitionsMain.jpg");
   background-size: cover;
+
+  @include responsive("md") {
+    background-position: center center;
+  }
 }
 
 .title {
@@ -24,10 +30,14 @@
   justify-content: center;
   font-size: 5rem;
   letter-spacing: 0.525rem;
-  color: #ffffff;
+  color: $white;
+
+  @include responsive("md") {
+    font-size: 4rem;
+  }
 }
 
-.box {  //Arreglar porque flex no funciona
+.box {
   display: flex;
   flex-direction: column;
 }
@@ -55,21 +65,48 @@
   height: 25.041rem;
   border-radius: 50%;
   margin-right: 7.96rem;
-  background-color: #e5e2e0;
+  background-color: $background-fill;
   transition: transform 0.3s ease, background-color 0.3s ease;
 
   &:hover {
     transform: scale(1.1);
-    background-color: #9b9794;
+    background-color: $circle-hover-grey;
   }
-  
+
+  @include responsive("md") {
+    width: 18rem;
+    height: 18rem;
+    margin-right: 6rem;
+  }
+
+  @include responsive("sm") {
+    width: 15rem;
+    height: 15rem;
+    margin-right: 5.5rem;
+  }
+
+  @include responsive("xs") {
+    width: 13rem;
+    height: 13rem;
+    margin-right: 5rem;
+  }
 }
-
-
 
 .text {
   font-size: 3.5rem;
   font-weight: 500;
   letter-spacing: -0.077rem;
   color: $background-black;
+
+  @include responsive("md") {
+    font-size: 3rem;
+  }
+
+  @include responsive("sm") {
+    font-size: 2.6rem;
+  }
+
+  @include responsive("sm") {
+    font-size: 2.2rem;
+  }
 }
