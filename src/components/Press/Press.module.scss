@@ -27,6 +27,21 @@
   margin-top: 3.4rem;
   margin-bottom: 6.8rem;
   background-color: $black;
+
+  @include responsive("md") {
+    width: 70rem;
+    height: 12rem;
+  }
+
+  @include responsive("sm") {
+    width: 57rem;
+    height: 10rem;
+  }
+
+  @include responsive("xs") {
+    width: 50rem;
+    height: 8rem;
+  }
 }
 
 .titleText {
@@ -36,6 +51,21 @@
   letter-spacing: 0.525rem;
   text-align: center;
   line-height: 16.6rem;
+
+  @include responsive("md") {
+    font-size: 4rem;
+    line-height: 12rem;
+  }
+
+  @include responsive("sm") {
+    font-size: 3.8rem;
+    line-height: 10rem;
+  }
+
+  @include responsive("xs") {
+    font-size: 3.5rem;
+    line-height: 8rem;
+  }
 }
 
 .box {
@@ -47,6 +77,33 @@
   padding: 9.4rem;
   margin-bottom: 15rem;
   background-color: $white-background;
+
+  @include responsive("md") {
+    width: 70rem;
+    padding: 3.4rem;
+
+    p {
+      font-size: 2.2rem;
+    }
+  }
+
+  @include responsive("sm") {
+    width: 57rem;
+    padding: 2.8rem;
+
+    p {
+      font-size: 2rem;
+    }
+  }
+
+  @include responsive("xs") {
+    width: 50rem;
+    padding: 2.5rem;
+
+    p {
+      font-size: 2rem;
+    }
+  }
 }
 
 .exposition {
@@ -62,12 +119,29 @@
   width: 82.9rem;
   color: $black;
   text-decoration: none;
+
+  @include responsive("md") {
+    font-size: 2.5rem;
+  }
+
+  @include responsive("sm") {
+    font-size: 2rem;
+  }
+
+  @include responsive("xs") {
+    font-size: 1.8rem;
+  }
 }
 
 .exposition .textWrapper {
   font-weight: 700;
+
+  @include responsive("md") {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .exposition .textWrapper:hover {
-  text-decoration:underline;
+  text-decoration: underline;
 }
