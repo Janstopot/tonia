@@ -31,6 +31,14 @@
       font-weight: 400;
       letter-spacing: 0.525rem;
       text-align: center;
+
+      @include responsive("sm") {
+        font-size: 4.5rem;
+      }
+
+      @include responsive("xs") {
+        font-size: 4rem;
+      }
     }
 
     .contentWrapper {
@@ -55,6 +63,16 @@
       flex-direction: column;
       width: 70rem;
 
+      @include responsive("sm") {
+        width: 58rem;
+      }
+
+      @include responsive("xs") {
+        width: 52rem;
+      }
+
+
+
       .input {
         height: 5.7rem;
         margin-top: 1.8rem;
@@ -65,6 +83,14 @@
         background-color: $background-grey;
         color: $white;
         border: none;
+
+        @include responsive("sm") {
+          font-size: 2.3rem;
+        }
+
+        @include responsive("xs") {
+          font-size: 2rem;
+        }
 
         &::placeholder {
           color: $white;
@@ -82,6 +108,14 @@
         font-family: $font-raleway;
         color: $white;
         border: none;
+
+        @include responsive("sm") {
+          font-size: 2.3rem;
+        }
+
+        @include responsive("xs") {
+          font-size: 2rem;
+        }
 
         &::placeholder {
           color: $white;
