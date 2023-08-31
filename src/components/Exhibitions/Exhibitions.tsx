@@ -2,8 +2,6 @@ import Link from "next/link";
 import styles from "./Exhibtions.module.scss";
 import { useRouter } from "next/router";
 
-import exhibitionData from "./Information/exhibitionData";
-
 function Exhibitions() {
   const router = useRouter();
 
