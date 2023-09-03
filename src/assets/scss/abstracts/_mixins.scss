@@ -1,5 +1,20 @@
 @mixin responsive($media) {
-    @if $media == xs {
+    @if $media == smMb {
+      @media (max-width: 320.98px) {
+        @content;
+        transition: all 0.3s;
+      }
+    } @else if $media == mdMb {
+      @media (max-width: 375.98px) {
+        @content;
+        transition: all 0.3s;
+      }
+    } @else if $media == xlMb {
+      @media (max-width: 425.98px) {
+        @content;
+        transition: all 0.3s;
+      }
+    } @else if $media == xs {
       @media (max-width: 575.98px) {
         @content;
         transition: all 0.3s;
