@@ -37,6 +37,10 @@
     height: 5rem;
     transition: height 0.3s;
 
+    &[src*='hamburger'] {
+      height: 1rem;
+    }
+
     @include responsive("xl") {
       height: 5rem;
     }
@@ -117,15 +121,15 @@
       }
 
       @include responsive("xlMb") {
-        font-size: 1rem;
+        font-size: 1.4rem;
       }
 
       @include responsive("mdMb") {
-        font-size: 0.85rem;
+        font-size: 1.3rem;
       }
 
       @include responsive("smMb") {
-        font-size: 0.7rem;
+        font-size: 1.2rem;
       }
 
     }
