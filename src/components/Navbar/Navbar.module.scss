@@ -27,6 +27,10 @@
     height: 3.5rem;
   }
 
+  @include responsive("xlMb") {
+    height: 3.1rem;
+  }
+
   .logoImage,
   .searchImage {
     width: auto;
@@ -47,6 +51,10 @@
 
     @include responsive("xs") {
       height: 2rem;
+    }
+
+    @include responsive("xlMb") {
+      height: 1.8rem;
     }
   }
 
@@ -70,6 +78,14 @@
 
     @include responsive("xs") {
       padding: 0.1rem 0.5rem;
+    }
+
+    @include responsive("xlMb") {
+      padding: 0.1rem 0.4rem;
+    }
+
+    @include responsive("mdMb") {
+      padding: 0.1rem 0.3rem;
     }
 
     li {
@@ -98,6 +114,18 @@
 
       @include responsive("xs") {
         font-size: 1.1rem;
+      }
+
+      @include responsive("xlMb") {
+        font-size: 1rem;
+      }
+
+      @include responsive("mdMb") {
+        font-size: 0.85rem;
+      }
+
+      @include responsive("smMb") {
+        font-size: 0.7rem;
       }
 
     }

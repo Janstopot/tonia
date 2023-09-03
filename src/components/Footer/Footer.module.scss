@@ -22,6 +22,10 @@
     height: 8rem;
   }
 
+  @include responsive("xlMb") {
+    height: 7rem;
+  }
+
   .font {
     color: $white;
     text-decoration: none;
@@ -41,6 +45,10 @@
 
     @include responsive("sm") {
       font-size: 1.8rem;
+    }
+
+    @include responsive("xlMb") {
+      font-size: 1.5rem;
     }
   }
 
@@ -62,6 +70,11 @@
     @include responsive("sm") {
       width: 3.8rem;
       height: 3.9rem;
+    }
+
+    @include responsive("xlMb") {
+      width: 3rem;
+      height: 3.1rem;
     }
   }
 }
