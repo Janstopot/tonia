@@ -1,7 +1,6 @@
 import React from 'react'
 
 import styles from './Homepage.module.scss'
-import Image from 'next/image'
 
 function Homepage() {
     return (

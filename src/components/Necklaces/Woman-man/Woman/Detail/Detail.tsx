@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Detail.module.scss";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import ImageDetail from "./ImageDetail/ImageDetail";
 import arrow from "@/assets/images/arrow.png";
 
@@ -27,7 +27,7 @@ function Detail(props: any) {
         </button>
 
         <button className={styles.image} onClick={openImage}>
-          <Image src={data.image} alt="image" />
+          
         </button>
         <div className={styles.descriptionBox}>
           <div className={styles.name}>{data.name}</div>

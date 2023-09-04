@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import styles from "./Woman.module.scss";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import necklaceData from "./necklaceData";
 import Detail from "./Detail/Detail";
 import { Necklace } from "./necklaceData";
