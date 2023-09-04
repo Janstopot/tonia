@@ -4,17 +4,14 @@ import styles from "./Woman.module.scss";
 import Image, { StaticImageData } from "next/image";
 import necklaceData from "./necklaceData";
 import Detail from "./Detail/Detail";
+import { Necklace } from "./necklaceData";
 
-interface neckLace {
-  image: StaticImageData;
-  name: string;
-  description: string;
-}
+
 
 function Woman() {
   const [showDetails, setShowDetails] = useState(false);
   const [index, setIndex] = useState(0);
-  const [currentNecklace, setCurrentNecklace] = useState<neckLace>();
+  const [currentNecklace, setCurrentNecklace] = useState<Necklace>();
 
   const toggleViewDetails = (index: number) => {
     setIndex(index);

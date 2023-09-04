@@ -27,7 +27,7 @@ function Contact() {
     console.log("Form data:", formData);
   };
 
-  const [focusedInput, setFocusedInput] = useState(null);
+  const [focusedInput, setFocusedInput] = useState<string>();
 
   return (
     <>
@@ -53,7 +53,7 @@ function Contact() {
                 value={formData.name}
                 onChange={handleInputChange}
                 onFocus={() => setFocusedInput('name')}
-                onBlur={() => setFocusedInput(null)}
+                onBlur={() => setFocusedInput('')}
                 autoComplete="off" 
               />
               <input
@@ -64,7 +64,7 @@ function Contact() {
                 value={formData.mail}
                 onChange={handleInputChange}
                 onFocus={() => setFocusedInput('mail')}
-                onBlur={() => setFocusedInput(null)}
+                onBlur={() => setFocusedInput('')}
                 autoComplete="off" 
               />
               <textarea
@@ -74,7 +74,7 @@ function Contact() {
                 value={formData.comment}
                 onChange={handleInputChange}
                 onFocus={() => setFocusedInput('comment')}
-                onBlur={() => setFocusedInput(null)}
+                onBlur={() => setFocusedInput('')}
                 autoComplete="off" 
               />
               <button type="submit" value="Submit" className={styles.submit}>
