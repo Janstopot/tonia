@@ -27,7 +27,7 @@ function Detail(props: any) {
         </button>
 
         <button className={styles.image} onClick={openImage}>
-          
+          <Image src={data.image} alt="image" />
         </button>
         <div className={styles.descriptionBox}>
           <div className={styles.name}>{data.name}</div>
