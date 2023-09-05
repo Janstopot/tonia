@@ -28,7 +28,7 @@
   }
 
   @include responsive("xlMb") {
-    height: 3.1rem;
+    height: 5.2rem;
   }
 
   .logoImage,
@@ -87,11 +87,11 @@
     }
 
     @include responsive("xlMb") {
-      padding: 0.1rem 0.4rem;
+      padding: 1.1rem 0.4rem;
     }
 
     @include responsive("mdMb") {
-      padding: 0.1rem 0.3rem;
+      padding: 1.1rem 0.3rem;
     }
 
     .text {
