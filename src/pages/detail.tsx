@@ -4,7 +4,7 @@ import React from "react";
 
 function detail() {
     return(
-        <Detail />
+null
     )
 
 }
