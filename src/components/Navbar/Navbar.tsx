@@ -17,6 +17,10 @@ function Navbar() {
         setIsActive((prevIsActive) => !prevIsActive);
     };
 
+    const handleLinkClick = () => {
+        setIsActive(false);
+    };
+
 
     return (
         <>
@@ -47,11 +51,11 @@ function Navbar() {
                         <div className={styles.bar}></div>
                     </button>
                     <nav className={`${styles.mobileNav} ${isActive ? styles.isActive : ''}`}>
-                        <a href="/">HOME</a>
-                        <a href="/necklaces">NECKLACES</a>
-                        <a href="/exhibitions">EXHIBITIONS</a>
-                        <a href="/press">PRESS</a>
-                        <a href="/contact">CONTACT</a>
+                        <Link href="/" onClick={handleLinkClick}>HOME</Link>
+                        <Link href="/necklaces" onClick={handleLinkClick}>NECKLACES</Link>
+                        <Link href="/exhibitions" onClick={handleLinkClick}>EXHIBITIONS</Link>
+                        <Link href="/press" onClick={handleLinkClick}>PRESS</Link>
+                        <Link href="/contact" onClick={handleLinkClick}>CONTACT</Link>
                     </nav>
                 </ul>
             </div>
