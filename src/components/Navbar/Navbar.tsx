@@ -33,11 +33,11 @@ function Navbar() {
                     </div>
 
                     <nav className={`${styles.text} ${styles.smallLinks}`}>
-                        <a href="/">HOME</a>
-                        <a href="/necklaces">NECKLACES</a>
-                        <a href="/exhibitions">EXHIBITIONS</a>
-                        <a href="/press">PRESS</a>
-                        <a href="/contact">CONTACT</a>
+                        <Link href="/">HOME</Link>
+                        <Link href="/necklaces">NECKLACES</Link>
+                        <Link href="/exhibitions">EXHIBITIONS</Link>
+                        <Link href="/press">PRESS</Link>
+                        <Link href="/contact">CONTACT</Link>
                     </nav>
                     <Image src={search} alt="search" className={styles.searchImage} />
                     <button
