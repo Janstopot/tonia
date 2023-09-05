@@ -9,46 +9,14 @@ import logo from '@/assets/images/Logo.png'
 import search from '@/assets/images/Search.png'
 import hamburger from "@/assets/images/hamburger.png"
 
-function shouldShowAdditionalNavItems() {
-    const [windowWidth, setWindowWidth] = useState(0);
-
-    useEffect(() => {
-        function handleResize() {
-            setWindowWidth(window.innerWidth);
-        }
-
-        window.addEventListener('resize', handleResize);
-
-        setWindowWidth(window.innerWidth);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    return windowWidth > 425.98;
-}
 
 function Navbar() {
-    const [isResponsiveMode, setIsResponsiveMode] = useState(false);
+    const [isActive, setIsActive] = useState(false);
 
-    useEffect(() => {
-        function handleResize() {
-            if (window.innerWidth < 425.98) {
-                setIsResponsiveMode(true);
-            } else {
-                setIsResponsiveMode(false);
-            }
-        }
+    const handleMenuClick = () => {
+        setIsActive((prevIsActive) => !prevIsActive);
+    };
 
-        window.addEventListener('resize', handleResize);
-
-        handleResize();
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
 
     return (
         <>
@@ -63,33 +31,28 @@ function Navbar() {
                             />
                         </Link>
                     </div>
-                    <li>
-                        <Link href="/">HOME</Link>
-                    </li>
-                    {shouldShowAdditionalNavItems() && (
-                        <>
-                            <li>
-                                <Link href="/profile">MEET THE ARTIST</Link>
-                            </li>
-                            <li>
-                                <Link href="/necklaces">NECKLACES</Link>
-                            </li>
-                            <li>
-                                <Link href="/exhibitions">EXHIBITIONS</Link>
-                            </li>
-                            <li>
-                                <Link href="/press">PRESS</Link>
-                            </li>
-                            <li>
-                                <Link href="/contact">CONTACT</Link>
-                            </li>
-                        </>
-                    )}
-                    <Image
-                        src={isResponsiveMode ? hamburger : search}
-                        alt="Logo"
-                        className={styles.searchImage}
-                    />
+
+                    <nav className={`${styles.text} ${styles.smallLinks}`}>
+                        <a href="/">HOME</a>
+                        <a href="/necklaces">NECKLACES</a>
+                        <a href="/exhibitions">EXHIBITIONS</a>
+                        <a href="/press">PRESS</a>
+                        <a href="/contact">CONTACT</a>
+                    </nav>
+                    <Image src={search} alt="search" className={styles.searchImage} />
+                    <button
+                        className={`${styles.hamburger} ${isActive ? styles.isActive : ''}`}
+                        onClick={handleMenuClick}
+                    >
+                        <div className={styles.bar}></div>
+                    </button>
+                    <nav className={`${styles.mobileNav} ${isActive ? styles.isActive : ''}`}>
+                        <a href="/">HOME</a>
+                        <a href="/necklaces">NECKLACES</a>
+                        <a href="/exhibitions">EXHIBITIONS</a>
+                        <a href="/press">PRESS</a>
+                        <a href="/contact">CONTACT</a>
+                    </nav>
                 </ul>
             </div>
         </>

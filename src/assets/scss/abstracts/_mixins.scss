@@ -1,53 +1,63 @@
 @mixin responsive($media) {
-    @if $media == smMb {
-      @media (max-width: 320.98px) {
-        @content;
-        transition: all 0.3s;
-      }
-    } @else if $media == mdMb {
-      @media (max-width: 375.98px) {
-        @content;
-        transition: all 0.3s;
-      }
-    } @else if $media == xlMb {
-      @media (max-width: 425.98px) {
-        @content;
-        transition: all 0.3s;
-      }
-    } @else if $media == xs {
-      @media (max-width: 575.98px) {
-        @content;
-        transition: all 0.3s;
-      }
-    } @else if $media == sm {
-      @media (max-width: 767.98px) {
-        @content;
-        transition: all 0.3s;
-      }
-    } @else if $media == smUp {
-      @media (min-width: 767.98px) {
-        @content;
-        transition: all 0.3s;
-      }
-    } @else if $media == md {
-      @media (max-width: 991.98px) {
-        @content;
-        transition: all 0.3s;
-      }
-    } @else if $media == mdUp {
-      @media (min-width: 991.98px) {
-        @content;
-        transition: all 0.3s;
-      }
-    } @else if $media == xl {
-      @media (max-width: 1199.98px) {
-        @content;
-        transition: all 0.3s;
-      }
-    } @else if $media == xlUp {
-      @media (min-width: 1199.98px) {
-        @content;
-        transition: all 0.3s;
-      }
+  @if $media == smMb {
+    @media (max-width: 320.98px) {
+      @content;
+      transition: all 0.3s;
+    }
+  } @else if $media == mdMb {
+    @media (max-width: 375.98px) {
+      @content;
+      transition: all 0.3s;
+    }
+  } @else if $media == xlMb {
+    @media (max-width: 428.98px) {
+      @content;
+      transition: all 0.3s;
+    }
+  } @else if $media == xlMbMin {
+    @media (min-width: 428.98px) {
+      @content;
+      transition: all 0.3s;
+    }
+  } @else if $media == xs {
+    @media (max-width: 575.98px) {
+      @content;
+      transition: all 0.3s;
+    }
+  } @else if $media == xsUp {
+    @media (min-width: 575.98px) {
+      @content;
+      transition: all 0.3s;
+    }
+  } @else if $media == sm {
+    @media (max-width: 767.98px) {
+      @content;
+      transition: all 0.3s;
+    }
+  } @else if $media == smUp {
+    @media (min-width: 767.98px) {
+      @content;
+      transition: all 0.3s;
+    }
+  } @else if $media == md {
+    @media (max-width: 991.98px) {
+      @content;
+      transition: all 0.3s;
+    }
+  } @else if $media == mdUp {
+    @media (min-width: 991.98px) {
+      @content;
+      transition: all 0.3s;
+    }
+  } @else if $media == xl {
+    @media (max-width: 1199.98px) {
+      @content;
+      transition: all 0.3s;
+    }
+  } @else if $media == xlUp {
+    @media (min-width: 1199.98px) {
+      @content;
+      transition: all 0.3s;
     }
   }
+}
