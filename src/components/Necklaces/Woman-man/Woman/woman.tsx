@@ -6,9 +6,11 @@ import necklaceData from "./necklaceData";
 import Detail from "./Detail/Detail";
 import { Necklace } from "./necklaceData";
 
+import type { InferGetStaticPropsType, GetStaticProps } from 'next'
 
+function Woman({
 
-function Woman() {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [showDetails, setShowDetails] = useState(false);
   const [index, setIndex] = useState(0);
   const [currentNecklace, setCurrentNecklace] = useState<Necklace>();
@@ -33,13 +35,12 @@ function Woman() {
     }
   };
 
-
   return (
     <>
       {!showDetails && (
         <div className={styles.main}>
           <div className={styles.box}>
-            {necklaceData.map((necklace, index) => (
+            {necklaceData.map((necklace : any, index : any) => (
               <button
                 onClick={() => toggleViewDetails(index)}
                 className={styles.image}
@@ -65,5 +66,15 @@ function Woman() {
     </>
   );
 }
+
+// Fetch the data using getStaticProps
+export const getStaticProps: GetStaticProps = async () => {
+  
+  return {
+    props: {
+      necklaceData,
+    },
+  };
+};
 
 export default Woman;
