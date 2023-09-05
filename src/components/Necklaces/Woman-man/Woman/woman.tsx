@@ -6,10 +6,6 @@ import necklaceData from "./necklaceData";
 import Detail from "./Detail/Detail";
 import { Necklace } from "./necklaceData";
 
-import type { InferGetStaticPropsType, GetStaticProps } from 'next'
-
-
-
 function Woman() {
   const [showDetails, setShowDetails] = useState(false);
   const [index, setIndex] = useState(0);
@@ -34,9 +30,6 @@ function Woman() {
       setCurrentNecklace(necklaceData[index - 1]);
     }
   };
-
-
-
 
   return (
     <>
@@ -68,10 +61,6 @@ function Woman() {
       )}
     </>
   );
-
-  
 }
-
-
 
 export default Woman;
