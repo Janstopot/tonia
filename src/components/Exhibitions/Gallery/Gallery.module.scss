@@ -11,6 +11,10 @@
     gap: 0.5rem;
     justify-content: center;
     padding: 0 10px;
+
+    @include responsive("xlMb") {
+      grid-template-columns: repeat(2, calc(53.333% - 10px));
+    }
   }
 
   .modalBackdrop {
@@ -30,6 +34,13 @@
     max-width: 90vw;
     max-height: 90vh;
 
+    @include responsive("sm") {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
     .navButton {
       background-color: transparent;
       border: none;
@@ -39,6 +50,10 @@
       transform: translateY(-50%);
       z-index: 10;
       transition: opacity 0.3s;
+
+      @include responsive("xlMb") {
+        top: 85%;
+      }
     }
 
     .navButton:hover {
@@ -47,11 +62,63 @@
 
     .nextButton {
       right: 6.5rem;
+
+      @include responsive("sm") {
+        right: 2rem;
+      }
+
+      @include responsive("xlMb") {
+        right: 0rem;
+      }
+
+      @include responsive("smMb") {
+        right: -1rem;
+      }
     }
 
     .previousButton {
       left: 6.5rem;
       transform: scaleX(-1) translateY(-50%);
+
+      @include responsive("sm") {
+        left: 2rem;
+      }
+
+      @include responsive("xlMb") {
+        left: 0rem;
+      }
+
+      @include responsive("smMb") {
+        left: -1rem;
+      }
+    }
+
+    img {
+
+      @include responsive("md") {
+        max-width: 80vw;
+        max-height: 70vh;
+      }
+
+      @include responsive("sm") {
+        max-width: 60vw;
+        max-height: 50vh;
+      }
+
+      @include responsive("xlMb") {
+        max-width: 80vw;
+        max-height: 50vh;
+      }
+
+      @include responsive("mdMb") {
+        max-width: 80vw;
+        max-height: 45vh;
+      }
+
+      @include responsive("smMb") {
+        max-width: 80vw;
+        max-height: 40vh;
+      }
     }
   }
 
@@ -61,6 +128,10 @@
     border: none;
     position: relative;
     cursor: pointer;
+
+    @include responsive("xlMb") {
+      height: 20rem;
+    }
 
     img {
       width: 100%;

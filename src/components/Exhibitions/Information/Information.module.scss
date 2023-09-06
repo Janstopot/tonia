@@ -3,7 +3,6 @@
 .main {
   background-color: $background-fill;
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -137,22 +136,22 @@
         .right {
           width: 48rem;
           height: 30rem;
-  
+
           @include responsive("laptop") {
             width: 46rem;
             height: 28rem;
           }
-  
+
           @include responsive("md") {
             width: 34rem;
             height: 32rem;
           }
-  
+
           @include responsive("sm") {
             width: 28rem;
             height: 35rem;
           }
-  
+
           @include responsive("xs") {
             width: 36rem;
             height: 30rem;
@@ -176,19 +175,19 @@
 
         .left {
           margin-right: 6.5rem;
-  
+
           @include responsive("laptop") {
             margin-right: 6.2rem;
           }
-  
+
           @include responsive("md") {
             margin-right: 5.9rem;
           }
-  
+
           @include responsive("sm") {
             margin-right: 5.6rem;
           }
-  
+
           @include responsive("xs") {
             margin-right: 0rem;
           }
@@ -196,32 +195,40 @@
           @include responsive("xlMb") {
             margin-right: 0rem;
           }
-          
         }
         .right {
           @include responsive("xs") {
             height: 25rem;
           }
         }
-
       }
     }
 
     .background {
-      width: 100%;
-      height: 100vh;
-      height: 1rem;
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
       position: relative;
-      margin-top: 5rem;
+      margin: 5rem 0 5rem 0;
 
       .background-image {
         width: 30rem;
         height: 30rem;
         object-fit: cover;
         opacity: 0.3;
+
+        @include responsive("xs") {
+          height: 20rem;
+        }
+
+        @include responsive("xlMb") {
+          height: 10rem;
+        }
+
+        @include responsive("mdMb") {
+          height: 9rem;
+        }
+
+        @include responsive("smMb") {
+          height: 8rem;
+        }
       }
 
       .background-wrapper {
@@ -232,6 +239,18 @@
         height: 30rem;
         position: relative;
         cursor: pointer;
+
+        @include responsive("xlMb") {
+          height: 10rem;
+        }
+
+        @include responsive("mdMb") {
+          height: 9rem;
+        }
+
+        @include responsive("smMb") {
+          height: 8rem;
+        }
 
         .text {
           color: $black;
