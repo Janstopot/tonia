@@ -1,14 +1,24 @@
-.main {
-  position: absolute;
-  top: 0;
+.container{
   width: 100%;
   height: 100%;
+}
+
+.main {
+  //position: absolute;
+  //top: 0;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-family: $font-raleway;
   color: #fff;
   background-color: #2e2d2d;
+  overflow: scroll;
+  @include responsive("xlMb"){
+    //justify-content:center;
+
+  }
 }
 
 .hiddenButton {
@@ -19,8 +29,18 @@
 .arrow {
   width: 5.4rem;
   height: 5.4rem;
+
   border: none;
   background-color: #2e2d2d;
+  @include responsive("xlMb"){
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.arrow img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .backArrow {
@@ -28,19 +48,28 @@
   transform: scaleX(-1);
 }
 
-.imageBlock{
+.imageBlock {
+  width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 6rem;
-  @include responsive("xlMb"){
+  @include responsive("xlMb") {
     flex-direction: column;
     justify-content: center;
   }
 }
 
+.hiddenName {
+  display: none; /* Initially hide this element */
+  @include responsive("xlMb") {
+    display: block;
+    font-size: 4rem;
+    margin-top: 6rem;
+  }
+}
+
 .image {
-  position: relative;
   width: 46.6rem;
   height: 68.1rem;
   border: none;
@@ -51,9 +80,12 @@
     transform: scale(1.1);
     filter: grayscale(50%);
   }
+
+  @include responsive("xlMb") {
+    width: 24.6rem;
+    height: 35.1rem;
+  }
 }
-
-
 
 .image img {
   height: 100%;
@@ -63,16 +95,24 @@
 
 .descriptionBox {
   width: 39.7rem;
+  @include responsive("xlMb") {
+    width: 36.7rem;
+  }
 }
 
 .name {
   font-size: 5rem;
   letter-spacing: 0.525rem;
   margin-bottom: 4.6rem;
+  @include responsive("xlMb") {
+    display: none;
+  }
 }
 
 .description {
   font-size: 2.2rem;
   letter-spacing: -0.033rem;
+  @include responsive("xlMb") {
+    font-size: 2rem;
+  }
 }
-
