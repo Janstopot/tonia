@@ -33,8 +33,10 @@ const Information: React.FC<ExhibitionProps> = ({ exhibition }) => {
                     <div>{exhibition.location}</div>
                 </div>
                 <div className={styles.description}>
-                    <div className={styles.left}>{exhibition.leftText}</div>
-                    <div className={styles.right}>{exhibition.rightText}</div>
+                    <div className={styles['text-info']}>
+                        <div className={styles.left}>{exhibition.leftText}</div>
+                        <div className={styles.right}>{exhibition.rightText}</div>
+                    </div>
                 </div>
                 <div className={styles.stickyBackgroundGallery}>
                     <Link href={`gallery?exhibition=paris2022`}>
