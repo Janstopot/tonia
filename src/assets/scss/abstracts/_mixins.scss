@@ -49,7 +49,13 @@
       @content;
       transition: all 0.3s;
     }
-  } @else if $media == xl {
+  } @else if $media == laptop {
+    @media (max-width: 1024.98px) {
+      @content;
+      transition: all 0.3s;
+    }
+  } 
+  @else if $media == xl {
     @media (max-width: 1199.98px) {
       @content;
       transition: all 0.3s;

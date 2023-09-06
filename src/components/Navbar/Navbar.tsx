@@ -7,8 +7,6 @@ import Image from 'next/image'
 
 import logo from '@/assets/images/Logo.png'
 import search from '@/assets/images/Search.png'
-import hamburger from "@/assets/images/hamburger.png"
-
 
 function Navbar() {
     const [isActive, setIsActive] = useState(false);
@@ -26,7 +24,7 @@ function Navbar() {
         <>
             <div className={styles.container}>
                 <ul className={styles.content}>
-                    <div>
+                    <div className={styles.logoContainer}>
                         <Link href="/">
                             <Image
                                 src={logo}
@@ -35,7 +33,6 @@ function Navbar() {
                             />
                         </Link>
                     </div>
-
                     <nav className={`${styles.text} ${styles.smallLinks}`}>
                         <Link href="/">HOME</Link>
                         <Link href="/necklaces">NECKLACES</Link>
@@ -43,7 +40,10 @@ function Navbar() {
                         <Link href="/press">PRESS</Link>
                         <Link href="/contact">CONTACT</Link>
                     </nav>
-                    <Image src={search} alt="search" className={styles.searchImage} />
+                    <div className={styles.searchContainer}>
+
+                        <Image src={search} alt="search" className={styles.searchImage} />
+                    </div>
                     <button
                         className={`${styles.hamburger} ${isActive ? styles.isActive : ''}`}
                         onClick={handleMenuClick}

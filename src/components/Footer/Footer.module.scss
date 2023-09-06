@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 10rem;
+  min-height: 9rem;
   background-color: $black;
   font-family: $font-raleway;
   position: static;
@@ -14,16 +14,24 @@
   left: 0;
   z-index: 2;
 
+  @include responsive("xl") {
+    min-height: 8rem;
+  }
+
   @include responsive("md") {
-    height: 9rem;
+    min-height: 7rem;
   }
 
   @include responsive("sm") {
-    height: 8rem;
+    min-height: 6rem;
+  }
+
+  @include responsive("xs") {
+    min-height: 5rem;
   }
 
   @include responsive("xlMb") {
-    height: 7rem;
+    min-height: 7rem;
   }
 
   .font {
@@ -32,7 +40,7 @@
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 400;
-    margin-bottom: 0.5rem;
+    margin: 0.3rem 0 0.5rem 0;
     letter-spacing: 0.31rem;
 
     @include responsive("md") {
@@ -43,12 +51,12 @@
       font-size: 2rem;
     }
 
-    @include responsive("sm") {
+    @include responsive("xs") {
       font-size: 1.8rem;
     }
 
     @include responsive("xlMb") {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
   }
 
@@ -57,9 +65,13 @@
   }
 
   .imgContainer {
+    width: 4.4rem;
+    height: 4.5rem;
+    margin-bottom: 0.5rem;
+
     @include responsive("md") {
-      width: 4.4rem;
-      height: 4.5rem;
+      width: 4.2rem;
+      height: 4.3rem;
     }
 
     @include responsive("sm") {
@@ -68,8 +80,8 @@
     }
 
     @include responsive("sm") {
-      width: 3.8rem;
-      height: 3.9rem;
+      width: 3.6rem;
+      height: 3.7rem;
     }
 
     @include responsive("xlMb") {
