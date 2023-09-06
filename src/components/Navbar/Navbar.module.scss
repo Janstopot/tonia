@@ -125,7 +125,6 @@
       outline: none;
       border: none;
       z-index: 99;
-      margin-right: 1rem;
 
       @include responsive("xlMbMin") {
         display: none;
