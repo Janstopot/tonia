@@ -26,12 +26,14 @@ function Detail(props: any) {
           <Image src={arrow} alt="arrow" />
         </button>
 
-        <button className={styles.image} onClick={openImage}>
-          <Image src={data.image} alt="image" />
-        </button>
-        <div className={styles.descriptionBox}>
-          <div className={styles.name}>{data.name}</div>
-          <div className={styles.description}>{data.description}</div>
+        <div className={styles.imageBlock}>
+          <button className={styles.image} onClick={openImage}>
+            <Image src={data.image} alt="image" />
+          </button>
+          <div className={styles.descriptionBox}>
+            <div className={styles.name}>{data.name}</div>
+            <div className={styles.description}>{data.description}</div>
+          </div>
         </div>
 
         <button
