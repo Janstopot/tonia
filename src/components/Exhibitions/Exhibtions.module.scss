@@ -7,7 +7,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  @include responsive("xlMb"){
+
+  @include responsive("xlMb") {
     align-items: center;
   }
 }
@@ -39,17 +40,27 @@
   @include responsive("md") {
     font-size: 4rem;
   }
+
+  @include responsive("xlMb") {
+    font-size: 3.8rem;
+  }
+
+  @include responsive("mdMb") {
+    font-size: 3.6rem;
+  }
+
+  @include responsive("smMb") {
+    font-size: 3.4rem;
+  }
 }
 
 .box {
   display: flex;
   flex-direction: column;
 
-  @include responsive("xlMb"){
+  @include responsive("xlMb") {
     flex-direction: row;
     align-items: center;
-  }
-  @include responsive("md") {
   }
 }
 
@@ -58,21 +69,18 @@
   justify-content: flex-end;
   margin-bottom: 1.96rem;
 
-  @include responsive("xlMb"){
+  @include responsive("xlMb") {
     flex-direction: column;
     justify-content: center;
   }
-
-  @include responsive("mdMb"){
-
-  }
 }
+
 .row2 {
   display: flex;
   justify-content: center;
   margin-bottom: 1.96rem;
 
-  @include responsive("xlMb"){
+  @include responsive("xlMb") {
     flex-direction: column;
   }
 }
@@ -106,18 +114,27 @@
   @include responsive("sm") {
     width: 15rem;
     height: 15rem;
-    margin-right: 5.5rem;
-    //margin-right: 0rem;
+    margin-right: 4rem;
   }
 
   @include responsive("xs") {
-    width: 15rem;
-    height: 15rem;
-    //margin-right: 5rem;
-    margin-right: 0rem;
+    width: 12rem;
+    height: 12rem;
+    margin-right: 3rem;
   }
-  @include responsive("xlMb"){
+
+  @include responsive("xlMb") {
     margin-top: 2.04rem;
+  }
+
+  @include responsive("mdMb") {
+    width: 11rem;
+    height: 11rem;
+  }
+
+  @include responsive("smMb") {
+    width: 10rem;
+    height: 10rem;
   }
 }
 
@@ -128,14 +145,22 @@
   color: $background-black;
 
   @include responsive("md") {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 
   @include responsive("sm") {
-    font-size: 2.6rem;
+    font-size: 2rem;
   }
 
-  @include responsive("sm") {
-    font-size: 2.2rem;
+  @include responsive("xlMb") {
+    font-size: 1.9rem;
+  }
+
+  @include responsive("mdMb") {
+    font-size: 1.8rem;
+  }
+
+  @include responsive("smMb") {
+    font-size: 1.6rem;
   }
 }
