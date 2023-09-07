@@ -13,14 +13,18 @@ function Footer() {
             <div className={styles.container}>
                 <div className={styles.font}>Follow us</div>
                 <div className={styles.icons}>
-                    <Link href="/" className={styles.spacing}>
+                    <Link href="https://www.instagram.com/tonias.necklaces/" className={styles.spacing}
+                        rel="noopener noreferrer"
+                        target="_blank">
                         <Image
                             src={instagram}
                             alt="Instagram logo"
                             className={styles.imgContainer}
                         />
                     </Link>
-                    <Link href="/">
+                    <Link href="https://www.facebook.com/toniasnecklaces"
+                        rel="noopener noreferrer"
+                        target="_blank">
                         <Image
                             src={facebook}
                             alt="Facebook logo"

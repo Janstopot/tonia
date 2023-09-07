@@ -39,8 +39,19 @@
   }
 
   @include responsive("xs") {
-    width: 50rem;
+    width: 41rem;
     height: 8rem;
+  }
+
+  @include responsive("xlMb") {
+    border: none;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    width: 100%;
+    height: 10rem;
+    background-color: $white-background;
+    color: $black;
+    padding-top: 1rem;
   }
 }
 
@@ -63,8 +74,12 @@
   }
 
   @include responsive("xs") {
-    font-size: 3.5rem;
+    font-size: 3.4rem;
     line-height: 8rem;
+  }
+
+  @include responsive("xlMb") {
+    color: $black;
   }
 }
 
@@ -97,11 +112,29 @@
   }
 
   @include responsive("xs") {
-    width: 50rem;
-    padding: 2.5rem;
+    width: 41rem;
+    padding: 2.3rem;
 
     p {
-      font-size: 2rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  @include responsive("xlMb") {
+    width: 100%;
+    margin-bottom: 0rem;
+    padding: 0;
+  }
+
+  @include responsive("mdMb") {
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include responsive("smMb") {
+    p {
+      font-size: 1.4rem;
     }
   }
 }
@@ -129,8 +162,51 @@
   }
 
   @include responsive("xs") {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
+
+  @include responsive("xlMb") {
+    &.black {
+      padding-left: 2rem;
+      padding-right: 1rem;
+      background-color: $background-black;
+      color: $white;
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+
+    &.white {
+      padding-left: 2rem;
+      padding-right: 1rem;
+      background-color: transparent;
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+  }
+
+  @include responsive("mdMb") {
+    &.black {
+      font-size: 1.4rem;
+      padding-right: 2rem;
+    }
+
+    &.white {
+      font-size: 1.4rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @include responsive("smMb") {
+    &.black {
+      font-size: 1.3rem;
+      padding-right: 2rem;
+    }
+
+    &.white {
+      font-size: 1.3rem;
+      padding-right: 2rem;
+    }
+}
 }
 
 .exposition .textWrapper {

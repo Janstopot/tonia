@@ -37,10 +37,14 @@ function Contact() {
           <div className={styles.title}>CONTACT</div>
           <div className={styles.contentWrapper}>
             <div className={styles.iconsContainer}>
-              <Link href="/" className={styles.icons}>
+              <Link href="https://www.instagram.com/tonias.necklaces/" className={styles.icons}
+                rel="noopener noreferrer"
+                target="_blank">
                 <Image src={instagram} alt="Instagram logo" />
               </Link>
-              <Link href="/" className={styles.icons}>
+              <Link href="https://www.facebook.com/toniasnecklaces" className={styles.icons}
+                rel="noopener noreferrer"
+                target="_blank">
                 <Image src={facebook} alt="Facebook logo" />
               </Link>
             </div>
@@ -54,7 +58,7 @@ function Contact() {
                 onChange={handleInputChange}
                 onFocus={() => setFocusedInput('name')}
                 onBlur={() => setFocusedInput('')}
-                autoComplete="off" 
+                autoComplete="off"
               />
               <input
                 type="email"
@@ -65,7 +69,7 @@ function Contact() {
                 onChange={handleInputChange}
                 onFocus={() => setFocusedInput('mail')}
                 onBlur={() => setFocusedInput('')}
-                autoComplete="off" 
+                autoComplete="off"
               />
               <textarea
                 name="comment"
@@ -75,7 +79,7 @@ function Contact() {
                 onChange={handleInputChange}
                 onFocus={() => setFocusedInput('comment')}
                 onBlur={() => setFocusedInput('')}
-                autoComplete="off" 
+                autoComplete="off"
               />
               <button type="submit" value="Submit" className={styles.submit}>
                 <Image src={send} alt="Send logo" />
