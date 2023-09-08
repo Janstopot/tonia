@@ -1,23 +1,29 @@
-.container{
+.container {
   width: 100%;
   height: 100%;
 }
 
 .main {
-  //position: absolute;
-  //top: 0;
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   font-family: $font-raleway;
   color: #fff;
   background-color: #2e2d2d;
-  overflow: scroll;
-  @include responsive("xlMb"){
-    //justify-content:center;
+  overflow: auto;
 
+  @include responsive("xlMb") {
+    padding: 2rem;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  @include responsive("mdMb") {
+  }
+
+  @include responsive("smMb") {
   }
 }
 
@@ -29,10 +35,25 @@
 .arrow {
   width: 5.4rem;
   height: 5.4rem;
-
   border: none;
   background-color: #2e2d2d;
-  @include responsive("xlMb"){
+
+  @include responsive("md") {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  @include responsive("sm") {
+    width: 4rem;
+    height: 4em;
+  }
+
+  @include responsive("xs") {
+    width: 3rem;
+    height: 3em;
+  }
+
+  @include responsive("xlMb") {
     width: 3rem;
     height: 3rem;
   }
@@ -41,11 +62,18 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+
+  @include responsive("xlMb") {
+  }
 }
 
 .backArrow {
   @extend .arrow;
   transform: scaleX(-1);
+
+  @include responsive("xlMb") {
+    margin-top: 2rem;
+  }
 }
 
 .imageBlock {
@@ -55,34 +83,74 @@
   align-items: center;
   gap: 6rem;
   @include responsive("xlMb") {
+    height: 100%;
     flex-direction: column;
     justify-content: center;
   }
 }
 
 .hiddenName {
-  display: none; /* Initially hide this element */
+  display: none;
   @include responsive("xlMb") {
     display: block;
     font-size: 4rem;
-    margin-top: 6rem;
+    margin-top: -2rem;
+  }
+
+  @include responsive("mdMb") {
+    font-size: 3rem;
+  }
+
+  @include responsive("smMb") {
+    font-size: 2.5rem;
   }
 }
 
 .image {
-  width: 46.6rem;
-  height: 68.1rem;
+  max-width: 36rem;
+  height: 63rem;
   border: none;
-  transition: transform 0.3s ease; /* Apply transition to transform property */
-  filter: grayscale(0); /* Set grayscale to 0% by default */
+  position: relative;
+  transition: transform 0.3s ease;
+  filter: grayscale(0);
 
   &:hover {
     transform: scale(1.1);
     filter: grayscale(50%);
   }
 
+  @include responsive("laptop") {
+    max-width: 35rem;
+    height: 60rem;
+  }
+
+  @include responsive("md") {
+    max-width: 32rem;
+    max-height: 52rem;
+  }
+
+  @include responsive("sm") {
+    max-width: 32rem;
+    height: 46rem;
+  }
+
+  @include responsive("xs") {
+    max-width: 31rem;
+    height: 35rem;
+  }
+
   @include responsive("xlMb") {
-    width: 24.6rem;
+    max-width: 24.6rem;
+    height: 35.1rem;
+  }
+
+  @include responsive("mdMb") {
+    max-width: 22.6rem;
+    height: 32.1rem;
+  }
+
+  @include responsive("xsMb") {
+    max-width: 24.6rem;
     height: 35.1rem;
   }
 }
@@ -104,6 +172,19 @@
   font-size: 5rem;
   letter-spacing: 0.525rem;
   margin-bottom: 4.6rem;
+
+  @include responsive("md") {
+    font-size: 4.5rem;
+  }
+
+  @include responsive("sm") {
+    font-size: 4rem;
+  }
+
+  @include responsive("xs") {
+    font-size: 3.8rem;
+  }
+
   @include responsive("xlMb") {
     display: none;
   }
@@ -112,7 +193,36 @@
 .description {
   font-size: 2.2rem;
   letter-spacing: -0.033rem;
-  @include responsive("xlMb") {
+
+  @include responsive("laptop") {
     font-size: 2rem;
+  }
+
+  @include responsive("md") {
+    font-size: 1.8rem;
+  }
+
+  @include responsive("sm") {
+    font-size: 1.5rem;
+  }
+
+  @include responsive("xs") {
+    font-size: 1.2rem;
+  }
+
+  @include responsive("xlMb") {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  @include responsive("mdMb") {
+    font-size: 1.7rem;
+    padding: 2rem;
+  }
+
+  @include responsive("smMb") {
+    font-size: 1.2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
