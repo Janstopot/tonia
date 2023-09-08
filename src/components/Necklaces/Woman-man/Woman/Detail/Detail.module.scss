@@ -15,9 +15,8 @@
   overflow: auto;
 
   @include responsive("xlMb") {
-    padding: 2rem;
     flex-direction: column;
-    overflow: hidden;
+    height: 100%;
   }
 
   @include responsive("mdMb") {
@@ -142,6 +141,11 @@
   @include responsive("xlMb") {
     max-width: 24.6rem;
     height: 35.1rem;
+
+    &:hover {
+      transform: none;
+      filter: grayscale(0);
+    }
   }
 
   @include responsive("mdMb") {
@@ -213,6 +217,7 @@
   @include responsive("xlMb") {
     margin-bottom: 2rem;
     font-size: 2rem;
+    padding: 2rem;
   }
 
   @include responsive("mdMb") {
