@@ -36,7 +36,7 @@ function Navbar() {
                     <nav className={`${styles.text} ${styles.smallLinks}`}>
                         <Link href="/">HOME</Link>
                         <Link href="/profile">MEET THE ARTIST</Link>
-                        <Link href="/necklaces">NECKLACES</Link>
+                        <Link href="/woman">NECKLACES</Link>
                         <Link href="/exhibitions">EXHIBITIONS</Link>
                         <Link href="/press">PRESS</Link>
                         <Link href="/contact">CONTACT</Link>
@@ -53,7 +53,7 @@ function Navbar() {
                     </button>
                     <nav className={`${styles.mobileNav} ${isActive ? styles.isActive : ''}`}>
                         <Link href="/profile" onClick={handleLinkClick}>MEET THE ARTIST</Link>
-                        <Link href="/necklaces" onClick={handleLinkClick}>NECKLACES</Link>
+                        <Link href="/woman" onClick={handleLinkClick}>NECKLACES</Link>
                         <Link href="/exhibitions" onClick={handleLinkClick}>EXHIBITIONS</Link>
                         <Link href="/press" onClick={handleLinkClick}>PRESS</Link>
                         <Link href="/contact" onClick={handleLinkClick}>CONTACT</Link>

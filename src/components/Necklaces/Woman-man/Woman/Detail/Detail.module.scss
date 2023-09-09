@@ -5,7 +5,7 @@
 
 .main {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -15,8 +15,7 @@
   overflow: auto;
 
   @include responsive("xlMb") {
-    flex-direction: column;
-    height: 100%;
+
   }
 
   @include responsive("mdMb") {
@@ -29,6 +28,12 @@
 .hiddenButton {
   visibility: hidden;
   pointer-events: none;
+
+  @include responsive("xlMb") {
+    width: 3rem;
+    height: 3rem;
+
+  }
 }
 
 .arrow {
@@ -62,8 +67,7 @@
   width: 100%;
   object-fit: cover;
 
-  @include responsive("xlMb") {
-  }
+
 }
 
 .backArrow {
@@ -71,7 +75,6 @@
   transform: scaleX(-1);
 
   @include responsive("xlMb") {
-    margin-top: 2rem;
   }
 }
 
@@ -80,6 +83,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 6rem;
   @include responsive("xlMb") {
     height: 100%;
@@ -93,15 +97,17 @@
   @include responsive("xlMb") {
     display: block;
     font-size: 4rem;
-    margin-top: -2rem;
+    margin-top: 2.6rem;
   }
 
   @include responsive("mdMb") {
     font-size: 3rem;
+    margin-top: 5rem;
   }
 
   @include responsive("smMb") {
     font-size: 2.5rem;
+    margin-top: -6rem;
   }
 }
 
@@ -139,8 +145,8 @@
   }
 
   @include responsive("xlMb") {
-    max-width: 24.6rem;
-    height: 35.1rem;
+    //max-width: 24.6rem;
+    //height: 35.1rem;
 
     &:hover {
       transform: none;
