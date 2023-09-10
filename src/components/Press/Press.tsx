@@ -3,6 +3,12 @@ import React from "react";
 import styles from "./Press.module.scss";
 import Link from "next/link";
 
+interface press {
+  date : string,
+  text : string,
+  link : string
+}
+
 function Press() {
   return (
     <>
