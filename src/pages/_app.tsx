@@ -6,6 +6,7 @@ import Footer from '@/components/Footer/Footer';
 import '../styles/Home.module.css'
 
 
+
 import firebase from "firebase/compat/app";
 
 const firebaseConfig = {
@@ -23,6 +24,7 @@ if (!firebase.apps.length) {
 }else {
    firebase.app();
 }
+
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
