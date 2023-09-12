@@ -25,13 +25,13 @@ function Detail(props: any) {
         </button>
 
         <div className={styles.imageBlock}>
-          <div className={styles.hiddenName}>{data.name}</div>
+          <div className={styles.hiddenName}>{data.title}</div>
           <button className={styles.image} onClick={openImage}>
-            <Image src={data.image} alt="image" />
+            <Image width={500} height={500} src={data.image} alt="image" />
           </button>
           <div className={styles.descriptionBox}>
-            <div className={styles.name}>{data.name}</div>
-            <div className={styles.description}>{data.description}</div>
+            <div className={styles.name}>{data.title}</div>
+            <div className={styles.description}>{data.eng}</div>
           </div>
         </div>
 

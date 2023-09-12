@@ -24,12 +24,12 @@ const DataBaseFeeder = () => {
     if (selectedFiles) {
       for (let i = 0; i < selectedFiles.length; i++) {
         const file = selectedFiles[i];
-        const storageRef = ref(getStorage(), `necklacesImages/${file.name}`);
+        const storageRef = ref(getStorage(), `necklacesImages/${file.name.toUpperCase()}`);
         const result = await uploadFile(storageRef, file, {
           contentType: file.type,
         });
-        alert(`Result: ${JSON.stringify(result)}`);
-
+        //alert(`Result: ${JSON.stringify(result)}`);
+/*
         const imageUrl = await getDownloadURL(storageRef);
         const notesRef = collection(getFirestore(), "necklaces");
 
@@ -43,6 +43,7 @@ const DataBaseFeeder = () => {
 
         // You may want to await this operation to make sure it's completed before moving to the next file
         await addDoc(notesRef, newNecklace).catch((e) => {});
+        */
       }
     }
   };
