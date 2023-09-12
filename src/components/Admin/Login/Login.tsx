@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import DataBaseFeeder from "../dataBaseFeeder";
+import DataBaseFeeder2 from "../dataBaseFeeder2";
 //import firebase from "../../../pages/api/clientApp";
-import firebase from "firebase/compat/app";
+//import firebase from "firebase/compat/app";
 import {
   GoogleAuthProvider,
   getAuth,
@@ -11,14 +13,13 @@ import {
 
 
 const provider = new GoogleAuthProvider();
-
+const auth = getAuth();
 
 function Admin() {
-  const [user, loading, error] = useAuthState(getAuth());
+  const [user, loading, error] = useAuthState(auth);
   console.log("loading: ", loading, "|", "Current user:", user);
 
   const handleSignIn = () => {
-    const auth = getAuth();
     signInWithPopup(auth, provider)
       .then((result) => {
         // Handle successful sign-in here if needed.
@@ -30,7 +31,7 @@ function Admin() {
   };
 
   const handleSignOut = () => {
-    const auth = getAuth();
+    
     signOut(auth)
       .then(() => {
         // Handle successful sign-out here if needed.
@@ -43,6 +44,7 @@ function Admin() {
 
   return (
     <div>
+      <DataBaseFeeder2 /> 
       {!user && (
         <div>
           <button onClick={handleSignIn}>SIGN UP</button>
@@ -53,6 +55,8 @@ function Admin() {
         <div>
           <button onClick={handleSignOut}>LOG OUT</button>
         </div>
+
+        
       )}
     </div>
   );
