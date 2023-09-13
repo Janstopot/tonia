@@ -1,22 +1,16 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { Necklace } from "@/assets/interfaces";
+import { addDoc, collection, doc, getFirestore, setDoc } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import React, { useState } from "react";
 
-interface Necklace {
-  title: string;
-  image: string;
-  fr: string;
-  eng: string;
-  copyright: string;
-}
 
 const DataBaseFeeder2 = () => {
 
   const [fileContent, setFileContent] = useState<string | null>(null);
 
-  const parseText = (inputText: string): Necklace[] => {
+  const parseText = (): Necklace[] => {
     const entries: Necklace[] = [];
-    const lines = inputText.split('\n').map((line) => line.trim());
+    const lines = fileContent!.split('\n').map((line) => line.trim());
   
     let currentEntry: Partial<Necklace> = {};
   
@@ -50,7 +44,8 @@ const DataBaseFeeder2 = () => {
     entries.forEach(async function(neck){
       const storageRef = ref(getStorage(), `necklacesImages/${neck.title}.JPG`);
       const imageUrl = await getDownloadURL(storageRef);
-      const notesRef = collection(getFirestore(), "necklaces");
+      
+      //const notesRef = collection(getFirestore(), "necklaces", neck.title); no usamos este por que estamos poniendo un ID custom y no le mola
 
       const newNecklace: Necklace = {
         title: neck.title,
@@ -60,8 +55,8 @@ const DataBaseFeeder2 = () => {
         copyright: neck.copyright,
       };
 
-      // You may want to await this operation to make sure it's completed before moving to the next file
-      await addDoc(notesRef, newNecklace).catch((e) => {});
+      await setDoc(doc(getFirestore(), "necklaces", neck.title), newNecklace).catch((e) => {});
+      //await setDoc(doc(notesRef), newNecklace).catch((e) => {});
     })
     
   
@@ -97,12 +92,14 @@ const DataBaseFeeder2 = () => {
     });
   };
 
-  const parsedEntries = fileContent ? parseText(fileContent) : [];
 
   return (
     <div>
+      <h1>UPLOADING TEXT</h1>
       <input type="file" accept=".txt" onChange={handleFileChange} />
+      <button onClick={parseText}>Upload TEEEEXT</button>
     </div>
+    
   );
 };
 

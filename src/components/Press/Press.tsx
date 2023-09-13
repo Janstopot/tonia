@@ -3,12 +3,8 @@ import styles from "./Press.module.scss";
 import Link from "next/link";
 import {useCollectionData} from "react-firebase-hooks/firestore";
 import { collection, getFirestore } from "firebase/firestore";
+import { press } from "@/assets/interfaces";
 
-interface press {
-  date: string;
-  text: string;
-  link: string;
-}
 
 function Press() {
   const [value, loading, error] = useCollectionData(collection(getFirestore(), "press"),{});
@@ -41,7 +37,7 @@ function Press() {
         <div className={styles.box}>
           {pressArray!.map((press, key) => (
             <Link
-              key={press.link}
+              key={key}
               className={`${styles.exposition} ${
                 key % 2 === 0 ? styles.black : styles.white
               }`}

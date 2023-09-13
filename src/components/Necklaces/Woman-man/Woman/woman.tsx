@@ -7,14 +7,9 @@ import Detail from "./Detail/Detail";
 //import { Necklace } from "./necklaceData";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { collection, getFirestore } from "firebase/firestore";
+import { Necklace } from "@/assets/interfaces";
 
-interface Necklace {
-  title: string;
-  image: string;
-  fr: string;
-  eng: string;
-  copyright: string;
-}
+
 
 function Woman() {
   const [value, loading, error] = useCollectionData(collection(getFirestore(), "necklaces"),{});

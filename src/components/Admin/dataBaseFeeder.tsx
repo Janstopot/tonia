@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import { useUploadFile } from "react-firebase-hooks/storage";
-import { getDownloadURL, getStorage, ref } from "firebase/storage";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { getStorage, ref } from "firebase/storage";
 
-interface Necklace {
-  title: string;
-  image: string;
-  fr: string;
-  eng: string;
-  copyright: string;
-}
 
 const DataBaseFeeder = () => {
   const [uploadFile, uploading, snapshot, error] = useUploadFile();
@@ -29,27 +21,13 @@ const DataBaseFeeder = () => {
           contentType: file.type,
         });
         //alert(`Result: ${JSON.stringify(result)}`);
-/*
-        const imageUrl = await getDownloadURL(storageRef);
-        const notesRef = collection(getFirestore(), "necklaces");
-
-        const newNecklace: Necklace = {
-          title: file.name,
-          image: imageUrl,
-          fr: "TESTTETSTEW",
-          eng: "TESTSTESTSTES",
-          copyright: "LKASJALKDJ",
-        };
-
-        // You may want to await this operation to make sure it's completed before moving to the next file
-        await addDoc(notesRef, newNecklace).catch((e) => {});
-        */
       }
     }
   };
 
   return (
     <div>
+      <h1>UPLOADING PHOTOS</h1>
       <input
         type="file"
         onChange={handleFileChange}

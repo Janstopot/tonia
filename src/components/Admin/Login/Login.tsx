@@ -44,7 +44,7 @@ function Admin() {
 
   return (
     <div>
-      <DataBaseFeeder /> 
+      <DataBaseFeeder2 /> 
       {!user && (
         <div>
           <button onClick={handleSignIn}>SIGN UP</button>

@@ -17,7 +17,7 @@ function Detail(props: any) {
   };
 
   return (
-    <div className={styles.container}>
+    <div>
       <div className={styles.main}>
         <button
           className={index === 0 ? styles.hiddenButton : styles.backArrow} onClick={decreaseIndex}>
@@ -27,7 +27,7 @@ function Detail(props: any) {
         <div className={styles.imageBlock}>
           <div className={styles.hiddenName}>{data.title}</div>
           <button className={styles.image} onClick={openImage}>
-            <Image width={500} height={500} src={data.image} alt="image" />
+            <Image width={500} height={200} src={data.image} alt="image" />
           </button>
           <div className={styles.descriptionBox}>
             <div className={styles.name}>{data.title}</div>
