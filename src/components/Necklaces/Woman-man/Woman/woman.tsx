@@ -4,9 +4,18 @@ import styles from "./Woman.module.scss";
 import Image from "next/image";
 import necklaceData from "./necklaceData";
 import Detail from "./Detail/Detail";
-import { Necklace } from "./necklaceData";
+import { useCollectionData } from "react-firebase-hooks/firestore";
+import { collection, getFirestore } from "firebase/firestore";
+import { Necklace } from "@/assets/interfaces";
+
+
 
 function Woman() {
+  const [value, loading, error] = useCollectionData(collection(getFirestore(), "necklaces"),{});
+  const necklaceData: Necklace[] = value as Necklace[];
+
+
+
   const [showDetails, setShowDetails] = useState(false);
   const [index, setIndex] = useState(0);
   const [currentNecklace, setCurrentNecklace] = useState<Necklace>();
@@ -31,6 +40,24 @@ function Woman() {
     }
   };
 
+
+
+  if (loading) {
+    // Render a loading indicator or a message while data is being fetched
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    console.log(error)
+    // Handle the error gracefully, e.g., display an error message
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (!value) {
+    // Handle the case where value is still undefined
+    return null;
+  }
+
   return (
     <>
       {!showDetails && (
@@ -42,8 +69,8 @@ function Woman() {
                 className={styles.image}
                 key={index}
               >
-                <div className={styles.text}>{necklace.name}</div>
-                <Image src={necklace.image} alt={necklace.name} />
+                <div className={styles.text}>{necklace.title}</div>
+                <Image width={500} height={500} src={necklaceData[0].image} alt={necklace.title} />
               </button>
             ))}
           </div>

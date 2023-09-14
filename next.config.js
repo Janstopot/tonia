@@ -11,6 +11,16 @@ const nextConfig = {
     config.resolve.alias['@'] = path.join(__dirname);
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
+        port: '',
+        pathname: '**',
+      },
+    ],
+  }
 }
 
 module.exports = nextConfig;
