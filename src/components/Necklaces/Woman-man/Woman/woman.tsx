@@ -4,7 +4,6 @@ import styles from "./Woman.module.scss";
 import Image from "next/image";
 import necklaceData from "./necklaceData";
 import Detail from "./Detail/Detail";
-//import { Necklace } from "./necklaceData";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { collection, getFirestore } from "firebase/firestore";
 import { Necklace } from "@/assets/interfaces";
@@ -49,6 +48,7 @@ function Woman() {
   }
 
   if (error) {
+    console.log(error)
     // Handle the error gracefully, e.g., display an error message
     return <div>Error: {error.message}</div>;
   }
@@ -70,7 +70,7 @@ function Woman() {
                 key={index}
               >
                 <div className={styles.text}>{necklace.title}</div>
-                <Image width={500} height={500} src={necklace.image} alt={necklace.title} />
+                <Image width={500} height={500} src={necklaceData[0].image} alt={necklace.title} />
               </button>
             ))}
           </div>

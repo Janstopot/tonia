@@ -15,7 +15,7 @@ import {
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
 
-function Admin() {
+function Login() {
   const [user, loading, error] = useAuthState(auth);
   console.log("loading: ", loading, "|", "Current user:", user);
 
@@ -44,7 +44,7 @@ function Admin() {
 
   return (
     <div>
-      <DataBaseFeeder2 /> 
+      <DataBaseFeeder /> 
       {!user && (
         <div>
           <button onClick={handleSignIn}>SIGN UP</button>
@@ -62,4 +62,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default Login;

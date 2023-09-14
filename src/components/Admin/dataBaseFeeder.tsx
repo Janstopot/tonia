@@ -19,7 +19,7 @@ const DataBaseFeeder = () => {
         const storageRef = ref(getStorage(), `necklacesImages/${file.name.toUpperCase()}`);
         const result = await uploadFile(storageRef, file, {
           contentType: file.type,
-        });
+        }).catch((e)=> console.log("LKASJDLKAJSDLKASJD" + e));
         //alert(`Result: ${JSON.stringify(result)}`);
       }
     }

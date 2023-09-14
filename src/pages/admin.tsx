@@ -1,10 +1,10 @@
-import Login from "@/components/Admin/Login/Login";
+import Login2 from "@/components/Admin/Login/Logini2";
 
 function Admin() {
 
   return (
     <div>
-      <Login />
+      <Login2 />
     </div>
   );
 }
