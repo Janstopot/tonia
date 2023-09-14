@@ -11,15 +11,14 @@ function ImageDetail(props: any) {
   return (
     <div className={styles.main}>
       <button className={styles.closeButton} onClick={handleClose}>
-        <Image src={close} alt="closeButton" />
       </button>
       <Image
-          width={500}  // Set a fixed width
-          height={500} // Set a fixed height
-          style={{
-            maxWidth: '100%',  // Make the image responsive
-            height: 'auto',   // Ensure the aspect ratio is maintained
-          }}
+        width={500}
+        height={500}
+        style={{
+          maxWidth: '100%',
+          height: 'auto',
+        }}
         className={styles.image}
         src={image}
         alt="image"
