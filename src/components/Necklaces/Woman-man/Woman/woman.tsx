@@ -2,17 +2,31 @@ import React, { useState } from "react";
 
 import styles from "./Woman.module.scss";
 import Image from "next/image";
-import necklaceData from "./necklaceData";
 import Detail from "./Detail/Detail";
-import { useCollectionData } from "react-firebase-hooks/firestore";
-import { collection, getFirestore } from "firebase/firestore";
+import { useCollectionData, useCollectionDataOnce } from "react-firebase-hooks/firestore";
+import { collection, endAt, getFirestore, limit, orderBy, query, startAfter } from "firebase/firestore";
 import { Necklace } from "@/assets/interfaces";
 
 
 
 function Woman() {
-  const [value, loading, error] = useCollectionData(collection(getFirestore(), "necklaces"),{});
+  const [queryLimit, setQueryLimit] = useState(9);
+  const [lastElement, setLastElement] = useState(0)
+  const [value, loading, error] = useCollectionDataOnce(query(collection(getFirestore(), "necklaces"),
+    limit(queryLimit),
+    orderBy('title'),
+    startAfter(lastElement)
+    
+  ));
+
   const necklaceData: Necklace[] = value as Necklace[];
+
+  const nextPage = () => {
+    setLastElement(necklaceData.length - 1)
+    setQueryLimit(prevQueryLimit => prevQueryLimit + 1)
+    console.log(lastElement)
+  }
+
 
 
 
@@ -74,7 +88,13 @@ function Woman() {
               </button>
             ))}
           </div>
+          <div>
+            <h1>
+              <button onClick={nextPage}>NEXT PAGE</button>
+            </h1>
+          </div>
         </div>
+        
       )}
 
       {showDetails && (
