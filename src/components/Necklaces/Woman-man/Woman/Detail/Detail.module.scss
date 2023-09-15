@@ -9,6 +9,7 @@
   color: #fff;
   background-color: #2e2d2d;
   //overflow: auto;
+  //position: absolute;
 
   @include responsive("xlMb") {
 
@@ -19,6 +20,47 @@
 
   @include responsive("smMb") {
   }
+}
+
+.closeButton {
+  width: 4.3rem;
+  height: 4.3rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  margin: 3.5rem;
+
+  position: absolute;
+
+  @include responsive("xlMb") {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  @include responsive("xlMb") {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+}
+
+.closeButton::before,
+.closeButton::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: $white;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.closeButton::before {
+  transform: rotate(45deg);
+}
+
+.closeButton::after {
+  transform: rotate(-45deg);
 }
 
 .hiddenButton {

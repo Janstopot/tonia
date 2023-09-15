@@ -8,7 +8,7 @@ import { useLanguage } from "@/pages/hooks/LanguageContext";
 function Detail(props: any) {
   const { currentLanguage, handleEngClick, handleFrClick } = useLanguage();
 
-  const { data, increaseIndex, decreaseIndex, index, listLength } = props;
+  const {showComponent, data, increaseIndex, decreaseIndex, index, listLength } = props;
   const [isImageOpen, setIsImageOpen] = useState(false);
 
   const openImage = () => {
@@ -19,9 +19,15 @@ function Detail(props: any) {
     setIsImageOpen(false);
   };
 
+  const handleClose = () => {
+    showComponent()
+  };
+
   return (
     <div>
+      <button className={styles.closeButton} onClick={handleClose}></button>
       <div className={styles.main}>
+      
         <button
           className={index === 0 ? styles.hiddenButton : styles.backArrow} onClick={decreaseIndex}>
           <Image src={arrow} alt="arrow" />
