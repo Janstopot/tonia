@@ -216,6 +216,11 @@
       font-style: normal;
       font-weight: 400;
       transition: font-size 0.3s ease;
+
+      @include responsive("smMb") {
+        font-size: 2rem;
+        padding: 1rem 1.3rem;
+      }
     }
 
     .mobileNav a:hover {
