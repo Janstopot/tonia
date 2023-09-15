@@ -37,7 +37,7 @@
       }
 
       @include responsive("xlMb") {
-        font-size: 3rem;
+        font-size: 2.9rem;
       }
 
       @include responsive("mdMb") {
@@ -45,7 +45,7 @@
       }
 
       @include responsive("smMb") {
-        font-size: 2.3rem;
+        font-size: 2rem;
       }
     }
 
@@ -71,15 +71,15 @@
       }
 
       @include responsive("xlMb") {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       }
 
       @include responsive("mdMb") {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
       }
 
       @include responsive("smMb") {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
 
       div {
@@ -126,6 +126,7 @@
       .text-info {
         display: flex;
         justify-content: space-between;
+        gap: 4rem;
 
         @include responsive("xs") {
           flex-direction: column;
@@ -134,71 +135,31 @@
 
         .left,
         .right {
-          width: 48rem;
-          height: 30rem;
+          flex: 1;
+          width: 50rem;
 
           @include responsive("laptop") {
-            width: 46rem;
-            height: 28rem;
+            width: 45rem;
           }
 
           @include responsive("md") {
-            width: 34rem;
-            height: 32rem;
+            width: 44rem;
           }
 
           @include responsive("sm") {
-            width: 28rem;
-            height: 35rem;
+            width: 32rem;
           }
 
           @include responsive("xs") {
             width: 36rem;
-            height: 30rem;
-          }
-
-          @include responsive("xlMb") {
-            width: 32rem;
-            height: 32rem;
           }
 
           @include responsive("mdMb") {
-            width: 30rem;
-            height: 30rem;
+            width: 33rem;
           }
 
           @include responsive("smMb") {
-            width: 29rem;
-            height: 28rem;
-          }
-        }
-
-        .left {
-          margin-right: 6.5rem;
-
-          @include responsive("laptop") {
-            margin-right: 6.2rem;
-          }
-
-          @include responsive("md") {
-            margin-right: 5.9rem;
-          }
-
-          @include responsive("sm") {
-            margin-right: 5.6rem;
-          }
-
-          @include responsive("xs") {
-            margin-right: 0rem;
-          }
-
-          @include responsive("xlMb") {
-            margin-right: 0rem;
-          }
-        }
-        .right {
-          @include responsive("xs") {
-            height: 25rem;
+            width: 28rem;
           }
         }
       }
