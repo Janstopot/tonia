@@ -1,34 +1,59 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import styles from "./Woman.module.scss";
 import Image from "next/image";
 import Detail from "./Detail/Detail";
-import { useCollectionData, useCollectionDataOnce } from "react-firebase-hooks/firestore";
-import { collection, endAt, getFirestore, limit, orderBy, query, startAfter } from "firebase/firestore";
+import { DocumentData, collection, getDocs, getFirestore, limit, orderBy, query, startAfter } from "firebase/firestore";
 import { Necklace } from "@/assets/interfaces";
 
-
+import necklaceData2 from "./necklaceData";
 
 function Woman() {
-  const [queryLimit, setQueryLimit] = useState(9);
-  const [lastElement, setLastElement] = useState(0)
-  const [value, loading, error] = useCollectionDataOnce(query(collection(getFirestore(), "necklaces"),
-    limit(queryLimit),
-    orderBy('title'),
-    startAfter(lastElement)
-    
-  ));
+  const [necklaceData, setNecklaceData] = useState<Necklace[]>([]);
+  const [pageSize, setPageSize] = useState(9); // Initial page size
+  const [lastDoc, setLastDoc] = useState(null); // Store the last document for pagination
 
-  const necklaceData: Necklace[] = value as Necklace[];
+  useEffect(() => {
+    console.log("MOUNTINGGG")
+    fetchData();
+  }, []);
+
+
+  const fetchData = async () => {
+    console.error("FETCHING DATA")
+    try {
+      const q = query(
+        collection(getFirestore(), "necklaces"), // Replace with your collection name
+        orderBy("title"),
+        startAfter(lastDoc),
+        limit(pageSize)
+        // Use startAfter if lastDoc is available
+      );
+
+      const querySnapshot = await getDocs(q);
+      const data: any[] = [];
+
+      querySnapshot.forEach((doc) => {
+        console.log(doc.data().title);
+        data.push({ doc, ...doc.data() });
+      });
+      console.log(data);
+
+      // Append newly fetched data to the existing necklaceData
+      setNecklaceData((prevData) => [...prevData, ...data]);
+
+      // Update lastDoc for pagination
+      if (querySnapshot.docs.length > 0) {
+        setLastDoc(querySnapshot.docs[querySnapshot.docs.length - 1].data().title);
+      }
+      setPageSize(3);
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    }
+  };
 
   const nextPage = () => {
-    setLastElement(necklaceData.length - 1)
-    setQueryLimit(prevQueryLimit => prevQueryLimit + 1)
-    console.log(lastElement)
-  }
-
-
-
+    fetchData();
+  };
 
   const [showDetails, setShowDetails] = useState(false);
   const [index, setIndex] = useState(0);
@@ -54,24 +79,6 @@ function Woman() {
     }
   };
 
-
-
-  if (loading) {
-    // Render a loading indicator or a message while data is being fetched
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    console.log(error)
-    // Handle the error gracefully, e.g., display an error message
-    return <div>Error: {error.message}</div>;
-  }
-
-  if (!value) {
-    // Handle the case where value is still undefined
-    return null;
-  }
-
   return (
     <>
       {!showDetails && (
@@ -84,7 +91,12 @@ function Woman() {
                 key={index}
               >
                 <div className={styles.text}>{necklace.title}</div>
-                <Image width={500} height={500} src={necklaceData[0].image} alt={necklace.title} />
+                <Image
+                  width={500}
+                  height={500}
+                  src={necklace.image}
+                  alt={necklace.title}
+                />
               </button>
             ))}
           </div>
@@ -94,7 +106,6 @@ function Woman() {
             </h1>
           </div>
         </div>
-        
       )}
 
       {showDetails && (
