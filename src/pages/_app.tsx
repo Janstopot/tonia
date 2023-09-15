@@ -4,7 +4,7 @@ import Head from "next/head"
 import Navbar from "@/components/Navbar/Navbar"
 import Footer from '@/components/Footer/Footer';
 import '../styles/Home.module.css'
-
+import { LanguageProvider } from './hooks/LanguageContext';
 
 
 import firebase from "firebase/compat/app";
@@ -20,9 +20,9 @@ const firebaseConfig = {
 
 
 if (!firebase.apps.length) {
-   firebase.initializeApp(firebaseConfig);
-}else {
-   firebase.app();
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app();
 }
 
 
@@ -32,10 +32,12 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <Navbar />
-      <div className="content">
-        <Component {...pageProps} />
-      </div>
+      <LanguageProvider>
+        <Navbar />
+        <div className="content">
+          <Component {...pageProps} />
+        </div>
+      </LanguageProvider>
       <Footer />
     </div>
   );

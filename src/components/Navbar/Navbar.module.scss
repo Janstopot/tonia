@@ -115,6 +115,28 @@
       }
     }
 
+    .languageBtn {
+      border: none;
+      background-color: transparent;
+      color: $white;
+      cursor: pointer;
+      font-size: 1rem;
+
+      @include responsive("sm") {
+        font-size: 0.8rem;
+      }
+
+      @include responsive("xs") {
+        font-size: 0.7rem;
+      }
+    }
+
+    .line {
+      color: $white;
+      font-size: 2rem;
+      margin: 0 0.5rem 0 0.5rem;
+    }
+
     .hamburger {
       position: relative;
       display: block;
@@ -153,6 +175,11 @@
       &.isActive .bar {
         opacity: 0;
       }
+    }
+
+    .navLanguageBtn {
+      display: flex;
+      justify-content: center;
     }
 
     .mobileNav {
