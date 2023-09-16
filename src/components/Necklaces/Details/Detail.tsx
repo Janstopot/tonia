@@ -16,7 +16,8 @@ function Detail(props: any) {
 
   
   useEffect(() => {
-    //getImageDimensions();
+    getImageDimensions();
+    console.log("mounting detail")
 
     window.scrollTo({
       top: 0,
