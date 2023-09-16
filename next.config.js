@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const path = require('path'); // Add this line
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   sassOptions: {
     prependData: `
     @import "src/assets/scss/abstracts/_variables.scss";

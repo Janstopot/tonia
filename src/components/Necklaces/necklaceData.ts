@@ -22,7 +22,7 @@ export interface Necklace {
   description: string;
 }
 
-const necklaceData: Necklace[] = [
+const necklaceData2: Necklace[] = [
   {
     image: woman1,
     name: "ROMAN HEAD",
@@ -114,4 +114,4 @@ const necklaceData: Necklace[] = [
   },
 ];
 
-export default necklaceData;
+export default necklaceData2;
