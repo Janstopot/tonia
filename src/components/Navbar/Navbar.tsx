@@ -72,7 +72,7 @@ function Navbar() {
                     <nav className={`${styles.text} ${styles.smallLinks}`}>
                         <Link href="/">{linkText[currentLanguage].home}</Link>
                         <Link href="/profile">{linkText[currentLanguage].artist}</Link>
-                        <Link href="/woman">{linkText[currentLanguage].necklaces}</Link>
+                        <Link href="/necklaces">{linkText[currentLanguage].necklaces}</Link>
                         <Link href="/exhibitions">{linkText[currentLanguage].exhibitions}</Link>
                         <Link href="/press">{linkText[currentLanguage].press}</Link>
                         <Link href="/contact">{linkText[currentLanguage].contact}</Link>
@@ -98,7 +98,7 @@ function Navbar() {
                         <Link href="/profile" onClick={handleLinkClick}>
                             {linkText[currentLanguage].artist}
                         </Link>
-                        <Link href="/woman" onClick={handleLinkClick}>
+                        <Link href="/necklaces" onClick={handleLinkClick}>
                             {linkText[currentLanguage].necklaces}
                         </Link>
                         <Link href="/exhibitions" onClick={handleLinkClick}>

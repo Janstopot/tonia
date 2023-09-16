@@ -1,63 +1,71 @@
 @import "src/assets/scss/abstracts/_variables";
 
 .main {
-  display: flex;
-  flex-direction: column;
-  font-family: $font-raleway;
-
-  .title {
-    width: 100%;
-    height: 15rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-    letter-spacing: 0.525rem;
-    color: $white;
-    background-color: $black;
-  }
+  overflow: hidden;
+  padding-bottom: 11.04rem;
+  background-color: $black;
 
   .box {
-    display: flex;
-  }
+    display: grid;
+    grid-template-columns: repeat(3, calc(33.333% - 10px));
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 0 10px;
 
-  .image {
-    width: 50%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-
-    &:hover .text {
-      margin-bottom: 17.8rem;
-      transform: scale(1.3);
-      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+    @include responsive("xlMb") {
+      grid-template-columns: repeat(2, calc(50%));
     }
   }
 
-  .image img {
-    height: 100%;
+  .image {
     width: 100%;
-    object-fit: cover;
-  }
+    height: 40rem;
+    border: none;
+    position: relative;
+    cursor: pointer;
 
-  .text {
-    position: absolute;
-    width: 51.8rem;
-    height: 12.5rem;
-    margin-bottom: 19.8rem;
-    text-align: center;
-    line-height: 12.5rem;
-    color: $white;
-    font-size: 50px;
-    font-weight: 600;
-    background-color: $background-black;
-    transition: margin-bottom 0.3s, transform 0.3s, filter 0.3s;
-  }
+    .text {
+      position: absolute;
+      font-family: $font-raleway;
+      font-size: 2rem;
+      letter-spacing: 0.525rem;
+      color: $white;
+      opacity: 0;
+      width: 80%;
+      height: 6rem;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%) scale(1);
+      transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+    }
 
-  .separation {
-    width: 2rem;
-    background-color: $black;
+    &:hover .text {
+      opacity: 1;
+      transform: translate(-50%, 50%) scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    @include responsive("xlMb") {
+      width: 100%; 
+      height: 100%; /* Allow height to adjust proportionally */
+      .text {
+        font-size: 1.5rem; /* Reduce the font size */
+        height: auto; /* Allow height to adjust proportionally */
+        padding: 1rem; /* Reduce padding */
+        opacity: 1; /* Always visible */
+        transform: translate(-50%, 50%) scale(1); /* Reset the transform */
+      }
+      .box{
+        //padding: 0;
+      }
+      
+    }
   }
 }
