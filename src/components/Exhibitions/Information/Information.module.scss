@@ -3,6 +3,7 @@
 .main {
   background-color: $background-fill;
   width: 100%;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -38,14 +39,17 @@
 
       @include responsive("xlMb") {
         font-size: 2.9rem;
+        max-width: 30rem;
       }
 
       @include responsive("mdMb") {
         font-size: 2.5rem;
+        max-width: 30rem;
       }
 
       @include responsive("smMb") {
         font-size: 2rem;
+        max-width: 30rem;
       }
     }
 

@@ -13,7 +13,8 @@ import paris10 from "@/assets/images/exhibitions/paris/paris10.png"
 import paris11 from "@/assets/images/exhibitions/paris/paris11.png"
 import paris12 from "@/assets/images/exhibitions/paris/paris12.png"
 
-const backgroundImages: StaticImageData[] = [
+const backgroundImages: Record<string, StaticImageData[]> = {
+  paris: [
     paris1,
     paris2,
     paris3,
@@ -26,6 +27,7 @@ const backgroundImages: StaticImageData[] = [
     paris10,
     paris11,
     paris12,
-  ];
-  
-  export default backgroundImages;
+  ],
+};
+
+export default backgroundImages;
