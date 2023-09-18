@@ -3,7 +3,7 @@ import styles from "./Detail.module.scss";
 import Image from "next/image";
 import ImageDetail from "../ImageDetails/ImageDetail";
 import arrow from "@/assets/images/arrow.png";
-import { useLanguage } from "@/pages/hooks/LanguageContext";
+import { useLanguage } from "@/hooks/LanguageContext";
 
 function Detail(props: any) {
   const { currentLanguage, handleEngClick, handleFrClick } = useLanguage();
