@@ -5,11 +5,11 @@
   min-height: calc(100vh - 15rem);
   background-color: $background-fill;
   font-family: $font-raleway;
-  overflow-y: auto;
 
   .container {
     padding-top: 5rem;
     max-width: 100%;
+    min-height: 90vh;
     margin: 0 auto;
   }
 
@@ -109,6 +109,25 @@
       p {
         margin: 1rem 0;
       }
+    }
+
+    .btn {
+      background-color: $background-fill;
+      box-sizing: border-box;
+      height: 3vw;
+      width: 3vw;
+      border-style: solid;
+      border-color: $black;
+      border-width: 0rem 0.1rem 0.1rem 0rem;
+      transform: rotate(45deg);
+      transition: border-width 150ms ease-in-out;
+      margin-left: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .btn:hover {
+      border-bottom-width: 0.4rem;
+      border-right-width: 0.4rem;
     }
 
     .imageContainer {

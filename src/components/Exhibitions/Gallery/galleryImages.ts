@@ -74,6 +74,8 @@ import algiers10 from "@/assets/images/exhibitions/algiers/algiers10.jpg"
 import algiers11 from "@/assets/images/exhibitions/algiers/algiers11.jpg"
 import algiers12 from "@/assets/images/exhibitions/algiers/algiers12.jpg"
 
+import gallerium1 from "@/assets/images/exhibitions/gallerium/gallerium1.png"
+
 
 export interface Gallery {
   image: StaticImageData;
@@ -82,6 +84,11 @@ export interface Gallery {
 }
 
 const galleryData: Gallery[] = [
+  {
+    image: gallerium1,
+    name: "gallerium1",
+    place: "gallerium"
+  },
   {
     image: paris1,
     name: "paris1",
