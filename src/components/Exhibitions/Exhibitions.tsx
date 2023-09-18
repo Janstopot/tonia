@@ -12,7 +12,7 @@ function Exhibitions() {
       <div className={styles.box}>
         <div className={styles.row}>
           <Link href={`/information?exhibition=gallerium2023&place=gallerium`} className={styles.circle}>
-            <div className={styles.text}>GALLERIUM ART 2023</div>
+            <div className={styles.text}>GALLERIUM 2023</div>
           </Link>
           <Link href={`/information?exhibition=paris2022&place=paris`} className={styles.circle}>
             <div className={styles.text}>PARIS 2022</div>
@@ -21,7 +21,7 @@ function Exhibitions() {
             <div className={styles.text}>NEW ORLEANS 2022</div>
           </Link>
           <Link href={`/information?exhibition=santlouis2021&place=stlouis`} className={styles.circle}>
-            <div className={styles.text}>SANT LOUIS 2021</div>
+            <div className={styles.text}>ST LOUIS 2021</div>
           </Link>
         </div>
         <div className={styles.row2}>

@@ -41,7 +41,7 @@ const exhibitionData: Record<string, Exhibition> = {
         place: 'neworleans',
     },
     santlouis2021: {
-        title: 'SANT LOUIS 2021',
+        title: 'ST LOUIS, USA 2021',
         subtitle: '« RITUALS »',
         location: "Intersect Art Gallery, St Louis, Missouri, USA",
         leftTextEng: 'Intersect Arts Gallery features 117 works by 44 artists that explore the phenomenon of ritual. From the sacred to the mundane we invite you into contemplations of rituals that may be personal or corporate, ancient or contemporary, organized or completely of the artist’s invention, spiritual, religious, political or of daily life. You will glimpse rituals that reference ideas of healing, connection, lament, promise, and protection. You will see rituals of repentance, resistance, and routine. Rituals feel superfluous in many ways. They are not necessarily necessary. You can eat lunch without ceremony, and it will still nourish your body.  Rituals can be practiced with a high degree of intentionality, or they may be absorbed into daily life by rote, carried on from the traditions of past generations. You may have rituals so ingrained in you from birth that you hardly recognize them as separate from your DNA.',
