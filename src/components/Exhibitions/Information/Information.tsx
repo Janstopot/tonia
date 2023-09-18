@@ -7,6 +7,7 @@ import exhibitionData from './exhibitionData';
 import Link from "next/link"
 
 import backgroundImages from './backgroundImage';
+import { useLanguage } from "@/pages/hooks/LanguageContext";
 
 interface ExhibitionProps {
     exhibition: Exhibition;
@@ -22,6 +23,8 @@ function InformationWrapper() {
 }
 
 const Information: React.FC<ExhibitionProps> = ({ exhibition }) => {
+    const { currentLanguage, handleEngClick, handleFrClick } = useLanguage();
+
     return (
         <div className={styles.main}>
             <div className={styles.container}>
@@ -34,8 +37,8 @@ const Information: React.FC<ExhibitionProps> = ({ exhibition }) => {
                 </div>
                 <div className={styles.description}>
                     <div className={styles['text-info']}>
-                        <div className={styles.left}>{exhibition.leftText}</div>
-                        <div className={styles.right}>{exhibition.rightText}</div>
+                        <div className={styles.left}>{currentLanguage === 'ENG' ? exhibition.leftTextEng : exhibition.leftTextFr}</div>
+                        <div className={styles.right}>{currentLanguage === 'ENG' ? exhibition.rightTextEng : exhibition.rightTextFr}</div>
                     </div>
                 </div>
                 <div className={styles.stickyBackgroundGallery}>

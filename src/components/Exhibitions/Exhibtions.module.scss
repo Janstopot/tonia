@@ -57,6 +57,7 @@
 .box {
   display: flex;
   flex-direction: column;
+  gap: 5rem;
 
   @include responsive("xlMb") {
     flex-direction: row;
@@ -93,10 +94,10 @@
   text-decoration: none;
   padding: 3.8rem;
   position: relative;
-  width: 25.041rem;
-  height: 25.041rem;
+  width: 20rem;
+  height: 20rem;
   border-radius: 50%;
-  margin-right: 7.96rem;
+  margin-right: 7rem;
   background-color: $background-fill;
   transition: transform 0.3s ease, background-color 0.3s ease;
 
@@ -105,21 +106,27 @@
     background-color: $circle-hover-grey;
   }
 
-  @include responsive("md") {
+  @include responsive("laptop") {
     width: 18rem;
     height: 18rem;
+    margin-right: 5rem;
+  }
+
+  @include responsive("md") {
+    width: 16rem;
+    height: 16rem;
     margin-right: 6rem;
   }
 
   @include responsive("sm") {
-    width: 15rem;
-    height: 15rem;
+    width: 14rem;
+    height: 14rem;
     margin-right: 4rem;
   }
 
   @include responsive("xs") {
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
     margin-right: 3rem;
   }
 
@@ -139,28 +146,32 @@
 }
 
 .text {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: 500;
   letter-spacing: -0.077rem;
   color: $background-black;
 
+  @include responsive("laptop") {
+    font-size: 2.6rem;
+  }
+
   @include responsive("md") {
-    font-size: 2.8rem;
+    font-size: 2.3rem;
   }
 
   @include responsive("sm") {
     font-size: 2rem;
   }
 
-  @include responsive("xlMb") {
-    font-size: 1.9rem;
+  @include responsive("xs") {
+    font-size: 1.4rem;
   }
 
   @include responsive("mdMb") {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   @include responsive("smMb") {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
 }

@@ -11,8 +11,11 @@ function Exhibitions() {
       <div className={styles.title}>EXHIBITIONS</div>
       <div className={styles.box}>
         <div className={styles.row}>
+          <Link href={`/information?exhibition=gallerium2023`} className={styles.circle}>
+            <div className={styles.text}>GALLERIUM ART 2023</div>
+          </Link>
           <Link href={`/information?exhibition=paris2022`} className={styles.circle}>
-            <div className={styles.text}>PARIS 2020</div>
+            <div className={styles.text}>PARIS 2022</div>
           </Link>
           <Link href={`/information?exhibition=neworleans2022`} className={styles.circle}>
             <div className={styles.text}>NEW ORLEANS 2022</div>
@@ -22,10 +25,16 @@ function Exhibitions() {
           </Link>
         </div>
         <div className={styles.row2}>
-          <Link href={`/information?exhibition=algiers2017`} className={styles.circle}>
-            <div className={styles.text}>DAKAR 2018</div>
+          <Link href={`/information?exhibition=provence2020`} className={styles.circle}>
+            <div className={styles.text}>PROVENCE 2020</div>
+          </Link>
+          <Link href={`/information?exhibition=montpellier2019`} className={styles.circle}>
+            <div className={styles.text}>MONTPELLIER 2019</div>
           </Link>
           <Link href={`/information?exhibition=dakar2018`} className={styles.circle}>
+            <div className={styles.text}>DAKAR 2018</div>
+          </Link>
+          <Link href={`/information?exhibition=algiers2017`} className={styles.circle}>
             <div className={styles.text}>ALGIERS 2017</div>
           </Link>
         </div>
