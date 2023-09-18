@@ -7,6 +7,10 @@ import facebook from "@/assets/images/Facebook.png";
 import instagram from "@/assets/images/Instagram.png";
 import send from "@/assets/images/emailSend.png";
 
+import { useLanguage } from '@/hooks/LanguageContext';
+
+export type Language = 'ENG' | 'FR';
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -28,6 +32,18 @@ function Contact() {
   };
 
   const [focusedInput, setFocusedInput] = useState<string>();
+
+  const { currentLanguage } = useLanguage();
+  const placeholders: Record<Language, Record<string, string>> = {
+    ENG: {
+      name: 'NAME',
+      comment: 'COMMENT',
+    },
+    FR: {
+      name: 'NOM',
+      comment: 'COMMENTAIRE',
+    },
+  };
 
   return (
     <>
@@ -53,7 +69,7 @@ function Contact() {
                 type="text"
                 name="name"
                 className={styles.input}
-                placeholder={focusedInput === "name" ? "" : "NAME"}
+                placeholder={focusedInput === "name" ? "" : placeholders[currentLanguage as Language][`name`]}
                 value={formData.name}
                 onChange={handleInputChange}
                 onFocus={() => setFocusedInput('name')}
@@ -74,7 +90,7 @@ function Contact() {
               <textarea
                 name="comment"
                 className={styles.comment}
-                placeholder={focusedInput === "comment" ? "" : "COMMENT"}
+                placeholder={focusedInput === "comment" ? "" : placeholders[currentLanguage as Language][`comment`]}
                 value={formData.comment}
                 onChange={handleInputChange}
                 onFocus={() => setFocusedInput('comment')}

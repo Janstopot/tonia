@@ -131,6 +131,11 @@
       }
     }
 
+    .active {
+      text-decoration: underline;
+      color: #FFB000;
+    }
+
     .line {
       color: $white;
       font-size: 2rem;
