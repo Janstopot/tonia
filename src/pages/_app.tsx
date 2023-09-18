@@ -4,7 +4,7 @@ import Head from "next/head"
 import Navbar from "@/components/Navbar/Navbar"
 import Footer from '@/components/Footer/Footer';
 import '../styles/Home.module.css'
-import { LanguageProvider } from './hooks/LanguageContext';
+import { LanguageProvider } from '../hooks/LanguageContext';
 
 
 import firebase from "firebase/compat/app";

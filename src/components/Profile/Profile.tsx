@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import styles from './Profile.module.scss'
 import Image from 'next/image'
-import { useLanguage } from '@/pages/hooks/LanguageContext';
+import { useLanguage } from '@/hooks/LanguageContext';
 
 import profile from '@/assets/images/tonia_profile.png'
 
@@ -29,7 +29,7 @@ function Profile() {
     const toggleNewText = () => {
         setShowNewText(!showNewText);
     };
- 
+
     const descriptionText: Record<Language, string[]> = {
         ENG: [
             "✓ Conference on « Ritual Functions of Venetian Glass Beads in Africa » as part of the program for the yearly ‘Venice Glass Week’, Venice, Italy. September 2020",

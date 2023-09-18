@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link'
 import styles from './Navbar.module.scss'
 import Image from 'next/image'
-import { useLanguage } from '@/pages/hooks/LanguageContext';
+import { useLanguage } from '@/hooks/LanguageContext';
 
 import logo from '@/assets/images/Logo.png'
 import search from '@/assets/images/Search.png'
