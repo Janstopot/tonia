@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 import styles from './Gallery.module.scss';
 import galleryData from "./galleryImages"
-import arrow from "@/assets/images/arrow.png";
+import { useRouter } from 'next/router';
 
+interface GalleryProps {
+  place: string;
+}
 
-function Gallery() {
+function Gallery({ place }: GalleryProps) {
+  const router = useRouter();
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+
+  const filteredGalleryData = galleryData.filter((image) => image.place === place);
 
   const openModal = (index: number) => {
     setSelectedImageIndex(index);
@@ -20,7 +26,7 @@ function Gallery() {
   };
 
   const nextImage = () => {
-    if (selectedImageIndex !== null && selectedImageIndex < galleryData.length - 1) {
+    if (selectedImageIndex !== null && selectedImageIndex < filteredGalleryData.length - 1) {
       setSelectedImageIndex(selectedImageIndex + 1);
     }
   };
@@ -35,11 +41,26 @@ function Gallery() {
     event.stopPropagation();
   };
 
+  useEffect(() => {
+    const handleRouteChange = () => {
+      closeModal();
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, []);
+
+  console.log('Place:', place);
+  console.log('Filtered Gallery Data:', filteredGalleryData);
+
   return (
     <>
       <div className={styles.main}>
         <div className={styles.box}>
-          {galleryData.map((image, index) => (
+          {filteredGalleryData.map((image, index) => (
             <div
               className={styles.image}
               key={index}
@@ -55,16 +76,16 @@ function Gallery() {
             <div className={styles.modalContent}>
               {selectedImageIndex > 0 && (
                 <button className={`${styles.navButton} ${styles.previousButton}`} onClick={(e) => { previousImage(); preventPropagation(e); }}>
-                  <Image src={arrow} alt="arrow" />
+                  <div className={styles.nextButton}>&raquo;</div>
                 </button>
               )}
               <Image
-                src={galleryData[selectedImageIndex].image}
-                alt={galleryData[selectedImageIndex].name}
+                src={filteredGalleryData[selectedImageIndex].image}
+                alt={filteredGalleryData[selectedImageIndex].name}
               />
-              {selectedImageIndex < galleryData.length - 1 && (
+              {selectedImageIndex < filteredGalleryData.length - 1 && (
                 <button className={`${styles.navButton} ${styles.nextButton}`} onClick={(e) => { nextImage(); preventPropagation(e); }}>
-                  <Image src={arrow} alt="arrow" />
+                  <div className={styles.nextButton}>&raquo;</div>
                 </button>
               )}
             </div>
