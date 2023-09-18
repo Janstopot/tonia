@@ -8,13 +8,13 @@ import { useLanguage } from "@/hooks/LanguageContext";
 function Detail(props: any) {
   const { currentLanguage, handleEngClick, handleFrClick } = useLanguage();
 
-  const {showComponent, data, increaseIndex, decreaseIndex, index, listLength } = props;
+  const { showComponent, data, increaseIndex, decreaseIndex, index, listLength } = props;
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [imageClass, setImageClass] = useState("tall")
 
-  const [imageDimensions, setImageDimensions] = useState({width: 0, height: 0});
+  const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
 
-  
+
   useEffect(() => {
     //getImageDimensions();
     console.log("mounting detail")
@@ -24,7 +24,7 @@ function Detail(props: any) {
     })
   }, [data])
 
-  async function getImageDimensions ()  {
+  async function getImageDimensions() {
     console.log("joder")
     try {
       const response = await fetch(data.image, { method: 'HEAD' });
@@ -60,7 +60,7 @@ function Detail(props: any) {
     <div id="top">
       <button className={styles.closeButton} onClick={handleClose}></button>
       <div className={styles.main}>
-      
+
         <button
           className={index === 0 ? styles.hiddenButton : styles.backArrow} onClick={decreaseIndex}>
           <Image src={arrow} alt="arrow" />
