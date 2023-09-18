@@ -7,7 +7,7 @@ import exhibitionData from './exhibitionData';
 import Link from "next/link"
 
 import backgroundImages from './backgroundImage';
-import { useLanguage } from "@/pages/hooks/LanguageContext";
+import { useLanguage } from "@/hooks/LanguageContext";
 
 interface ExhibitionProps {
     exhibition: Exhibition;
