@@ -62,7 +62,7 @@
     }
 
     .nextButton {
-      right: 5rem;
+      right: 4rem;
 
       @include responsive("sm") {
         right: 2rem;
@@ -74,7 +74,7 @@
     }
 
     .previousButton {
-      left: 5rem;
+      left: 4rem;
       transform: scaleX(-1) translateY(-50%);
 
       @include responsive("sm") {
@@ -89,7 +89,7 @@
     .nextButton {
       background-color: transparent;
       color: white;
-      font-size: 8rem;
+      font-size: 7rem;
 
       @include responsive("sm") {
         font-size: 6rem;
@@ -101,6 +101,14 @@
 
       @include responsive("smMb") {
         font-size: 4rem;
+      }
+    }
+
+    .nextButton:hover {
+      font-size: 8rem;
+
+      @include responsive("xlMb") {
+        font-size: 5rem;
       }
     }
 
