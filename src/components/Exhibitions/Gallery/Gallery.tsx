@@ -66,7 +66,7 @@ function Gallery({ place }: GalleryProps) {
               key={index}
               onClick={() => openModal(index)}
             >
-              <Image src={image.image} alt={image.name} />
+              <Image src={image.image} alt={image.name} placeholder='blur'/>
             </div>
           ))}
         </div>

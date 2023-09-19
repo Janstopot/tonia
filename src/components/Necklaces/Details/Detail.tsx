@@ -14,7 +14,6 @@ function Detail(props: any) {
 
   const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
 
-
   useEffect(() => {
     //getImageDimensions();
     console.log("mounting detail")
@@ -58,14 +57,12 @@ function Detail(props: any) {
 
   return (
     <div id="top">
-      <button className={styles.closeButton} onClick={handleClose}></button>
       <div className={styles.main}>
-
+        <button className={styles.closeButton} onClick={handleClose}></button>
         <button
-          className={index === 0 ? styles.hiddenButton : styles.backArrow} onClick={decreaseIndex}>
-          <Image src={arrow} alt="arrow" />
+          className={`${styles.navButton} ${styles.previousButton}`} onClick={decreaseIndex}>
+          <div className={styles.nextButton}>&raquo;</div>
         </button>
-
         <div className={styles.imageBlock}>
           <div className={styles.hiddenName}>{data.title}</div>
           <button className={styles.image} onClick={openImage}>
@@ -76,14 +73,11 @@ function Detail(props: any) {
             <div className={styles.description}>{currentLanguage === 'ENG' ? data.eng : data.fr}</div>
           </div>
         </div>
-
         <button
-          className={
-            index === listLength - 1 ? styles.hiddenButton : styles.arrow
-          }
+          className={`${styles.navButton} ${styles.nextButton}`}
           onClick={increaseIndex}
         >
-          <Image src={arrow} alt="arrow" />
+          <div className={styles.nextButton}>&raquo;</div>
         </button>
       </div>
 
