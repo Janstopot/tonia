@@ -6,11 +6,22 @@ import { collection, getDocs, getFirestore, limit, orderBy, query, startAfter } 
 import { Necklace } from "@/assets/interfaces";
 
 import necklaceData2 from "./necklaceData";
-import { useRouter } from "next/router";
 import Detail from "./Details/Detail";
+import { useInView } from 'react-intersection-observer';
 
 function Woman() {
-  const router = useRouter();
+  const [initialLoad, setInitialLoad] = useState(true);
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 1,
+    rootMargin: '15px 0px 0px 0px',
+    trackVisibility: true, 
+    delay: 10000,
+    onChange : (inView)=> {
+      if(inView && !initialLoad) nextPage()
+    }
+  });
+
   const [necklaceData, setNecklaceData] = useState<Necklace[]>([]);
   const [pageSize, setPageSize] = useState(9); // Numero inicial de collares
   const [lastDoc, setLastDoc] = useState(null); // último collar de la lista
@@ -48,6 +59,7 @@ function Woman() {
         setLastDoc(querySnapshot.docs[querySnapshot.docs.length - 1].data().title);
       }
       setPageSize(3); // Setea el numero de elementos despúes de la primera carga
+      setInitialLoad(false);
     } catch (error) {
       console.error("Error fetching data: ", error);
     }
@@ -95,8 +107,8 @@ function Woman() {
             ))}
           </div>
           <div>
-            <h1>
-              <button onClick={nextPage}>NEXT PAGE</button>
+            <h1 ref={ref}>
+              LOADING 
             </h1>
           </div>
         </div>
