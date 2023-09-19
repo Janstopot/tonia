@@ -1,47 +1,145 @@
-
 .main {
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   font-family: $font-raleway;
   color: #fff;
   background-color: #2e2d2d;
-  //overflow: auto;
-  //position: fixed;
 
-  @include responsive("xlMb") {
-
+  @include responsive("laptop") {
+    height: 100vh;
   }
 
   @include responsive("mdMb") {
+    height: 100vh;
+    min-height: 100%;
   }
 
   @include responsive("smMb") {
+    height: 100%;
+  }
+}
+
+.navButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: opacity 0.3s;
+
+  @include responsive("xlMb") {
+   
+  }
+}
+
+.navButton:hover {
+  opacity: 0.5;
+}
+
+.nextButton {
+  right: 3rem;
+
+  @include responsive("xl") {
+    right: 1rem;
+  }
+
+  @include responsive("md") {
+    right: 1.5rem;
+  }
+
+  @include responsive("xlMb") {
+    right: 1rem;
+  }
+}
+
+.previousButton {
+  left: 3rem;
+  transform: scaleX(-1) translateY(-50%);
+
+  @include responsive("xl") {
+    left: 1rem;
+  }
+
+  @include responsive("md") {
+    left: 1.5rem;
+  }
+
+  @include responsive("xlMb") {
+    left: 1rem;
+  }
+}
+
+.nextButton {
+  background-color: transparent;
+  color: white;
+  font-size: 7rem;
+
+  @include responsive("md") {
+    font-size: 6rem;
+  }
+
+  @include responsive("sm") {
+    font-size: 5rem;
+  }
+
+  @include responsive("mdMb") {
+    font-size: 5rem;
+  }
+
+  @include responsive("smMb") {
+    font-size: 4rem;
+  }
+}
+
+.nextButton:hover {
+  font-size: 8rem;
+
+  @include responsive("md") {
+    font-size: 7rem;
+  }
+
+  @include responsive("sm") {
+    font-size: 6.5rem;
+  }
+
+  @include responsive("xs") {
+    font-size: 6rem;
+  }
+
+  @include responsive("xlMb") {
+    font-size: 5rem;
   }
 }
 
 .closeButton {
-  right: 6rem;
+  right: 4rem;
+  top: 11rem;
   width: 4.3rem;
   height: 4.3rem;
   cursor: pointer;
   background-color: transparent;
   border: none;
-  margin: 3.5rem;
+  position: absolute;
 
-  position: fixed;
+  @include responsive("md") {
+    width: 4rem;
+    height: 4rem;
+  }
 
-  @include responsive("xlMb") {
-    right: 0rem;
-    width: 2.5rem;
-    height: 2.5rem;
+  @include responsive("sm") {
+    width: 3.5rem;
+    height: 3.5rem;
   }
 
   @include responsive("xlMb") {
     width: 2.2rem;
     height: 2.2rem;
+    top: 7rem;
+    right: 3rem;
   }
 }
 
@@ -65,98 +163,54 @@
   transform: rotate(-45deg);
 }
 
-.hiddenButton {
-  visibility: hidden;
-  pointer-events: none;
-
-  @include responsive("xlMb") {
-    width: 3rem;
-    height: 3rem;
-
-  }
-}
-
-.arrow {
-  width: 5.4rem;
-  height: 5.4rem;
-  border: none;
-  background-color: #2e2d2d;
-
-  @include responsive("md") {
-    width: 5rem;
-    height: 5rem;
-  }
-
-  @include responsive("sm") {
-    width: 4rem;
-    height: 4em;
-  }
-
-  @include responsive("xs") {
-    width: 3rem;
-    height: 3em;
-  }
-
-  @include responsive("xlMb") {
-    width: 3rem;
-    height: 3rem;
-  }
-}
-.arrow img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-
-
-}
-
-.backArrow {
-  @extend .arrow;
-  transform: scaleX(-1);
-
-  @include responsive("xlMb") {
-  }
-}
-
 .imageBlock {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 6rem;
+  gap: 5rem;
+  width: 100%;
+
+  @include responsive("xs") {
+    gap: 3.5rem;
+  }
+
   @include responsive("xlMb") {
     height: 100%;
+    width: 82%;
     flex-direction: column;
     justify-content: center;
+  }
+
+  @include responsive("mdMb") {
+    min-height: 80%;
+    margin-top: 3rem;
   }
 }
 
 .hiddenName {
   display: none;
+
   @include responsive("xlMb") {
     display: block;
     font-size: 4rem;
-    margin-top: 2.6rem;
+    margin-top: 2rem;
   }
 
   @include responsive("mdMb") {
     font-size: 3rem;
-    margin-top: 5rem;
   }
 
   @include responsive("smMb") {
     font-size: 2.5rem;
-    margin-top: -6rem;
   }
 }
 
 .image {
-  height: 49rem;
-  max-width: 50rem;
-  //max-height: 49rem;
+  width: 45vw;
+  height: 100vh;
   border: none;
-  //position: relative;
-  transition: transform 0.3s ease;
+  background-color: #2e2d2d;
   filter: grayscale(0);
 
   &:hover {
@@ -164,45 +218,47 @@
     filter: grayscale(50%);
   }
 
+  img {
+    max-height: 90%;
+    object-fit: cover;
+  }
+
   @include responsive("laptop") {
-    max-width: 35rem;
-    height: 60rem;
+    height: 70vh;
   }
 
   @include responsive("md") {
-    max-width: 32rem;
-    max-height: 52rem;
+    height: 65vh;
+    width: 37vw;
   }
 
   @include responsive("sm") {
-    max-width: 32rem;
-    height: 46rem;
+    height: 50vh;
+    width: 35vw;
   }
 
   @include responsive("xs") {
-    max-width: 31rem;
-    height: 35rem;
+    height: 45vh;
+    width: 38vw;
   }
 
   @include responsive("xlMb") {
-    //max-width: 24.6rem;
-    //height: 35.1rem;
+    height: 55%;
+    width: 75vw;
 
     &:hover {
       transform: none;
       filter: grayscale(0);
-      
     }
   }
 
   @include responsive("mdMb") {
-    max-width: 22.6rem;
-    height: 32.1rem;
+    height: 50%;
+    width: 70vw;
   }
 
   @include responsive("xsMb") {
-    max-width: 24.6rem;
-    height: 35.1rem;
+    width: 65vw;
   }
 }
 
@@ -213,9 +269,28 @@
 }
 
 .descriptionBox {
-  width: 39.7rem;
+  width: 45rem;
+
+  @include responsive("laptop") {
+    width: 35rem;
+  }
+
+  @include responsive("sm") {
+    width: 35vw;
+  }
+
   @include responsive("xlMb") {
-    width: 36.7rem;
+    width: 35rem;
+  }
+
+  @include responsive("mdMb") {
+    width: 35rem;
+  }
+
+  @include responsive("smMb") {
+    width: 30rem;
+  
+    // overflow-y: auto;
   }
 }
 
@@ -229,11 +304,12 @@
   }
 
   @include responsive("sm") {
-    font-size: 4rem;
+    font-size: 3.7rem;
+    margin-bottom: 3.6rem;
   }
 
   @include responsive("xs") {
-    font-size: 3.8rem;
+    font-size: 2.8rem;
   }
 
   @include responsive("xlMb") {
@@ -244,6 +320,8 @@
 .description {
   font-size: 2.2rem;
   letter-spacing: -0.033rem;
+  line-height: 3rem;
+  text-align: justify;
 
   @include responsive("laptop") {
     font-size: 2rem;
@@ -255,26 +333,27 @@
 
   @include responsive("sm") {
     font-size: 1.5rem;
+    line-height: 2.5rem;
   }
 
   @include responsive("xs") {
     font-size: 1.2rem;
+    line-height: 2.1rem;
   }
 
   @include responsive("xlMb") {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    padding: 2rem;
+    // margin-bottom: 2rem;
+    font-size: 1.5rem;
+    padding: 1rem;
   }
 
   @include responsive("mdMb") {
-    font-size: 1.7rem;
-    padding: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    padding: 1.5rem;
   }
 
   @include responsive("smMb") {
     font-size: 1.2rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
   }
 }
