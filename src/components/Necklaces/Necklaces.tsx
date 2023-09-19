@@ -9,14 +9,14 @@ import necklaceData2 from "./necklaceData";
 import Detail from "./Details/Detail";
 import { useInView } from 'react-intersection-observer';
 
-function Woman() {
+function Necklaces() {
   const [initialLoad, setInitialLoad] = useState(true);
   const { ref, inView, entry } = useInView({
     /* Optional options */
     threshold: 1,
-    rootMargin: '15px 0px 0px 0px',
+    //rootMargin: '15px 0px 0px 0px',
     trackVisibility: true, 
-    delay: 10000,
+    delay: 500,
     onChange : (inView)=> {
       if(inView && !initialLoad) nextPage()
     }
@@ -106,10 +106,12 @@ function Woman() {
               </button>
             ))}
           </div>
-          <div>
-            <h1 ref={ref}>
-              LOADING 
-            </h1>
+          <div ref={ref} className={styles.spinnerBox}>
+          <div className={styles.spinner}>
+            <span className={styles.spinnerInner1}></span>
+            <span className={styles.spinnerInner2}></span>
+            <span className={styles.spinnerInner3}></span>
+          </div>
           </div>
         </div>
       )}
@@ -121,4 +123,4 @@ function Woman() {
   );
 }
 
-export default Woman;
+export default Necklaces;
