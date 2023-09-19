@@ -112,9 +112,9 @@ function Navbar() {
                         </Link>
                         {isActive && (
                             <div className={styles.navLanguageBtn}>
-                                <button className={styles.languageBtn} onClick={handleEngClick}>ENG</button>
+                                <button className={`${styles.languageBtn} ${currentLanguage === 'ENG' ? styles.active : ''}`} onClick={handleEngClick}>ENG</button>
                                 <div className={styles.line}>|</div>
-                                <button className={styles.languageBtn} onClick={handleFrClick}>FR</button>
+                                <button className={`${styles.languageBtn} ${currentLanguage === 'FR' ? styles.active : ''}`} onClick={handleFrClick}>FR</button>
                             </div>
                         )}
                     </nav>
