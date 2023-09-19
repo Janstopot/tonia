@@ -4,6 +4,7 @@
   overflow: hidden;
   padding-bottom: 2rem;
   background-color: $black;
+  min-height: 100vh;
 
   .box {
     display: grid;

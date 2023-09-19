@@ -13,7 +13,6 @@ import paris10 from "@/assets/images/exhibitions/paris/paris10.png"
 import paris11 from "@/assets/images/exhibitions/paris/paris11.png"
 import paris12 from "@/assets/images/exhibitions/paris/paris12.png"
 
-import stlouis1 from "@/assets/images/exhibitions/stlouis/stlouis1.jpg"
 import stlouis2 from "@/assets/images/exhibitions/stlouis/stlouis2.png"
 import stlouis3 from "@/assets/images/exhibitions/stlouis/stlouis3.png"
 import stlouis4 from "@/assets/images/exhibitions/stlouis/stlouis4.png"
@@ -148,11 +147,6 @@ const galleryData: Gallery[] = [
     image: paris12,
     name: "paris12",
     place: "paris"
-  },
-  {
-    image: stlouis1,
-    name: "stlouis1",
-    place: "stlouis"
   },
   {
     image: stlouis2,
