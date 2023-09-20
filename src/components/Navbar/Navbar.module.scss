@@ -30,6 +30,10 @@
     min-height: 5rem;
   }
 
+  @include responsive("xlMb") {
+    min-height: 7rem;
+  }
+
   .logoImage,
   .searchImage {
     width: auto;
@@ -128,6 +132,10 @@
 
       @include responsive("xs") {
         font-size: 0.7rem;
+      }
+
+      @include responsive("xlMb") {
+        font-size: 1.1rem;
       }
     }
 
