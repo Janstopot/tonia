@@ -249,11 +249,6 @@
   background-color: #2e2d2d;
   filter: grayscale(0);
 
-  &:hover {
-    transform: scale(1.1);
-    filter: grayscale(50%);
-  }
-
   img {
     max-height: 90%;
     object-fit: cover;
