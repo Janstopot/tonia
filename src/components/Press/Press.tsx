@@ -1,18 +1,26 @@
 import React from "react";
 import styles from "./Press.module.scss";
 import Link from "next/link";
-import {useCollectionData} from "react-firebase-hooks/firestore";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 import { collection, getFirestore } from "firebase/firestore";
 import { press } from "@/assets/interfaces";
 
+import { BeatLoader } from "react-spinners"
+
 
 function Press() {
-  const [value, loading, error] = useCollectionData(collection(getFirestore(), "press"),{});
+  const [value, loading, error] = useCollectionData(collection(getFirestore(), "press"), {});
   const pressArray: press[] = value as press[];
 
   if (loading) {
     // Render a loading indicator or a message while data is being fetched
-    return <div>Loading...</div>;
+
+
+    return (
+      <div className={styles.loaderContainer}>
+        <BeatLoader color="#000000" loading={loading} size={30} />
+      </div>
+    )
   }
 
   if (error) {
@@ -38,9 +46,8 @@ function Press() {
           {pressArray!.map((press, key) => (
             <Link
               key={key}
-              className={`${styles.exposition} ${
-                key % 2 === 0 ? styles.black : styles.white
-              }`}
+              className={`${styles.exposition} ${key % 2 === 0 ? styles.black : styles.white
+                }`}
               href={press.link}
               rel="noopener noreferrer"
               target="_blank"
