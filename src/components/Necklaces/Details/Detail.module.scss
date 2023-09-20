@@ -62,11 +62,10 @@
   }
 
   @include responsive("xlMb") {
-    right: 1rem;
+    right: 0.9rem;
   }
 
   @include responsive("mdMb") {
-    right: 1rem;
   }
 
   @include responsive("smMb") {
@@ -87,11 +86,10 @@
   }
 
   @include responsive("xlMb") {
-    left: 1rem;
+    left: 0.9rem;
   }
 
   @include responsive("mdMb") {
-    left: 1rem;
   }
 
   @include responsive("smMb") {
