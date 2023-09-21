@@ -68,6 +68,7 @@ function Detail(props: any) {
             <div className={styles.descriptionBox}>
               <div className={styles.name}>{data.title}</div>
               <div className={styles.description}>{currentLanguage === 'ENG' ? data.eng : data.fr}</div>
+              <div className={styles.copyright}>© {data.copyright}</div>
             </div>
           </div>
           <button

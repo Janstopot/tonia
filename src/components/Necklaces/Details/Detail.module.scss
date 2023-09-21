@@ -317,6 +317,43 @@
   @include responsive("smMb") {
     width: 28rem;
   }
+
+  .copyright {
+    display: flex;
+    margin-top: 1.5rem;
+    font-size: 2rem;
+
+    @include responsive("laptop") {
+      font-size: 1.8rem;
+    }
+
+    @include responsive("md") {
+      font-size: 1.6rem;
+    }
+
+    @include responsive("sm") {
+      font-size: 1.3rem;
+    }
+
+    @include responsive("xs") {
+      font-size: 1rem;
+    }
+
+    @include responsive("xlMb") {
+      justify-content: center;
+      margin-top: 0;
+      padding: 2rem;
+      font-size: 1.4rem;
+    }
+
+    @include responsive("mdMb") {
+      font-size: 1.3rem;
+    }
+
+    @include responsive("smMb") {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 .name {
@@ -350,7 +387,7 @@
 
   @include responsive("laptop") {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
   }
 
   @include responsive("md") {
@@ -368,7 +405,6 @@
   }
 
   @include responsive("xlMb") {
-    margin-bottom: 2rem;
     font-size: 1.5rem;
     padding: 1rem;
   }
