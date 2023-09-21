@@ -2,29 +2,24 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Detail.module.scss";
 import Image from "next/image";
 import ImageDetail from "../ImageDetails/ImageDetail";
-import arrow from "@/assets/images/arrow.png";
 import { useLanguage } from "@/hooks/LanguageContext";
 
 function Detail(props: any) {
-  const { currentLanguage, handleEngClick, handleFrClick } = useLanguage();
-
-  const { showComponent, data, increaseIndex, decreaseIndex, index, listLength } = props;
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [imageClass, setImageClass] = useState("tall")
-
   const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
+
+  const { currentLanguage, handleEngClick, handleFrClick } = useLanguage();
+  const { showComponent, data, increaseIndex, decreaseIndex, index, listLength } = props;
 
   useEffect(() => {
     //getImageDimensions();
-    console.log("mounting detail")
-
     window.scrollTo({
       top: 0,
     })
   }, [data])
 
   async function getImageDimensions() {
-    console.log("joder")
     try {
       const response = await fetch(data.image, { method: 'HEAD' });
       if (response.ok) {
@@ -36,7 +31,6 @@ function Detail(props: any) {
           const height = parseInt(heightHeader, 10);
           setImageDimensions({ width, height });
         }
-        console.log(imageDimensions)
       }
     } catch (error) {
       console.error('Error fetching image dimensions:', error);

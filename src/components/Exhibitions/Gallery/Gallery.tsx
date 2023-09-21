@@ -53,9 +53,6 @@ function Gallery({ place }: GalleryProps) {
     };
   }, []);
 
-  console.log('Place:', place);
-  console.log('Filtered Gallery Data:', filteredGalleryData);
-
   return (
     <>
       <div className={styles.main}>
