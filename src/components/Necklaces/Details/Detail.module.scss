@@ -242,10 +242,11 @@
   border: none;
   background-color: $background;
   filter: grayscale(0);
+  cursor: pointer;
 
   img {
     max-height: 90%;
-    object-fit: contain;  //object-fit: cover;
+    object-fit: contain; //object-fit: cover;
   }
 
   @include responsive("laptop") {

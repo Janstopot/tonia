@@ -15,10 +15,6 @@ function ImageDetail(props: any) {
       <Image
         width={500}
         height={500}
-        style={{
-          maxWidth: '100%',
-          height: 'auto',
-        }}
         className={styles.image}
         src={image}
         alt="image"
