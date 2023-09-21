@@ -175,7 +175,7 @@
       margin: 5rem 0 5rem 0;
 
       .background-image {
-        width: 25.3vh;
+        width: 19.5rem;
         height: 30rem;
         object-fit: cover;
         opacity: 0.3;
@@ -186,15 +186,17 @@
 
         @include responsive("xlMb") {
           height: 10rem;
-          width: 13vh;
+          width: 13.5vh;
         }
 
         @include responsive("mdMb") {
           height: 9rem;
+          width: 10rem;
         }
 
         @include responsive("smMb") {
           height: 8rem;
+          width: 6.8rem;
         }
       }
 
@@ -218,6 +220,7 @@
 
         @include responsive("smMb") {
           height: 8rem;
+          grid-template-columns: repeat(7, 6.8rem);
         }
 
         .text {
