@@ -8,17 +8,19 @@ import { Necklace } from "@/assets/interfaces";
 import necklaceData2 from "./necklaceData";
 import Detail from "./Details/Detail";
 import { useInView } from 'react-intersection-observer';
+import { BeatLoader } from "react-spinners"
 
 function Necklaces() {
   const [initialLoad, setInitialLoad] = useState(true);
+  const [loading, setLoading] = useState(true); // Add a loading state
   const { ref, inView, entry } = useInView({
     /* Optional options */
     threshold: 1,
     //rootMargin: '15px 0px 0px 0px',
-    trackVisibility: true, 
+    trackVisibility: true,
     delay: 500,
-    onChange : (inView)=> {
-      if(inView && !initialLoad) nextPage()
+    onChange: (inView) => {
+      if (inView && !initialLoad) nextPage()
     }
   });
 
@@ -27,13 +29,11 @@ function Necklaces() {
   const [lastDoc, setLastDoc] = useState(null); // último collar de la lista
 
   useEffect(() => {
-    console.log("MOUNTINGGG")
     fetchData();
   }, []);
 
 
   const fetchData = async () => {
-    console.error("FETCHING DATA")
     try {
       const q = query(
         collection(getFirestore(), "necklaces"),
@@ -46,10 +46,8 @@ function Necklaces() {
       const data: any[] = [];
 
       querySnapshot.forEach((doc) => {
-        console.log(doc.data().title);
         data.push({ doc, ...doc.data() });
       });
-      console.log(data);
 
       // Append newly fetched data to the existing necklaceData
       setNecklaceData((prevData) => [...prevData, ...data]);
@@ -60,6 +58,7 @@ function Necklaces() {
       }
       setPageSize(3); // Setea el numero de elementos despúes de la primera carga
       setInitialLoad(false);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching data: ", error);
     }
@@ -82,7 +81,7 @@ function Necklaces() {
 
   const increaseIndex: any = () => {
     if (index < necklaceData.length - 1) {
-      setIndex((prevIndex) => prevIndex +1);
+      setIndex((prevIndex) => prevIndex + 1);
       setCurrentNecklace(necklaceData[index + 1]);
     }
   };
@@ -96,7 +95,12 @@ function Necklaces() {
 
   return (
     <>
-      {!showDetails && (
+      {loading && (
+        <div className={styles.loaderContainer}>
+          <BeatLoader color="#ffffff" loading={loading} size={30} />
+        </div>
+      )}
+      {!loading && !showDetails && (
         <div className={styles.main}>
           <div className={styles.box}>
             {necklaceData.map((necklace, index) => (
@@ -107,17 +111,17 @@ function Necklaces() {
             ))}
           </div>
           <div ref={ref} className={styles.spinnerBox}>
-          <div className={styles.spinner}>
-            <span className={styles.spinnerInner1}></span>
-            <span className={styles.spinnerInner2}></span>
-            <span className={styles.spinnerInner3}></span>
-          </div>
+            <div className={styles.spinner}>
+              <span className={styles.spinnerInner1}></span>
+              <span className={styles.spinnerInner2}></span>
+              <span className={styles.spinnerInner3}></span>
+            </div>
           </div>
         </div>
       )}
 
-      {showDetails && (
-        <Detail showComponent = {toggleViewDetails} data={currentNecklace} increaseIndex={increaseIndex} decreaseIndex={decreaseIndex} index={index} listLength={necklaceData.length}  />
+      {!loading && showDetails && (
+        <Detail showComponent={toggleViewDetails} data={currentNecklace} increaseIndex={increaseIndex} decreaseIndex={decreaseIndex} index={index} listLength={necklaceData.length} />
       )}
     </>
   );
