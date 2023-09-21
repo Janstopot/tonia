@@ -25,11 +25,15 @@ function InformationWrapper() {
 
 const Information: React.FC<ExhibitionProps> = ({ exhibition, place }) => {
 
+    const defaultPlace = 'paris';
+    const minImagesToShow = 7;
     const galleryLink = `/gallery?exhibition=${exhibition.place}&place=${place}`;
 
     const { currentLanguage } = useLanguage();
 
-    console.log(galleryLink)
+    const imagesForCurrentPlace = backgroundImages[place || defaultPlace] || [];
+    const showParisGallery = imagesForCurrentPlace.length < minImagesToShow;
+
     return (
         <div className={styles.main}>
             <div className={styles.container}>
@@ -50,14 +54,23 @@ const Information: React.FC<ExhibitionProps> = ({ exhibition, place }) => {
                     <Link href={galleryLink}>
                         <div className={styles.background}>
                             <div className={styles['background-wrapper']}>
-                                {backgroundImages.paris.slice(0, 7).map((image, index) => (
-                                    <img
-                                        key={index}
-                                        className={styles['background-image']}
-                                        src={image.src}
-                                        alt={`Background Image ${index}`}
-                                    />
-                                ))}
+                                {showParisGallery
+                                    ? backgroundImages.paris.slice(0, minImagesToShow).map((image, index) => (
+                                        <img
+                                            key={index}
+                                            className={styles['background-image']}
+                                            src={image.src}
+                                            alt={`Background Image ${index}`}
+                                        />
+                                    ))
+                                    : imagesForCurrentPlace.slice(0, minImagesToShow).map((image, index) => (
+                                        <img
+                                            key={index}
+                                            className={styles['background-image']}
+                                            src={image.src}
+                                            alt={`Background Image ${index}`}
+                                        />
+                                    ))}
                                 <div className={styles.text}>GALLERY</div>
                             </div>
                         </div>

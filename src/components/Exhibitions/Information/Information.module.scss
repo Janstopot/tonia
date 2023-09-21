@@ -175,7 +175,7 @@
       margin: 5rem 0 5rem 0;
 
       .background-image {
-        width: 30rem;
+        width: 25.3vh;
         height: 30rem;
         object-fit: cover;
         opacity: 0.3;
@@ -186,6 +186,7 @@
 
         @include responsive("xlMb") {
           height: 10rem;
+          width: 13vh;
         }
 
         @include responsive("mdMb") {
@@ -199,7 +200,7 @@
 
       .background-wrapper {
         display: grid;
-        grid-template-columns: repeat(7, 30rem);
+        grid-template-columns: repeat(7, 19.5rem);
         justify-content: center;
         align-items: center;
         height: 30rem;
@@ -208,6 +209,7 @@
 
         @include responsive("xlMb") {
           height: 10rem;
+          grid-template-columns: repeat(7, 10rem);
         }
 
         @include responsive("mdMb") {

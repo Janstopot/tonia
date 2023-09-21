@@ -1,17 +1,19 @@
 import { StaticImageData } from "next/image";
 
 import paris1 from "@/assets/images/exhibitions/paris/paris1.png"
-import paris2 from "@/assets/images/exhibitions/paris/paris2.png"
-import paris3 from "@/assets/images/exhibitions/paris/paris3.png"
-import paris4 from "@/assets/images/exhibitions/paris/paris4.png"
-import paris5 from "@/assets/images/exhibitions/paris/paris5.png"
-import paris6 from "@/assets/images/exhibitions/paris/paris6.png"
-import paris7 from "@/assets/images/exhibitions/paris/paris7.png"
-import paris8 from "@/assets/images/exhibitions/paris/paris8.png"
-import paris9 from "@/assets/images/exhibitions/paris/paris9.png"
-import paris10 from "@/assets/images/exhibitions/paris/paris10.png"
-import paris11 from "@/assets/images/exhibitions/paris/paris11.png"
-import paris12 from "@/assets/images/exhibitions/paris/paris12.png"
+import paris2 from "@/assets/images/exhibitions/paris/paris2.jpg"
+import paris3 from "@/assets/images/exhibitions/paris/paris3.jpg"
+import paris4 from "@/assets/images/exhibitions/paris/paris4.jpg"
+import paris5 from "@/assets/images/exhibitions/paris/paris5.jpg"
+import paris6 from "@/assets/images/exhibitions/paris/paris6.jpg"
+import paris7 from "@/assets/images/exhibitions/paris/paris7.jpg"
+import paris8 from "@/assets/images/exhibitions/paris/paris8.jpg"
+import paris9 from "@/assets/images/exhibitions/paris/paris9.jpg"
+import paris10 from "@/assets/images/exhibitions/paris/paris10.jpg"
+import paris11 from "@/assets/images/exhibitions/paris/paris11.jpg"
+import paris12 from "@/assets/images/exhibitions/paris/paris12.jpg"
+import paris13 from "@/assets/images/exhibitions/paris/paris13.jpg"
+import paris14 from "@/assets/images/exhibitions/paris/paris14.jpg"
 
 import stlouis2 from "@/assets/images/exhibitions/stlouis/stlouis2.png"
 import stlouis3 from "@/assets/images/exhibitions/stlouis/stlouis3.png"
@@ -145,6 +147,16 @@ const galleryData: Gallery[] = [
   },
   {
     image: paris12,
+    name: "paris12",
+    place: "paris"
+  },
+  {
+    image: paris13,
+    name: "paris13",
+    place: "paris"
+  },
+  {
+    image: paris14,
     name: "paris12",
     place: "paris"
   },
