@@ -37,11 +37,11 @@
   .logoImage,
   .searchImage {
     width: auto;
-    height: 4rem;
+    height: 4.5rem;
     transition: height 0.3s;
 
     @include responsive("md") {
-      height: 3rem;
+      height: 3.5rem;
     }
 
     @include responsive("sm") {
@@ -49,7 +49,7 @@
     }
 
     @include responsive("xs") {
-      height: 1.8rem;
+      height: 3rem;
     }
   }
 
