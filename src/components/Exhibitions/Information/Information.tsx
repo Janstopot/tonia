@@ -53,7 +53,7 @@ const Information: React.FC<ExhibitionProps> = ({ exhibition, place }) => {
                 <div className={styles.stickyBackgroundGallery}>
                     <Link href={galleryLink}>
                         <div className={styles.background}>
-                            <div className={styles['background-wrapper']}>
+                            {!exhibition.video ? <div className={styles['background-wrapper']}>
                                 {showParisGallery
                                     ? backgroundImages.paris.slice(0, minImagesToShow).map((image, index) => (
                                         <img
@@ -72,7 +72,8 @@ const Information: React.FC<ExhibitionProps> = ({ exhibition, place }) => {
                                         />
                                     ))}
                                 <div className={styles.text}>GALLERY</div>
-                            </div>
+                            </div> : <iframe width="420" height="315"src={exhibition.video}></iframe>
+                            }
                         </div>
                     </Link>
                 </div>

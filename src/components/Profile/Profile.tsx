@@ -80,6 +80,8 @@ function Profile() {
                                     {descriptionText[currentLanguage as Language].texts.map((text, index) => (
                                         <p key={index}>{text}</p>
                                     ))}
+                                    <iframe  height="315"src="https://www.youtube.com/embed/oURvwjVlHQc"></iframe>
+                                    <iframe  height="315"src="https://www.youtube.com/embed/dazr9V75t7Q"></iframe>
                                 </>
                             )}
 

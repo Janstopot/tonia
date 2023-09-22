@@ -7,6 +7,7 @@ export interface Exhibition {
     leftTextFr: string;
     rightTextFr: string;
     place: string;
+    video?: string;
 }
 
 const exhibitionData: Record<string, Exhibition> = {
@@ -39,6 +40,7 @@ const exhibitionData: Record<string, Exhibition> = {
         leftTextFr: 'Ayant vécu et travaillé comme épidémiologiste dans plusieurs pays africains, ma passion m’a amené à visiter certains des marchés les plus éloignés et des antiquaires pour trouver des perles et construire ma collection. Comme les perles proviennent de ma collection personnelle, mes colliers sont souvent uniques ou fabriqués en édition limitée. J’ai imaginé et conçu ces créations contemporaines inspirées de perles africaines parfois anciennes.',
         rightTextFr: 'Certaines perles sont encore utilisées aujourd’hui dans les rituels, et j’ai documenté beaucoup de ces fonctions. J’ai choisi d’exposer mes créations à la Sullivan Gallery, un atelier de vitrail, car mon travail est comme un vitrail, ce sont des fragments d’histoire, de patrimoine culturel, réunis par la conception d’un collier. Porter un collier créé par moi est un voyage dans le temps. Tout à coup, on met une partie de l’histoire de l’Afrique, de son patrimoine.',
         place: 'neworleans',
+        video : 'https://www.youtube.com/embed/kU0zuwq5qQ4'
     },
     santlouis2021: {
         title: 'ST LOUIS, USA 2021',
@@ -49,6 +51,7 @@ const exhibitionData: Record<string, Exhibition> = {
         leftTextFr: 'Intersect Arts Gallery présente 117 œuvres de 44 artistes qui explorent le phénomène du rituel. Du sacré au mondain nous vous invitons à des contemplations de rituels qui peuvent être personnels ou corporatifs, anciens ou contemporains, organisés ou complètement de l’invention de l’artiste, spirituels, religieux, politiques ou de la vie quotidienne. Vous apercevrez des rituels qui font référence à des idées de guérison, de connexion, de lamentation, de promesse et de protection. Vous verrez des rituels de repentance, de résistance et de routine. Les rituels semblent superflus à bien des égards. Ils ne sont pas nécessairement nécessaires. Vous pouvez déjeuner sans cérémonie et cela nourrira votre corps. Les rituels peuvent être pratiqués avec un haut degré d’intentionnalité, ou ils peuvent être absorbés dans la vie quotidienne par cœur, perpétués à partir des traditions des générations passées. Vous avez peut-être des rituels si enracinés en vous dès la naissance que vous les reconnaissez à peine comme étant séparés de votre ADN.',
         rightTextFr: 'Vous avez peut-être développé de nouveaux rituels pendant cette période de Covid.  Vous pouvez aimer vos rituels, vous pouvez détester certains de vos rituels, vous pouvez rouler vos yeux à certaines formes de ritualisation par d’autres. Ces choses que nous faisons, ces rituels, avec cérémonie et répétition, ce ne sont pas seulement des habitudes. Les rituels sont l’embellissement de la nécessité, l’âme de pourquoi nous faisons ce que nous faisons. Ils sont la distillation d’un univers d’idées complexes et expansives qui dépassent souvent la compréhension en une structure tangible et réalisable de gestes, de mots et d’objets. Non seulement ils nourrissent notre corps, mais ils sont vitaux pour nourrir notre esprit et notre âme. Notre prospérité dépend d’eux, que nous en soyons conscients ou non.',
         place: 'stlouis',
+        video : 'https://www.youtube.com/embed/zGXJlKmf8Js'
     },
     provence2020: {
         title: 'SALON DE PROVENCE 2020',

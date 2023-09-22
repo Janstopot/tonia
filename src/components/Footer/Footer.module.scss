@@ -1,6 +1,7 @@
 @import "src/assets/scss/abstracts/_variables";
 
 .container {
+  position: sticky;
   display: flex;
   flex-direction: column;
   justify-content: center;
