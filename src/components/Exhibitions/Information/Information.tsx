@@ -72,7 +72,7 @@ const Information: React.FC<ExhibitionProps> = ({ exhibition, place }) => {
                                         />
                                     ))}
                                 <div className={styles.text}>GALLERY</div>
-                            </div> : <iframe width="420" height="315"src={exhibition.video}></iframe>
+                            </div> : <iframe className={styles.video} src={exhibition.video}></iframe>
                             }
                         </div>
                     </Link>

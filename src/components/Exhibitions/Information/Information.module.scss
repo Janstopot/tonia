@@ -272,5 +272,24 @@
         }
       }
     }
+    .video{
+      width:  47rem; 
+      height: 36.5rem;
+      @include responsive("xlMb") {
+        width:  41rem; 
+        height: 30.5rem;
+      }
+
+      @include responsive("mdMb") {
+        width:  37.5rem; 
+        height: 28.5rem;
+      }
+
+      @include responsive("smMb") {
+        width:  33.5rem; 
+        height: 28.5rem;
+      }
+
+    }
   }
 }
