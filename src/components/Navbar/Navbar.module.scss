@@ -119,6 +119,14 @@
       }
     }
 
+    a:hover {
+      color: $gold;
+    }
+
+    a:active {
+      color: $gold;
+    }
+
     .languageBtn {
       border: none;
       background-color: transparent;
@@ -237,7 +245,7 @@
     }
 
     .mobileNav a:hover {
-      color: $background;
+      color: $gold;
     }
   }
 }

@@ -63,6 +63,7 @@ function Contact() {
                 target="_blank">
                 <Image src={facebook} alt="Facebook logo" />
               </Link>
+              <div className={styles.instagramText}>@tonias.necklaces</div>
             </div>
             <form className={styles.form} onSubmit={handleSubmit}>
               <input
