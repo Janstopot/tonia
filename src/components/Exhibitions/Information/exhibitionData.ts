@@ -13,12 +13,12 @@ export interface Exhibition {
 const exhibitionData: Record<string, Exhibition> = {
     gallerium2023: {
         title: 'GALLERIUM ART ONLINE 2023',
-        subtitle: '',
-        location: "",
-        leftTextEng: '',
-        rightTextEng: '',
-        leftTextFr: '',
-        rightTextFr: '',
+        subtitle: "« BELIEVE »",
+        location: "hosted by gallerium.art, 2023",
+        leftTextEng: "One necklace by Tonia 'Masai Rouge', was selected for this international group exhibition. It fitted the theme of the exhibit as it contains some Millefiori beads ",
+        rightTextEng: " that are still used by Sarakhole healers in Senegal in their rituals to heal 'madness' and we all know that believing is certainly part of the healing process.",
+        leftTextFr: "Un collier de Tonia intitulé 'Masai Rouge' a été sélectionné pour cette exposition collective internationale. Il correspondait au thème de l'exposition car il contient des perles Millefiori",
+        rightTextFr: "toujours utilisées par les guérisseurs Sarakhole au Sénégal dans leurs rituels de guérison de la 'folie'. Et nous savons tous que la croyance fait certainement partie du processus de guérison.",
         place: 'gallerium',
     },
     paris2022: {
@@ -66,11 +66,11 @@ const exhibitionData: Record<string, Exhibition> = {
     montpellier2019: {
         title: 'MONTPELLIER 2019',
         subtitle: '« MAGIE DES PERLES D’AFRIQUE »',
-        location: "",
-        leftTextEng: '',
-        rightTextEng: '',
-        leftTextFr: '',
-        rightTextFr: '',
+        location: "Mon Collier chez agnès b. 14 rue Foch, Montpellier.",
+        leftTextEng: "The famous clothes designer and artists' sponsor , agnès b., hosted this exhibit of Tonia's necklaces in her Montpellier store.",
+        rightTextEng: "Many of agnès b.'s clients enjoyed the show and bought necklaces.",
+        leftTextFr: "La célèbre créatrice de mode et mécène d'artistes, agnès b., a accueilli cette exposition des colliers de Tonia dans sa boutique de Montpellier. ",
+        rightTextFr: "De nombreux clients d'agnès b. ont apprécié le spectacle et ont acheté des colliers.",
         place: 'montpellier',
     },
     dakar2018: {
