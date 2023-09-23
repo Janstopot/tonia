@@ -55,7 +55,7 @@ const exhibitionData: Record<string, Exhibition> = {
     },
     provence2020: {
         title: 'SALON DE PROVENCE 2020',
-        subtitle: 'Conférence « FONCTIONS DES PERLES D’AFRIQUE »',
+        subtitle: '« LIBERTÉ »',
         location: "La Cour des Créateurs, Salon de Provence, France",
         leftTextEng: 'Beads give me the freedom to create, to travel in time and space. Beads from Venice, Bohemia, the Indus and other parts of the world… Some beads have marked the history of the slave trade in Africa, they contributed to confiscate their freedom to human beings.',
         rightTextEng: 'They remind me today how expensive and fragile freedom is!',
