@@ -11,14 +11,16 @@ type Language = 'ENG' | 'FR';
 function Profile() {
     const { currentLanguage } = useLanguage();
 
-    const textLanguage: Record<Language, { text1: string; text2: string }> = {
+    const textLanguage: Record<Language, { text1: string; text2: string, text3: string }> = {
         ENG: {
             text1: 'Born in France, moved to Algeria in 1963 then Tonia obtained a Doctorate of Public Health in the USA. Her work in this area has enabled her to practice and live throughout Africa, in countries as diverse as Mali, Zambia, Senegal, Cote d`Ivoire, Rwanda, Mauritania and others.',
-            text2: 'She took advantage of these stays to collect beads from Africa and to document their uses by traditional healers and some animist priests. Now retired, Tonia devotes herself to her passion, the beads of Africa.'
+            text2: 'She took advantage of these stays to collect beads from Africa and to document their uses by traditional healers and some animist priests. Now retired, Tonia devotes herself to her passion, the beads of Africa.',
+            text3: 'Tonia has two hats, she documents the functions of beads (see more below) and she designs necklaces (see the other sections on this site).'
         },
         FR: {
             text1: "Née en France, déménagée en Algérie en 1963, puis Tonia a obtenu un doctorat en santé publique aux États-Unis. Son travail dans ce domaine lui a permis de pratiquer et de vivre dans toute l'Afrique, dans des pays aussi divers que le Mali, la Zambie, le Sénégal, la Côte d'Ivoire, le Rwanda, la Mauritanie, et d'autres.",
-            text2: "Elle a profité de ces séjours pour collecter des perles d'Afrique et documenter leurs utilisations par les guérisseurs traditionnels et certains prêtres animistes. Maintenant à la retraite, Tonia se consacre à sa passion, les perles d'Afrique."
+            text2: "Elle a profité de ces séjours pour collecter des perles d'Afrique et documenter leurs utilisations par les guérisseurs traditionnels et certains prêtres animistes. Maintenant à la retraite, Tonia se consacre à sa passion, les perles d'Afrique.",
+            text3: "Tonia a deux phases, elle documente les fonctions des perles (voir plus bas) et elle crée des colliers (voir les autres sections sur ce site)."
         }
     };
 
@@ -34,6 +36,7 @@ function Profile() {
         ENG: {
             title: "DOCUMENTING THE FUNCTIONS OF AFRICAN BEADS",
             texts: [
+                "✓ Artist Residency with 'La Grande Place' in Porto Novo, Benin to document the uses of beads in the Voodoo rite. December 2023.",
                 "✓ Conference on « Ritual Functions of Venetian Glass Beads in Africa » as part of the program for the yearly ‘Venice Glass Week’, Venice, Italy. September 2020",
                 "✓ Exhibit and conferences on « Powers of African Beads », National Bardo Museum, Museum of Prehistory and Ethnography, Algiers, Algeria, December 2014 to October 2015",
                 "✓ Conferences on ‘Functions of Beads’ at the Senegalese Superior Institute for Arts and Cultures, for Master students specialized in « Cultural Heritage ». Dakar, Senegal. 2010 and 2011",
@@ -44,6 +47,7 @@ function Profile() {
         FR: {
             title: "RECHERCHES DE TONIA SUR LES FONCTIONS DES PERLES D'AFRIQUE",
             texts: [
+                "✓ Résidence d'artiste avec 'La Grande Place' à Porto Novo, Bénin, pour documenter les utilisations des perles dans le rite Vaudou. Décembre 2023.",
                 "✓ Conférence sur « Fonctions Rituelles des Perles de Venise en Afrique » dans le cadre de ‘La Semaine du Verre de Venise’, Venise, Italie, Septembre 2020",
                 "✓ Exposition et conférences sur « Pouvoirs des Perles d'Afrique », Musée National du Bardo, Musée de Préhistoire et d’Ethnographie, Alger, Algérie, Décembre 2014 à Octobre 2015",
                 "✓ Conférences à L’Institut Supérieur des Arts et des Cultures du Sénégal à des étudiants de Master 2 spécialisés en « Patrimoine Culturel ». Dakar, Sénégal. 2010 et 2011",
@@ -56,7 +60,7 @@ function Profile() {
     const titleText: Record<Language, string> = {
         ENG: "MEET THE ARTIST",
         FR: "RENCONTREZ L'ARTISTE",
-      };
+    };
 
     return (
         <>
@@ -69,6 +73,7 @@ function Profile() {
                                 <>
                                     <p>{currentText.text1}</p>
                                     <p>{currentText.text2}</p>
+                                    <p>{currentText.text3}</p>
                                 </>
                             )}
 
@@ -80,8 +85,8 @@ function Profile() {
                                     {descriptionText[currentLanguage as Language].texts.map((text, index) => (
                                         <p key={index}>{text}</p>
                                     ))}
-                                    <iframe  height="315"src="https://www.youtube.com/embed/dazr9V75t7Q"></iframe>
-                                    <iframe  height="315"src="https://www.youtube.com/embed/oURvwjVlHQc"></iframe>
+                                    <iframe height="315" src="https://www.youtube.com/embed/dazr9V75t7Q"></iframe>
+                                    <iframe height="315" src="https://www.youtube.com/embed/oURvwjVlHQc"></iframe>
                                 </>
                             )}
 
