@@ -34,16 +34,16 @@ const exhibitionData: Record<string, Exhibition> = {
     neworleans2022: {
         title: 'NEW ORLEANS 2022',
         subtitle: '« AFRICAN BEADS REMIX »',
-        location: "Sullivan Gallery, 3827 Magazine St., New Orleans, Louisiana",
+        location: "Sullivan Art Gallery, Magazine St., New Orleans, Louisiana",
         leftTextEng: 'Having lived and worked as an epidemiologist in several African countries, my passion brought me to visit some of the most distant markets and antique dealers to find beads and build my collection. As the beads come from my personal collection my necklaces are often unique or made in limited edition. I imagined and designed those contemporary creations inspired by sometimes ancient African beads.',
-        rightTextEng: 'Certain beads are still used today in rituals, and I documented many of those functions. I chose to exhibit my creations at Sullivan Gallery, a stained glass studio, because my work is like stained glass, it is fragments of history, of cultural heritage, brought together by the design of a necklace. To wear a necklace created by me is a trip through time. Suddenly you put on a part of Africa’s history, of its heritage.',
+        rightTextEng: 'Certain beads are still used today in rituals, and I documented many of those functions. To wear a necklace created by me is a trip through time. Suddenly you put on a part of Africa’s history, of its heritage.',
         leftTextFr: 'Ayant vécu et travaillé comme épidémiologiste dans plusieurs pays africains, ma passion m’a amené à visiter certains des marchés les plus éloignés et des antiquaires pour trouver des perles et construire ma collection. Comme les perles proviennent de ma collection personnelle, mes colliers sont souvent uniques ou fabriqués en édition limitée. J’ai imaginé et conçu ces créations contemporaines inspirées de perles africaines parfois anciennes.',
         rightTextFr: 'Certaines perles sont encore utilisées aujourd’hui dans les rituels, et j’ai documenté beaucoup de ces fonctions. J’ai choisi d’exposer mes créations à la Sullivan Gallery, un atelier de vitrail, car mon travail est comme un vitrail, ce sont des fragments d’histoire, de patrimoine culturel, réunis par la conception d’un collier. Porter un collier créé par moi est un voyage dans le temps. Tout à coup, on met une partie de l’histoire de l’Afrique, de son patrimoine.',
         place: 'neworleans',
         video : 'https://www.youtube.com/embed/kU0zuwq5qQ4'
     },
     santlouis2021: {
-        title: 'ST LOUIS, USA 2021',
+        title: 'ST LOUIS, 2021',
         subtitle: '« RITUALS »',
         location: "Intersect Art Gallery, St Louis, Missouri, USA",
         leftTextEng: 'Intersect Arts Gallery features 117 works by 44 artists that explore the phenomenon of ritual. From the sacred to the mundane we invite you into contemplations of rituals that may be personal or corporate, ancient or contemporary, organized or completely of the artist’s invention, spiritual, religious, political or of daily life. You will glimpse rituals that reference ideas of healing, connection, lament, promise, and protection. You will see rituals of repentance, resistance, and routine. Rituals feel superfluous in many ways. They are not necessarily necessary. You can eat lunch without ceremony, and it will still nourish your body.  Rituals can be practiced with a high degree of intentionality, or they may be absorbed into daily life by rote, carried on from the traditions of past generations. You may have rituals so ingrained in you from birth that you hardly recognize them as separate from your DNA.',
