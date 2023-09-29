@@ -3,14 +3,14 @@ import styles from "./Press.module.scss";
 import Link from "next/link";
 import { useCollectionData, useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { collection, getFirestore } from "firebase/firestore";
-import { press } from "@/assets/interfaces";
+import { Press } from "@/assets/interfaces";
 
 import { BeatLoader } from "react-spinners"
 
 
 function Press() {
   const [value, loading, error] = useCollectionDataOnce(collection(getFirestore(), "press"), {});
-  const pressArray: press[] = value as press[];
+  const pressArray: Press[] = value as Press[];
 
   if (loading) {
     // Render a loading indicator or a message while data is being fetched

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import styles from "./Search.module.scss";
 import { CSSTransition } from "react-transition-group";
 import { collection, getDocs, getFirestore, query } from "firebase/firestore";
-import { Necklace } from "@/assets/interfaces";
+import { Necklace, Press } from "@/assets/interfaces";
+import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
+import { BeatLoader } from "react-spinners";
 
 function Search(props: any) {
   const [currentMenu, setCurrentMenu] = useState("main");
@@ -10,106 +12,118 @@ function Search(props: any) {
 
   function calcHeight(el : HTMLElement){
     setMenuHeight(el.offsetHeight)
-    console.error(menuHeight)
   }
 
-  const fetchData = async (cll : string) => {
-    try {
-      const q = query(collection(getFirestore(), cll));
+  const transitionProps1 = {
+    in: currentMenu === "main",
+    timeout: 500,
+    onEnter: calcHeight,
+    unmountOnExit: true,
+    classNames: {
+      enter: "Search_transitionEnter__r865V",
+      enterActive: "Search_transitionEnterActive__cQu4h",
+      exit: "Search_transitionExit__H42QD",
+      exitActive: "Search_transitionExitActive__B4l51",
+    },
+  };
 
-      const querySnapshot = await getDocs(q);
-      const data: Necklace[] = [];
-
-      querySnapshot.forEach((doc: any) => {
-        data.push({ ...doc.data() });
-      });
-      console.log(data);
-    } catch (error) {
-      console.error("Error fetching data: ", error);
-    }
+  const transitionProps2 = {
+    in: currentMenu != "main",
+    timeout: 500,
+    onEnter: calcHeight,
+    unmountOnExit: true,
+    classNames: {
+      enter: "Search_submenuTransitionEnter__OTSx6",
+      enterActive: "Search_subMenuTransitionEnterActive__M5nwb",
+      exit: "Search_subMenuTransitionExit__Mkyj_",
+      exitActive: "Search_subMenuTransitionExitActive__Z5B9p",
+    },
   };
 
   return (
   
 
-      <div className={`${styles.container} ${!props.mount ? styles.searchMenuHidden : styles.searchMenuShow}`} style={{height : menuHeight}}>
+    <div className={`${styles.container} ${!props.mount ? styles.searchMenuHidden : styles.searchMenuShow}`} style={{height : menuHeight}}>
 
-      <CSSTransition
-        in={currentMenu === "main"}
-        timeout={500}
-        onEnter={calcHeight}
-        unmountOnExit
-        classNames={{
-          enter: "Search_transitionEnter__r865V",
-          enterActive: "Search_transitionEnterActive__cQu4h",
-          exit: "Search_transitionExit__H42QD",
-          exitActive: "Search_transitionExitActive__B4l51",
-        }}
-      >
-        
-        <div key={"1"} className={styles.box} >
+      {/*PRIMER MENU*/}
+      <CSSTransition {...transitionProps1}>
+        <div className={styles.box} >
           <li onClick={() => {setCurrentMenu("necklaces")}}>NECKLACES</li>
-          <li onClick={() => {setCurrentMenu("necklaces")}}>EXHIBITIONS</li>
-          <li onClick={() => {setCurrentMenu("necklaces")}}>PRESS</li>
+          <li onClick={() => {setCurrentMenu("exhibitions")}}>EXHIBITIONS</li>
+          <li onClick={() => {setCurrentMenu("press")}}>PRESS</li>
         </div>
       </CSSTransition>
 
 
 
-      
-      <CSSTransition
-        in={ currentMenu === "necklaces"}
-        timeout={500}
-        onEnter={calcHeight}
-        unmountOnExit
-        classNames={{
-          enter: "Search_submenuTransitionEnter__OTSx6",
-          enterActive: "Search_subMenuTransitionEnterActive__M5nwb",
-          exit: "Search_subMenuTransitionExit__Mkyj_",
-          exitActive: "Search_subMenuTransitionExitActive__Z5B9p",
-        }}
-      >
-
-        
-        <div key={"2"} className={styles.box}>
-          <button className={styles.navButton} onClick={()=> setCurrentMenu("main")}>
-            <div>&raquo;</div>
-          </button>
-          <li>asdas</li>
-          <li>asdasd</li>
-          <li>asdasd</li>
-          <li>asdas</li>
-          <li>asdasd</li>
-          <li>asdasd</li>
-          <li>asdas</li>
-          <li>asdasd</li>
-          <li>asdasd</li>
+      {/*SEGUNDO MENU*/}
+      <CSSTransition {...transitionProps2}>
+        <div className={styles.box}>
+          <button className={styles.navButton} onClick={()=> setCurrentMenu("main")}><div>&raquo;</div></button>
+          <ShowData/>
         </div>
       </CSSTransition>
 
       
     </div>
-
-
-      
-
   );
 
+
+  function ShowData() {
+    switch (currentMenu) {
+      case "necklaces":
+        return (<Necklaces/>)
+      case "exhibitions":
+        return (<Exhibitions/>)
+      case "press":
+        return (<Press/>)        
+    }
+  }
+
   function Necklaces() {
+    const [value, loading, error] = useCollectionDataOnce(collection(getFirestore(), "necklaces"), {});
+    const array: Necklace[] = value as Necklace[];
+    if (loading) return (<li><BeatLoader color="#ffffff" loading={loading} size={50} /></li>)
+    console.log(array)
+  
     return (
-      <li onClick={() => {setCurrentMenu("necklaces")}}>NECKLACES</li>
+      <div>
+        <li>NECKLACES</li>
+          {array.map((necklace, key) => (
+            <li key={key}>{necklace.title}</li>
+          ))}
+      </div>
     );
   }
 
   function Exhibitions() {
     return (
-      <li onClick={() => {setCurrentMenu("exhibitions")}}>EXHIBITIONS</li>
+      <div>
+        <li>EXHIBITION</li>
+        <li>EXHIBITION</li>
+        <li>EXHIBITION</li>
+        <li>EXHIBITION</li>
+        <li>EXHIBITION</li>
+        <li>EXHIBITION</li>
+        <li>EXHIBITION</li>
+    </div>
     );
   }
 
   function Press() {
+    const [value, loading, error] = useCollectionDataOnce(collection(getFirestore(), "press"), {});
+    if (loading) return (<li><BeatLoader color="#777777" loading={loading} size={50} /></li>)
+
+    const array: Press[] = value as Press[];
+    console.log(array)
+  
     return (
-      <li onClick={() => {setCurrentMenu("press")}}>PRESS</li>
+      <div>
+        <li>PRESS</li>
+          {array.map((press, key) => (
+            <li key={key}>{press.text}</li>
+          ))}
+      </div>
     );
   }
 }

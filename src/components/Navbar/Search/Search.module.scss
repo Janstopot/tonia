@@ -6,11 +6,14 @@
   overflow: hidden;
   background-color: $black;
 
+
   .box {
     position: absolute;
     width: 100%;
-    text-align: center;
+    //text-align: center;
+    //overflow: scroll;
     li {
+      cursor: pointer;
       color: $white;
       list-style-type: none;
       font-size: 3rem;
@@ -32,11 +35,16 @@
 /*ABRIR MENU*/
 
 .searchMenuHidden {
+  border: solid goldenrod;
+  border-width: 0px 0px 0px 0px;
   max-height: 0rem;
   transition: all 500ms ease;
+
 }
 
 .searchMenuShow {
+  border: solid white;
+  border-width: 0px 0px 1px 1px;
   max-height: 70rem;
   transition: all 500ms ease;
 }
@@ -50,7 +58,6 @@
   transform: translateX(0%);
   transition: all 500ms;
 }
-
 
 
 .transitionExit {
@@ -74,7 +81,6 @@
   transform: translateX(0%);
   transition: all 500ms;
 }
-
 
 
 .subMenuTransitionExit {

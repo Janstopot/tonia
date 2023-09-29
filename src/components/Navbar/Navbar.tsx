@@ -100,7 +100,7 @@ function Navbar() {
                     </nav>
 
                     <div className={styles.searchContainer}>
-                        <Image onClick={()=> setIsDropdownOpen(!isDropdownOpen)} src={search} alt="search" className={styles.searchImage} />
+                        <Image onClick={()=> setIsDropdownOpen((prevState) => !prevState)} src={search} alt="search" className={styles.searchImage} />
                             <Search  mount={isDropdownOpen} />
                     </div>
 
