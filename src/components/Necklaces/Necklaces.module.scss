@@ -24,6 +24,10 @@
     position: relative;
     cursor: pointer;
 
+    @include responsive("xlMb") {
+      height: 40vh;
+    }
+
     .text {
       position: absolute;
       font-family: $font-raleway;
@@ -31,8 +35,8 @@
       letter-spacing: 0.525rem;
       color: $white;
       opacity: 0;
-      width: 80%;
-      height: 6rem;
+      width: auto;
+      height: auto;
       bottom: 50%;
       left: 50%;
       transform: translate(-50%, 50%) scale(1);
@@ -42,7 +46,7 @@
 
       @include responsive("xlMb") {
         width: auto;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         height: auto;
         padding: 1rem;
         opacity: 1;

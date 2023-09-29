@@ -10,13 +10,15 @@ import logo from '@/assets/images/Logo.png'
 import search from '@/assets/images/Search.png'
 import { useRouter } from 'next/router';
 
+import Search from './Search/Search';
+
 function Navbar() {
     const router = useRouter()
     const [current, setCurrent] = useState(router.pathname);
     const [isActive, setIsActive] = useState(false);
     const { currentLanguage, handleEngClick, handleFrClick } = useLanguage() as { currentLanguage: "ENG" | "FR", handleEngClick: () => void, handleFrClick: () => void };
 
-    
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const handleMenuClick = () => {
         setIsActive((prevIsActive) => !prevIsActive);
@@ -79,12 +81,12 @@ function Navbar() {
                         </Link>
                     </div>
                     <nav className={`${styles.text} ${styles.smallLinks}`}>
-                        <Link href="/" className={current == "/" ? styles.current : ''}>{linkText[currentLanguage].home}</Link>
-                        <Link href="/profile" className={current == "/profile" ? styles.current : ''}>{linkText[currentLanguage].artist}</Link>
-                        <Link href="/necklaces" className={current == "/necklaces" ? styles.current : ''}>{linkText[currentLanguage].necklaces}</Link>
-                        <Link href="/exhibitions" className={current == "/exhibitions" ? styles.current : ''}>{linkText[currentLanguage].exhibitions}</Link>
-                        <Link href="/press" className={current == "/press" ? styles.current : ''}>{linkText[currentLanguage].press}</Link>
-                        <Link href="/contact" className={current == "/contact" ? styles.current : ''}>{linkText[currentLanguage].contact}</Link>
+                   
+                        <Link href="/profile" onClick={()=> setIsDropdownOpen(false)} className={current == "/profile" ? styles.current : ''}>{linkText[currentLanguage].artist}</Link>
+                        <Link href="/necklaces" onClick={()=> setIsDropdownOpen(false)} className={current == "/necklaces" ? styles.current : ''}>{linkText[currentLanguage].necklaces}</Link>
+                        <Link href="/exhibitions" onClick={()=> setIsDropdownOpen(false)} className={current == "/exhibitions" ? styles.current : ''}>{linkText[currentLanguage].exhibitions}</Link>
+                        <Link href="/press" onClick={()=> setIsDropdownOpen(false)} className={current == "/press" ? styles.current : ''}>{linkText[currentLanguage].press}</Link>
+                        <Link href="/contact" onClick={()=> setIsDropdownOpen(false)} className={current == "/contact" ? styles.current : ''}>{linkText[currentLanguage].contact}</Link>
                         {!isActive && !isSmallScreen && (
                             <>
                                 <button className={`${styles.languageBtn} ${currentLanguage === 'ENG' ? styles.active : ''}`} onClick={handleEngClick}>ENG</button>
@@ -93,10 +95,12 @@ function Navbar() {
                             </>
                         )}
                     </nav>
-                    <div className={styles.searchContainer}>
 
-                        <Image src={search} alt="search" className={styles.searchImage} />
+                    <div className={styles.searchContainer}>
+                        <Image onClick={()=> setIsDropdownOpen((prevState) => !prevState)} src={search} alt="search" className={styles.searchImage} />
+                            <Search  mount={isDropdownOpen} />
                     </div>
+
                     <button
                         className={`${styles.hamburger} ${isActive ? styles.isActive : ''}`}
                         onClick={handleMenuClick}

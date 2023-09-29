@@ -6,7 +6,7 @@ export interface Necklace {
     copyright: string;
   }
 
-export interface press {
+export interface Press {
     date: string;
     text: string;
     link: string;
