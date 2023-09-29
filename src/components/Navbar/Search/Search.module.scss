@@ -1,0 +1,89 @@
+.container{
+  position: absolute;
+  width: 40rem;
+  top: 100%;
+  right: 0%;
+  overflow: hidden;
+  background-color: $black;
+
+  .box {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    li {
+      color: $white;
+      list-style-type: none;
+      font-size: 3rem;
+      font-style: normal;
+      padding: 2rem;
+    }
+    .navButton {
+      border: none;
+      cursor: pointer;
+      transform: scaleX(-1) translateY(-30%);
+      background-color: transparent;
+      color: $white;
+      font-size: 7rem;
+    }
+  }
+}
+
+
+/*ABRIR MENU*/
+
+.searchMenuHidden {
+  max-height: 0rem;
+  transition: all 500ms ease;
+}
+
+.searchMenuShow {
+  max-height: 70rem;
+  transition: all 500ms ease;
+}
+
+/*1 . TRANSICIÓN LATERAL*/
+.transitionEnter {
+  transform: translateX(-110%);
+}
+
+.transitionEnterActive {
+  transform: translateX(0%);
+  transition: all 500ms;
+}
+
+
+
+.transitionExit {
+  transform: translateX(0%);
+}
+
+.transitionExitActive {
+  transform: translateX(-110%);
+  transition: all 500ms;
+}
+
+
+
+/*2 . TRANSICIÓN LATERAL*/
+
+.submenuTransitionEnter {
+  transform: translateX(110%);
+}
+
+.subMenuTransitionEnterActive {
+  transform: translateX(0%);
+  transition: all 500ms;
+}
+
+
+
+.subMenuTransitionExit {
+  transform: translateX(0%);
+}
+
+.subMenuTransitionExitActive {
+  transform: translateX(110%);
+  transition: all 500ms ;
+}
+
+
