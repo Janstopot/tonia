@@ -5,6 +5,7 @@ import { collection, getDocs, getFirestore, query } from "firebase/firestore";
 import { Necklace, Press } from "@/assets/interfaces";
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { BeatLoader } from "react-spinners";
+import exhibitionData from "@/components/Exhibitions/Information/exhibitionData";
 
 function Search(props: any) {
   const [currentMenu, setCurrentMenu] = useState("main");
@@ -97,6 +98,7 @@ function Search(props: any) {
   }
 
   function Exhibitions() {
+
     return (
       <div>
         <li>EXHIBITION</li>

@@ -21,6 +21,7 @@ function Navbar() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const handleMenuClick = () => {
+        setIsDropdownOpen(false)
         setIsActive((prevIsActive) => !prevIsActive);
     };
 
