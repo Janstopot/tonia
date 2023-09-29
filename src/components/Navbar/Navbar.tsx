@@ -9,10 +9,7 @@ import { useLanguage } from '@/hooks/LanguageContext';
 import logo from '@/assets/images/Logo.png'
 import search from '@/assets/images/Search.png'
 import { useRouter } from 'next/router';
-import { collection, getDocs, getFirestore, query } from 'firebase/firestore';
-import { Necklace } from '@/assets/interfaces';
 
-import { CSSTransition } from 'react-transition-group';
 import Search from './Search/Search';
 
 function Navbar() {
@@ -84,7 +81,7 @@ function Navbar() {
                         </Link>
                     </div>
                     <nav className={`${styles.text} ${styles.smallLinks}`}>
-                        <Link href="/" onClick={()=> setIsDropdownOpen(false)}  className={current == "/" ? styles.current : ''}>{linkText[currentLanguage].home}</Link>
+                   
                         <Link href="/profile" onClick={()=> setIsDropdownOpen(false)} className={current == "/profile" ? styles.current : ''}>{linkText[currentLanguage].artist}</Link>
                         <Link href="/necklaces" onClick={()=> setIsDropdownOpen(false)} className={current == "/necklaces" ? styles.current : ''}>{linkText[currentLanguage].necklaces}</Link>
                         <Link href="/exhibitions" onClick={()=> setIsDropdownOpen(false)} className={current == "/exhibitions" ? styles.current : ''}>{linkText[currentLanguage].exhibitions}</Link>
