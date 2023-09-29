@@ -30,7 +30,7 @@ function Search(props: any) {
   const transitionProps2 = {
     in: currentMenu != "main",
     timeout: 500,
-    onEnter: calcHeight,
+    onEntered: calcHeight,
     unmountOnExit: true,
     classNames: {
       enter: "Search_submenuTransitionEnter__OTSx6",
