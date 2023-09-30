@@ -7,6 +7,7 @@
   height: 100%; /* Set a specific height for the scrollable container */
   overflow-y: scroll;
   overflow-x: hidden;
+  @include scrollbars(.5em, slategray);
   
 
   @include responsive ("mdMb") {
@@ -22,6 +23,7 @@
     padding-top: 1rem;
     position: absolute;
     width: 100%;
+    
     li {
       cursor: pointer;
       color: $white;
@@ -29,6 +31,9 @@
       font-size: 3rem;
       font-style: normal;
       padding: 2rem;
+      .links{
+        text-decoration: none;
+      }
     }
     .navButton {
       //position: fixed;
@@ -39,8 +44,10 @@
       color: $white;
       font-size: 7rem;
     }
+    
   }
 }
+
 
 
 /*ABRIR MENU*/
@@ -58,6 +65,7 @@
   border-width: 0px 0px 1px 1px;
   max-height: 70rem;
   transition: all 500ms ease;
+  
 }
 
 /*1 . TRANSICIÓN LATERAL*/
@@ -102,5 +110,7 @@
   transform: translateX(110%);
   transition: all 500ms ;
 }
+
+
 
 
