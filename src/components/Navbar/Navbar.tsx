@@ -73,7 +73,7 @@ function Navbar() {
             <div className={styles.container}>
                 <ul className={styles.content}>
                     <div className={styles.logoContainer}>
-                        <Link href="/">
+                        <Link href="/" onClick={()=> setIsDropdownOpen(false)}>
                             <Image
                                 src={logo}
                                 alt="Logo"

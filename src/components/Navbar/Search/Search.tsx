@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Search.module.scss";
 import { CSSTransition } from "react-transition-group";
-import { collection, getDocs, getFirestore, query } from "firebase/firestore";
-import { Necklace, Press } from "@/assets/interfaces";
-import { useCollectionData, useCollectionDataOnce } from "react-firebase-hooks/firestore";
-import { BeatLoader } from "react-spinners";
-import exhibitionData from "@/components/Exhibitions/Information/exhibitionData";
-import Link from "next/link";
+import PressMenu from "./Menus/PressMenu";
+import NecklacesMenu from "./Menus/NecklacesMenu";
 
 function Search(props: any) {
   const [currentMenu, setCurrentMenu] = useState("main");
   const [menuHeight, setMenuHeight] = useState<number>(225);
-  const [dataArray, setDataArray] = useState<any[]>([])
 
   function calcHeight(el : HTMLElement){
     setMenuHeight(el.offsetHeight)
+    console.log(menuHeight)
   }
 
   const transitionProps1 = {
@@ -63,7 +59,9 @@ function Search(props: any) {
       <CSSTransition {...transitionProps2}>
         <div className={styles.box}>
           <button className={styles.navButton} onClick={()=> setCurrentMenu("main")}><div>&raquo;</div></button>
-          <ShowData/>
+          {currentMenu === "necklaces" && <NecklacesMenu calcHeight ={calcHeight} />}
+          {currentMenu === "exhibitions" && <Exhibitions/>}
+          {currentMenu === "press" && <PressMenu calcHeight ={calcHeight}/>}
         </div>
       </CSSTransition>
 
@@ -72,32 +70,6 @@ function Search(props: any) {
   );
 
 
-  function ShowData() {
-    switch (currentMenu) {
-      case "necklaces":
-        return (<Necklaces/>)
-      case "exhibitions":
-        return (<Exhibitions/>)
-      case "press":
-        return (<Press/>)        
-    }
-  }
-
-  function Necklaces() {
-    const [value, loading, error] = useCollectionDataOnce(collection(getFirestore(), "necklaces"), {});
-    const array: Necklace[] = value as Necklace[];
-    if (loading) return (<li><BeatLoader color="#ffffff" loading={loading} size={50} /></li>)
-    console.log(array)
-  
-    return (
-      <div>
-        <li>NECKLACES</li>
-          {array.map((necklace, key) => (
-            <li key={key}>{necklace.title}</li>
-          ))}
-      </div>
-    );
-  }
 
   function Exhibitions() {
 
@@ -110,24 +82,6 @@ function Search(props: any) {
         <li>EXHIBITION</li>
         <li>EXHIBITION</li>
         <li>EXHIBITION</li>
-    </div>
-    );
-  }
-
-  function Press() {
-    const [value, loading, error] = useCollectionDataOnce(collection(getFirestore(), "press"), {});
-    const array: Press[] = value as Press[];
-    if (loading && !value) return (<li><BeatLoader color="#777777" loading={loading} size={50} /></li>)
-    return (
-    <div>
-      <div>
-        <li>PRESS</li>
-        {array.map((press, key) => (
-          <Link className={styles.links} key={key} href={press.link} rel="noopener noreferrer" target="_blank">
-              <li >{press.text}</li>
-          </Link>
-        ))}
-      </div>
     </div>
     );
   }
