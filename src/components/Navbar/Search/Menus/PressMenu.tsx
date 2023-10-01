@@ -51,7 +51,7 @@ function PressMenu(props: any) {
               <button className={styles.backButton} onClick={()=> props.setCurrentMenu("main")}><div>&raquo;</div></button>
               <div>PRESS</div>
           </div>
-          <input className={styles.input} onChange={(event) => setQuery(event.target.value)}/>
+          <input className={styles.input} onChange={(event) => setQuery(event.target.value)} placeholder="Search..."/>
         </div>
             <BeatLoader color="#777777" loading={loading} size={50} />
         </div>
@@ -72,7 +72,7 @@ function PressMenu(props: any) {
             <button className={styles.backButton} onClick={()=> props.setCurrentMenu("main")}><div>&raquo;</div></button>
             <div className={styles.title}>PRESS</div>
           </div>
-          <input className={styles.input} onChange={(event) => setQuery(event.target.value)}/>
+          <input className={styles.input} onChange={(event) => setQuery(event.target.value)} placeholder="Search..."/>
         </div>
 
         <div className={styles.body}>

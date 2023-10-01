@@ -75,7 +75,7 @@ function NecklacesMenu(props : any) {
         <div className={styles.body}>
           {filteredData.map((necklace, key) => (
             <div className={styles.NecklaceCard} key={key}>
-              <div>{necklace.title}</div>
+              <div className={styles.titleNecklace}>{necklace.title}</div>
               <Image className={styles.image} width={75} height={75} src={necklace.image} alt={necklace.title} loading="lazy"></Image>
             </div>
           ))}
