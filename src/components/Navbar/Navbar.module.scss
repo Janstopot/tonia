@@ -39,6 +39,7 @@
     width: auto;
     height: 4.5rem;
     transition: height 0.3s;
+    cursor: pointer;
 
     @include responsive("md") {
       height: 3.5rem;

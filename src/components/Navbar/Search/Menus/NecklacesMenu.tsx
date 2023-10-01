@@ -48,7 +48,7 @@ function NecklacesMenu(props : any) {
             <button className={styles.backButton} onClick={()=> props.setCurrentMenu("main")}><div>&raquo;</div></button>
             <div>NECKLACES</div>
           </div>
-          <input className={styles.input} onChange={(event) => setQuery(event.target.value)}/>
+          <input className={styles.input} onChange={(event) => setQuery(event.target.value)} placeholder="Search..."/>
         </div>
         <BeatLoader color="#777777" loading={loading} size={50} />
         </div>
@@ -69,14 +69,14 @@ function NecklacesMenu(props : any) {
             <button className={styles.backButton} onClick={()=> props.setCurrentMenu("main")}><div>&raquo;</div></button>
             <div className={styles.title}>NECKLACES</div>
           </div>
-          <input className={styles.input} onChange={(event) => setQuery(event.target.value)}/>
+          <input className={styles.input} onChange={(event) => setQuery(event.target.value)} placeholder="Search..."/>
         </div>
 
         <div className={styles.body}>
           {filteredData.map((necklace, key) => (
             <div className={styles.NecklaceCard} key={key}>
               <div>{necklace.title}</div>
-              <Image className={styles.image} width={75} height={75} src={necklace.image} alt={necklace.title}></Image>
+              <Image className={styles.image} width={75} height={75} src={necklace.image} alt={necklace.title} loading="lazy"></Image>
             </div>
           ))}
         </div>
