@@ -1,15 +1,17 @@
+
 import { Necklace } from "@/assets/interfaces";
+import styles from "./Menus.module.scss"
 import { collection, getDocs, getFirestore } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BeatLoader } from "react-spinners";
+import Image from "next/image";
 
 function NecklacesMenu(props : any) {
-  const [query, setQuery] = useState("");
-  const [filteredData, setFilteredData] = useState<Necklace[]>([]);
-  const [data, setData] = useState<Necklace[]>([]);
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [data, setData] = useState<Necklace[]>([]);
+  const [query, setQuery] = useState("");
+  const [filteredData, setFilteredData] = useState<Necklace[]>([]);
 
   useEffect(() => {
     fetchData();
@@ -17,8 +19,11 @@ function NecklacesMenu(props : any) {
 
   useEffect(() => {
     setFilteredData(query === '' ? data : data.filter((necklace) => { return necklace.title.toLowerCase().includes(query.toLowerCase())}));
-    if(document.getElementById('list')) props.calcHeight(document.getElementById('list'))
   }, [query]);
+
+  useEffect(() => {
+    props.calcHeight(document.getElementById("list"));
+  }, [filteredData]);
 
 
   const fetchData = async () => {
@@ -36,24 +41,47 @@ function NecklacesMenu(props : any) {
 
   if (loading) {
     return (
-      <li>
+      <div id="list">
+        <div className={styles.container}>
+                <div className={styles.head}>
+          <div className={styles.subHead}>
+            <button className={styles.backButton} onClick={()=> props.setCurrentMenu("main")}><div>&raquo;</div></button>
+            <div>NECKLACES</div>
+          </div>
+          <input className={styles.input} onChange={(event) => setQuery(event.target.value)}/>
+        </div>
         <BeatLoader color="#777777" loading={loading} size={50} />
-      </li>
+        </div>
+      </div>
     );
   }
 
   if (error) {
-    return <li>Error Loading!</li>;
+    return <li id="list">Error Loading!</li>;
   }
 
   return (
     <div id="list">
-      <div >
-        <li>NECKLACES</li>
-        <li><input onChange={(event) => setQuery(event.target.value)}/></li>
+      <div className={styles.container}>
+
+        <div className={styles.head}>
+          <div className={styles.subHead}>
+            <button className={styles.backButton} onClick={()=> props.setCurrentMenu("main")}><div>&raquo;</div></button>
+            <div className={styles.title}>NECKLACES</div>
+          </div>
+          <input className={styles.input} onChange={(event) => setQuery(event.target.value)}/>
+        </div>
+
+        <div className={styles.body}>
           {filteredData.map((necklace, key) => (
-            <li key={key}>{necklace.title}</li>
+            <div className={styles.NecklaceCard} key={key}>
+              <div>{necklace.title}</div>
+              <Image className={styles.image} width={75} height={75} src={necklace.image} alt={necklace.title}></Image>
+            </div>
           ))}
+        </div>
+
+
       </div>
     </div>
   );

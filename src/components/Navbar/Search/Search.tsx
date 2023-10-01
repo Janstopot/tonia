@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Search.module.scss";
 import { CSSTransition } from "react-transition-group";
 import PressMenu from "./Menus/PressMenu";
 import NecklacesMenu from "./Menus/NecklacesMenu";
 
 function Search(props: any) {
-  const [currentMenu, setCurrentMenu] = useState("main");
+  const [currentMenu, setCurrentMenu] = useState<string>();
   const [menuHeight, setMenuHeight] = useState<number>(225);
+
+  useEffect(()=> {
+    setCurrentMenu("main")
+  },[])
 
   function calcHeight(el : HTMLElement){
     setMenuHeight(el.offsetHeight)
-    console.log(menuHeight)
   }
 
   const transitionProps1 = {
@@ -29,7 +32,7 @@ function Search(props: any) {
   const transitionProps2 = {
     in: currentMenu != "main",
     timeout: 500,
-    onEntered: calcHeight,
+    onEnter: calcHeight,
     unmountOnExit: true,
     classNames: {
       enter: "Search_submenuTransitionEnter__OTSx6",
@@ -58,10 +61,9 @@ function Search(props: any) {
       {/*SEGUNDO MENU*/}
       <CSSTransition {...transitionProps2}>
         <div className={styles.box}>
-          <button className={styles.navButton} onClick={()=> setCurrentMenu("main")}><div>&raquo;</div></button>
-          {currentMenu === "necklaces" && <NecklacesMenu calcHeight ={calcHeight} />}
+          {currentMenu === "necklaces" && <NecklacesMenu calcHeight ={calcHeight} setCurrentMenu={setCurrentMenu} />}
           {currentMenu === "exhibitions" && <Exhibitions/>}
-          {currentMenu === "press" && <PressMenu calcHeight ={calcHeight}/>}
+          {currentMenu === "press" && <PressMenu calcHeight ={calcHeight} setCurrentMenu={setCurrentMenu} />}
         </div>
       </CSSTransition>
 
@@ -75,6 +77,7 @@ function Search(props: any) {
 
     return (
       <div>
+        <button className={styles.navButton} onClick={()=> setCurrentMenu("main")}><div>&raquo;</div></button>
         <li>EXHIBITION</li>
         <li>EXHIBITION</li>
         <li>EXHIBITION</li>

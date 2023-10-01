@@ -7,45 +7,26 @@
   height: 100%; /* Set a specific height for the scrollable container */
   overflow-y: scroll;
   overflow-x: hidden;
+  
   @include scrollbars(.5em, slategray);
   
-
   @include responsive ("mdMb") {
     width: 35rem;
   }
-
   @include responsive ("mdMb") {
     padding-left: 2rem;
   }
-
   .box {
-    padding-left: 1rem;
-    padding-top: 1rem;
     position: absolute;
+    padding: 2rem;
     width: 100%;
-    
     li {
-      margin-left: 2.5rem;
       cursor: pointer;
       color: $white;
       list-style-type: none;
       font-size: 3rem;
       font-style: normal;
       padding: 2rem;
-      .links{
-        text-decoration: none;
-      }
-    }
-    .navButton {
-      margin-top: 1.5rem;
-      border: none;
-      cursor: pointer;
-      transform: scaleX(-1) translateY(-30%);
-      background-color: transparent;
-      color: $white;
-      font-size: 7rem;
-      position: fixed; /* Position the navButton absolutely within the .box */
-      //top: 0; la position con sticky
     }
   }
 }
@@ -56,6 +37,7 @@
 
 .searchMenuHidden {
   border: solid white;
+  border-bottom-left-radius: 1rem;
   border-width: 0rem 0rem 0rem 0.2rem;
   max-height: 0rem;
   transition: all 500ms ease;
@@ -64,8 +46,9 @@
 
 .searchMenuShow {
   border: solid goldenrod;
+  border-bottom-left-radius: 1rem;
   border-width: 0rem 0rem 0.2rem 0.2rem;
-  max-height: 70rem;
+  max-height: 75vh;
   transition: all 500ms ease;
   
 }

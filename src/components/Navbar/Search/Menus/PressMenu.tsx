@@ -1,27 +1,32 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import styles from "./Menus.module.scss"
 import { Press } from "@/assets/interfaces";
 import { BeatLoader } from "react-spinners";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import Link from "next/link";
 
 function PressMenu(props: any) {
-  const [query, setQuery] = useState("");
-  const [filteredData, setFilteredData] = useState<Press[]>([]);
-  const [data, setData] = useState<Press[]>([]);
-  const [height, setHeight] = useState<HTMLElement>()
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [data, setData] = useState<Press[]>([]);
+  const [query, setQuery] = useState("");
+  const [filteredData, setFilteredData] = useState<Press[]>([]);
 
   useEffect(() => {
     fetchData();
-
   }, []);
 
   useEffect(() => {
-    setFilteredData(query === '' ? data : data.filter((press) => {return press.text.toLowerCase().includes(query.toLowerCase())}));
-    if(document.getElementById('list')) props.calcHeight(document.getElementById('list'))
+    setFilteredData(query === '' ? data : data.filter((press) => {
+      return press.text.toLowerCase().includes(query.toLowerCase())
+    }))
   }, [query]);
+
+
+  useEffect(() => {
+    props.calcHeight(document.getElementById("list"));
+  }, [filteredData]);
+
 
 
   const fetchData = async () => {
@@ -29,7 +34,7 @@ function PressMenu(props: any) {
       const querySnapshot = await getDocs(collection(getFirestore(), "press"))
       const dataArray = querySnapshot.docs.map((doc:any) => doc.data() as Press);
       setData((prevData) => [...prevData, ...dataArray])
-      setFilteredData((prevData) => [...prevData, ...dataArray])
+      setFilteredData((prevData) => [...prevData, ...dataArray]) 
       setLoading(false);
     } catch (error) {
       setError(true);
@@ -39,24 +44,48 @@ function PressMenu(props: any) {
 
   if (loading) {
     return (
-      <li>
-        <BeatLoader color="#777777" loading={loading} size={50} />
-      </li>
+      <div id="list">
+        <div className={styles.container}>
+          <div className={styles.head}>
+            <div className={styles.subHead}>
+              <button className={styles.backButton} onClick={()=> props.setCurrentMenu("main")}><div>&raquo;</div></button>
+              <div>PRESS</div>
+          </div>
+          <input className={styles.input} onChange={(event) => setQuery(event.target.value)}/>
+        </div>
+            <BeatLoader color="#777777" loading={loading} size={50} />
+        </div>
+      </div>
     );
   }
 
   if (error) {
-    return <li>Error Loading!</li>;
+    return <li id="list">Error Loading!</li>;
   }
 
   return (
-    <div id="list">
-      <div >
-        <li>PRESS</li>
-          <li><input onChange={(event) => setQuery(event.target.value)}/></li>
+<div id="list">
+      <div className={styles.container}>
+
+        <div className={styles.head}>
+          <div className={styles.subHead}>
+            <button className={styles.backButton} onClick={()=> props.setCurrentMenu("main")}><div>&raquo;</div></button>
+            <div className={styles.title}>PRESS</div>
+          </div>
+          <input className={styles.input} onChange={(event) => setQuery(event.target.value)}/>
+        </div>
+
+        <div className={styles.body}>
           {filteredData.map((press, key) => (
-            <li key={key}>{press.text}</li>
+            <div className={styles.NecklaceCard} key={key}>
+              <Link href={press.link} style={{ textDecoration: 'none' }} rel="noopener noreferrer" target="_blank">
+                <div >{press.text}</div>
+              </Link>
+            </div>
           ))}
+        </div>
+
+
       </div>
     </div>
   );

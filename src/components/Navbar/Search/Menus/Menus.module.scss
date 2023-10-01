@@ -1,0 +1,74 @@
+.container {
+  color: $white;
+  list-style-type: none;
+  font-size: 3rem;
+  font-style: normal;
+  padding: 2rem;
+
+  .head{
+    position: sticky;
+    top: 0;
+    background-color: $black;
+    padding-bottom: 2rem;
+    padding-top: 0.5rem;
+    border-bottom: 1px solid white;
+    .subHead{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-items: start;
+        .title{
+            text-decoration: overline;
+            color: goldenrod;
+        }
+    }
+    .backButton {
+        margin-top: -2.8rem;
+        border: none;
+        cursor: pointer;
+        transform: scaleX(-1) ;
+        background-color: transparent;
+        color: $white;
+        font-size: 7rem;
+
+      }
+      .input {
+        height: 5.7rem;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        font-size: 2.5rem;
+        font-weight: 400;
+        //text-align: center;
+        background-color: $background-grey;
+        font-family: $font-raleway;
+        color: $white;
+        border: none;
+        border-radius: 1rem;
+      }
+  }
+
+  .body{
+    .NecklaceCard {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        //text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        cursor: pointer;
+        &:hover{
+            //text-decoration: underline;
+            color: goldenrod
+        }
+        .image{
+            margin-left: 1rem;
+            object-fit: cover;
+            border: 1px solid goldenrod;
+            border-radius: 2rem;
+        }
+      }
+  }
+}
+
+
