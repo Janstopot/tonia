@@ -5,6 +5,7 @@ import { collection, getDocs, getFirestore } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { BeatLoader } from "react-spinners";
 import Image from "next/image";
+import Detail from "@/components/Necklaces/Details/Detail";
 
 function NecklacesMenu(props : any) {
   const [loading, setLoading] = useState(true);
@@ -12,6 +13,8 @@ function NecklacesMenu(props : any) {
   const [data, setData] = useState<Necklace[]>([]);
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState<Necklace[]>([]);
+  const [selectedNecklace, setSelectedNecklace] = useState<Necklace>();
+  const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -39,6 +42,12 @@ function NecklacesMenu(props : any) {
     }
   };
 
+  const toggleViewDetails = (key : number)=> {
+    console.log(key)
+    setSelectedNecklace(data[key])
+    setShowDetails(show => !show);
+  }
+
   if (loading) {
     return (
       <div id="list">
@@ -61,7 +70,8 @@ function NecklacesMenu(props : any) {
   }
 
   return (
-    <div id="list">
+    <>
+    {!showDetails && <div id="list">
       <div className={styles.container}>
 
         <div className={styles.head}>
@@ -74,7 +84,7 @@ function NecklacesMenu(props : any) {
 
         <div className={styles.body}>
           {filteredData.map((necklace, key) => (
-            <div className={styles.NecklaceCard} key={key}>
+            <div className={styles.NecklaceCard} key={key} onClick={()=> toggleViewDetails(key)}>
               <div className={styles.titleNecklace}>{necklace.title}</div>
               <Image className={styles.image} width={75} height={75} src={necklace.image} alt={necklace.title} loading="lazy"></Image>
             </div>
@@ -83,7 +93,11 @@ function NecklacesMenu(props : any) {
 
 
       </div>
-    </div>
+    </div>}
+    {showDetails && 
+      <Detail showComponent={toggleViewDetails} data={selectedNecklace} /> 
+    }
+    </>
   );
   }
 

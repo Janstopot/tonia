@@ -5,7 +5,6 @@ import Image from "next/image";
 import { collection, getDocs, getFirestore, limit, orderBy, query, startAfter } from "firebase/firestore";
 import { Necklace } from "@/assets/interfaces";
 
-import necklaceData2 from "./necklaceData";
 import Detail from "./Details/Detail";
 import { useInView } from 'react-intersection-observer';
 import { BeatLoader } from "react-spinners"
