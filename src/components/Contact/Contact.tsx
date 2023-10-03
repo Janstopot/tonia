@@ -8,6 +8,7 @@ import instagram from "@/assets/images/Instagram.png";
 import send from "@/assets/images/emailSend.png";
 
 import { useLanguage } from '@/hooks/LanguageContext';
+import { sendContactForm } from '@/lib/api';
 
 export type Language = 'ENG' | 'FR';
 
@@ -26,9 +27,26 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
+  const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    console.log("Form data:", formData);
+    // console.log("Form data:", formData);
+
+    try {
+      // Call the sendContactForm function to send the data to the server
+      const response = await sendContactForm(formData);
+
+      if (response.ok) {
+        // Handle success, you can show a success message or redirect here
+        console.log('Message sent successfully.');
+      } else {
+        // Handle failure, show an error message or take appropriate action
+        console.error('Failed to send message.');
+      }
+    } catch (error) {
+      // Handle network or other errors
+      console.error('Failed to send message:', error);
+    }
+
   };
 
   const [focusedInput, setFocusedInput] = useState<string>();
@@ -98,7 +116,7 @@ function Contact() {
                 onBlur={() => setFocusedInput('')}
                 autoComplete="off"
               />
-              <button type="submit" value="Submit" className={styles.submit}>
+              <button type="submit" value="Submit" className={styles.submit} disabled={!formData.name || !formData.mail || !formData.comment}>
                 <Image src={send} alt="Send logo" />
               </button>
             </form>
