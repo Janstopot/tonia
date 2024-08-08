@@ -3,6 +3,7 @@ import styles from "./Search.module.scss";
 import { CSSTransition } from "react-transition-group";
 import PressMenu from "./Menus/PressMenu";
 import NecklacesMenu from "./Menus/NecklacesMenu";
+import ExhibitionMenu from "./Menus/ExhibitionMenu";
 
 function Search(props: any) {
   const [currentMenu, setCurrentMenu] = useState<string>();
@@ -62,7 +63,7 @@ function Search(props: any) {
       <CSSTransition {...transitionProps2}>
         <div className={styles.box}>
           {currentMenu === "necklaces" && <NecklacesMenu calcHeight ={calcHeight} setCurrentMenu={setCurrentMenu} />}
-          {currentMenu === "exhibitions" && <Exhibitions/>}
+          {currentMenu === "exhibitions" && <ExhibitionMenu calcHeight ={calcHeight} setCurrentMenu={setCurrentMenu} />}
           {currentMenu === "press" && <PressMenu calcHeight ={calcHeight} setCurrentMenu={setCurrentMenu} />}
         </div>
       </CSSTransition>
@@ -72,22 +73,6 @@ function Search(props: any) {
   );
 
 
-
-  function Exhibitions() {
-
-    return (
-      <div>
-        <button className={styles.navButton} onClick={()=> setCurrentMenu("main")}><div>&raquo;</div></button>
-        <li>EXHIBITION</li>
-        <li>EXHIBITION</li>
-        <li>EXHIBITION</li>
-        <li>EXHIBITION</li>
-        <li>EXHIBITION</li>
-        <li>EXHIBITION</li>
-        <li>EXHIBITION</li>
-    </div>
-    );
-  }
 
 }
 

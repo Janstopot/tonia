@@ -21,11 +21,13 @@ function Navbar() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const handleMenuClick = () => {
+
         setIsDropdownOpen(false)
         setIsActive((prevIsActive) => !prevIsActive);
     };
 
     const handleLinkClick = () => {
+        localStorage.removeItem("positionY")
         setIsActive(false);
     };
 
@@ -45,6 +47,7 @@ function Navbar() {
     }, []);
 
     useEffect(()=> {
+        setIsDropdownOpen(false)
         setCurrent(router.pathname)
     }, [router.pathname])
 
@@ -83,11 +86,11 @@ function Navbar() {
                     </div>
                     <nav className={`${styles.text} ${styles.smallLinks}`}>
                    
-                        <Link href="/profile" onClick={()=> setIsDropdownOpen(false)} className={current == "/profile" ? styles.current : ''}>{linkText[currentLanguage].artist}</Link>
-                        <Link href="/necklaces" onClick={()=> setIsDropdownOpen(false)} className={current == "/necklaces" ? styles.current : ''}>{linkText[currentLanguage].necklaces}</Link>
-                        <Link href="/exhibitions" onClick={()=> setIsDropdownOpen(false)} className={current == "/exhibitions" ? styles.current : ''}>{linkText[currentLanguage].exhibitions}</Link>
-                        <Link href="/press" onClick={()=> setIsDropdownOpen(false)} className={current == "/press" ? styles.current : ''}>{linkText[currentLanguage].press}</Link>
-                        <Link href="/contact" onClick={()=> setIsDropdownOpen(false)} className={current == "/contact" ? styles.current : ''}>{linkText[currentLanguage].contact}</Link>
+                        <Link href="/profile" onClick={()=> {localStorage.removeItem("positionY"), setIsDropdownOpen(false)}} className={current == "/profile" ? styles.current : ''}>{linkText[currentLanguage].artist}</Link>
+                        <Link href="/necklaces" onClick={()=> {localStorage.removeItem("positionY"), setIsDropdownOpen(false)}} className={current == "/necklaces" ? styles.current : ''}>{linkText[currentLanguage].necklaces}</Link>
+                        <Link href="/exhibitions" onClick={()=> {localStorage.removeItem("positionY"), setIsDropdownOpen(false)}} className={current == "/exhibitions" ? styles.current : ''}>{linkText[currentLanguage].exhibitions}</Link>
+                        <Link href="/press" onClick={()=> {localStorage.removeItem("positionY"), setIsDropdownOpen(false)}} className={current == "/press" ? styles.current : ''}>{linkText[currentLanguage].press}</Link>
+                        <Link href="/contact" onClick={()=> {localStorage.removeItem("positionY"), setIsDropdownOpen(false)}} className={current == "/contact" ? styles.current : ''}>{linkText[currentLanguage].contact}</Link>
                         {!isActive && !isSmallScreen && (
                             <>
                                 <button className={`${styles.languageBtn} ${currentLanguage === 'ENG' ? styles.active : ''}`} onClick={handleEngClick}>ENG</button>

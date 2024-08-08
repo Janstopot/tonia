@@ -1,24 +1,21 @@
-
 import { Necklace } from "@/assets/interfaces";
 import styles from "./Menus.module.scss"
-import { collection, getDocs, getFirestore } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { BeatLoader } from "react-spinners";
 import Image from "next/image";
-import Detail from "@/components/Necklaces/Details/Detail";
+
+
+import { useApi } from "@/hooks/ApiContext";
+import Router from "next/router";
+
 
 function NecklacesMenu(props : any) {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-  const [data, setData] = useState<Necklace[]>([]);
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState<Necklace[]>([]);
-  const [selectedNecklace, setSelectedNecklace] = useState<Necklace>();
-  const [showDetails, setShowDetails] = useState(false);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  
+  const {loading, error, data} = useApi()
+
 
   useEffect(() => {
     setFilteredData(query === '' ? data : data.filter((necklace) => { return necklace.title.toLowerCase().includes(query.toLowerCase())}));
@@ -28,25 +25,21 @@ function NecklacesMenu(props : any) {
     props.calcHeight(document.getElementById("list"));
   }, [filteredData]);
 
+  function findNecklace(title : string){
+    console.log("DATA: " + data)
+    console.log(title)
+    data.map((n)=> {
+      if(n.title === title){
+        console.log(`/necklaceDetail?index=${data.indexOf(n)}`)
+        return Router.push(`/necklaceDetail?index=${data.indexOf(n)}`)
 
-  const fetchData = async () => {
-    try {
-      const querySnapshot = await getDocs(collection(getFirestore(), "necklaces"))
-      const dataArray = querySnapshot.docs.map((doc:any) => doc.data() as Necklace);
-      setData((prevData) => [...prevData, ...dataArray])
-      setFilteredData((prevData) => [...prevData, ...dataArray])
-      setLoading(false);
-    } catch (error) {
-      setError(true);
-      setLoading(false);
-    }
-  };
-
-  const toggleViewDetails = (key : number)=> {
-    console.log(key)
-    setSelectedNecklace(data[key])
-    setShowDetails(show => !show);
+      } 
+    })
+    
   }
+
+
+
 
   if (loading) {
     return (
@@ -71,7 +64,7 @@ function NecklacesMenu(props : any) {
 
   return (
     <>
-    {!showDetails && <div id="list">
+    <div id="list">
       <div className={styles.container}>
 
         <div className={styles.head}>
@@ -83,20 +76,18 @@ function NecklacesMenu(props : any) {
         </div>
 
         <div className={styles.body}>
-          {filteredData.map((necklace, key) => (
-            <div className={styles.NecklaceCard} key={key} onClick={()=> toggleViewDetails(key)}>
-              <div className={styles.titleNecklace}>{necklace.title}</div>
-              <Image className={styles.image} width={75} height={75} src={necklace.image} alt={necklace.title} loading="lazy"></Image>
+          {filteredData.map((necklace, index) => (
+            <div key={index} className={styles.links} onClick={()=> findNecklace(necklace.title)}>
+              <div className={styles.NecklaceCard}>
+                <div className={styles.titleNecklace}>{necklace.title}</div>
+                <Image className={styles.image} width={75} height={75} src={necklace.image} alt={necklace.title} loading="lazy"></Image>
+              </div>
             </div>
           ))}
         </div>
-
-
       </div>
-    </div>}
-    {showDetails && 
-      <Detail showComponent={toggleViewDetails} data={selectedNecklace} /> 
-    }
+    </div>
+
     </>
   );
   }

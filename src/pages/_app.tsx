@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar/Navbar"
 import Footer from '@/components/Footer/Footer';
 import '../styles/Home.module.css'
 import { LanguageProvider } from '../hooks/LanguageContext';
+import { ApiProvider } from '@/hooks/ApiContext';
+
 
 
 import firebase from "firebase/compat/app";
@@ -32,12 +34,14 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+      <ApiProvider>
       <LanguageProvider>
         <Navbar />
         <div className="content">
           <Component {...pageProps} />
         </div>
       </LanguageProvider>
+      </ApiProvider>
       <Footer />
     </div>
   );

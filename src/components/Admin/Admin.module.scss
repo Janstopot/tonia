@@ -1,0 +1,88 @@
+.container{
+    padding-left: 15rem;
+    padding-right: 15rem;
+    
+    .buttonsBox{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        align-items: center;
+        height: 10rem;
+        button{
+            height: 50%;
+            width: 15rem;
+        }
+    }
+
+    .boxHead{
+        display: flex;
+        justify-content: space-between;
+        height: 5rem;
+        padding: 1rem;
+        background-color:bisque;
+        border: solid black;
+        border-width: 1px 1px 1px 1px;
+        button{
+            width: 10rem;
+        }
+    }
+    .box{
+        width: 100%;
+        max-height: 30rem;
+        background-color: gainsboro;
+        overflow-y: scroll;
+        margin-bottom: 2rem;
+        border: solid black;
+        border-width: 0px 1px 1px 1px;
+
+        .row{
+            font-size: 1.5rem;
+            padding: 1rem;
+            max-height: 7rem;
+            border: solid black;
+            border-width: 0px 0px 1px 0px;
+        }
+        .rowImage{
+            display: flex;
+            justify-content: space-between;
+            font-size: 2rem;
+            padding: 1rem;
+            max-height: 10rem;
+            border: solid black;
+            border-width: 0px 0px 1px 0px;
+        
+        }
+    }
+
+    .boxHead2{
+        @extend .boxHead;
+        .edit{
+            background-color: antiquewhite;
+        }
+        .delete{
+            background-color: red;
+        }
+        .close{
+            background-color: white;
+        }
+    }
+
+    .box2{
+        @extend .box;
+        display: flex;
+        flex-direction: column;
+        .row2{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            font-size: 1.5rem;
+            height: 5rem;
+        }
+
+    
+
+    }
+
+}
+
+
